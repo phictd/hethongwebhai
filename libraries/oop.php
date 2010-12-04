@@ -3,7 +3,7 @@ class connect_db{
 protected $host="localhost";
 protected $user_host="root";
 protected $pass_host="root";
-protected $dbname="project";
+protected $dbname="dienmay";
 protected $conn;
 protected $result;
 public function connect(){

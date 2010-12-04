@@ -122,25 +122,34 @@ border:1px solid #0099FF;
 margin:5px;
 }
 
+table{
+font:12px verdana;
+}
 
-	table{
-	font:12px verdana;
-	}
-	
-	td{
-	border:1px solid green;
-	}
-	.title{
-	background:green;
-	color:#FFFFFF;
-	text-align:center;
-	font-weight:900;
-	}
-	
-	a{
-	color:green;
-	text-decoration:none;
-	}
-	a:hover{
-	color:#FF6666;
-	}
+td{
+border:1px solid green;
+}
+.title{
+background:green;
+color:#FFFFFF;
+text-align:center;
+font-weight:900;
+}
+
+a{
+color:green;
+text-decoration:none;
+}
+a:hover{
+color:#FF6666;
+}
+
+.ad_menu{
+	float:left;
+	width:150px;
+}
+
+.ad_main{
+	float:left;
+	width:500px;
+}
