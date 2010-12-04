@@ -1,10 +1,3 @@
-<div align="center">
-	<h4>Your Level: <select name="level" onchange="showlv(this.value)">
-    			<option value="0">List All</option>
-				<option value="1">Member</option>
-                <option value="2">Administrator</option>
-				</select></h4>
-     <div id="ketqua">           
 	<table align="center"  width="350" >
     	<tr>
         	<td class=title>STT</td>
@@ -14,8 +7,11 @@
         	<td class=title>Del</td>                                                
         </tr>
 <?php
+	$id=$_GET['id'];
+	require("../../libraries/oop.php");
+	require("../../libraries/user.php");
 	$a= new User;
-	$data=$a->listuser();
+	$data=$a->listlv($id);
 	$stt=0;
 	foreach($data as $item){
 		$stt++;
@@ -34,5 +30,3 @@
 
 ?>
     </table>
-    </div>
-</div>
