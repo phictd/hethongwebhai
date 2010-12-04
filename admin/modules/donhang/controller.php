@@ -1,5 +1,5 @@
 <?php
-require("menu.php");
+require("libraries/user.php");
 switch($_GET['act']){
 	case "add":
 	require("modules/user/add.php");
