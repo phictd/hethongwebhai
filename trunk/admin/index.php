@@ -1,7 +1,7 @@
 <?php
 ob_start();
-require("libraries/oop.php");
-require("languages/lang_vn.php");
+require("../libraries/oop.php");
+require("../languages/lang_vn.php");
 require_once("templates/default/top.php");
 require_once("templates/default/left.php");
 switch($_GET['module']){
