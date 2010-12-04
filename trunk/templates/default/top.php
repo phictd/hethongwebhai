@@ -8,4 +8,4 @@
 </head>
 
 <body>
-	<div id="top">Banner</div>
+	<div id="top">Welcome back, admin</div>
