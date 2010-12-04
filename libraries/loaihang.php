@@ -66,7 +66,7 @@ public function listloaihang(){
 }
 
 public function delete_loaihang(){
-	$sql="delete from loaihang where idLoaiHang='".$this->get_idloai()."'";
+	$sql="delete from loaihang where idLoaiHang='".$this->get_idloai()."'";	
 	$this->query($sql);
 }
 
