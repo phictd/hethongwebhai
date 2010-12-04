@@ -3,8 +3,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href="templates/default/style.css" rel="stylesheet" type="text/css" />
-<script language="javascript" src="libraries/ajax.js"></script>
-<title>Untitled Document</title>
+<script language="javascript" src="../libraries/ajax.js"></script>
+<title>Trang Admin</title>
 </head>
 
 <body>
