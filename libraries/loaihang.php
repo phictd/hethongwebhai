@@ -65,6 +65,19 @@ public function listloaihang(){
 	}
 }
 
+public function listcongty(){
+	$sql="select * from congty where idLoaiHang='".$this->get_idloai()."'";	
+	$this->query($sql);
+	if($this->num_rows() == 0){
+		return 0;
+	}else{
+		while($row=$this->fetch()){
+			$data[]=$row;
+		}	
+		return $data;
+	}
+}
+
 public function delete_loaihang(){
 	$sql="delete from loaihang where idLoaiHang='".$this->get_idloai()."'";	
 	$this->query($sql);
