@@ -105,7 +105,7 @@ border-top:1px solid #CCCCCC;
 }
 
 #left ul a:hover{
-background: #99CC33 url(../../images/icons/arrow.gif) no-repeat 11px 7px;
+background: #99CC33 11px 7px;
 }
 
  /*top menu*/
@@ -160,7 +160,7 @@ width: 140px;
 #left .arrowdiv{
 position: absolute;
 right: 2px;
-background: transparent url(../../images/icons/arrow.gif) no-repeat center right;
+background: transparent url(../../images/icons/red_arrow_nav.gif) no-repeat center right;
 }
 
 * html #left li { float: left; height: 1%; }
