@@ -28,15 +28,17 @@ function suacongty(id,loai,ten){
 
 function xoaloaihang(id){
 	http.open('get','modules/loaihang/xoa.php?id='+id,true);
-	http.onreadystatechange=process_xoa;
+	http.onreadystatechange=process_tuongtaccsdl;
 	http.send(null);
 }
 
-function process_xoa(){
-	if(http.readyState == 4 && http.status == 200){
-		list('loaihang');
-	}
+function xoacongty(id){
+	http.open('get','modules/congty/xoa.php?id='+id,true);
+	http.onreadystatechange=process_tuongtaccsdl;
+	http.send(null);
 }
+
+
 
 function list(module){
 	switch(module){
@@ -84,7 +86,6 @@ function themcongtyvaocsdl(idloai,tencongty){
 function process_tuongtaccsdl(){
 	if(http.readyState == 4 && http.status == 200){
 		kq=http.responseText;
-		document.getElementById('thu').innerHTML=kq;
 		if(kq==0){
 			document.getElementById('thongbao').innerHTML='Đã có dữ liệu này';			
 		}else{
@@ -93,6 +94,8 @@ function process_tuongtaccsdl(){
 				case '2': document.getElementById('thongbao').innerHTML='Sửa Thành Công';list('loaihang');break;
 				case '3': document.getElementById('thongbao').innerHTML='Thêm Thành Công';list('congty');break;
 				case '4': document.getElementById('thongbao').innerHTML='Sửa Thành Công';list('congty');break;
+				case '5   ': document.getElementById('thongbao').innerHTML='Xóa Thành Công';list('loaihang');break;
+				case '6   ': document.getElementById('thongbao').innerHTML='Xóa Thành Công';list('congty');break;
 				default : document.getElementById('thongbao').innerHTML='Không có hành động nào';
 			}
 			

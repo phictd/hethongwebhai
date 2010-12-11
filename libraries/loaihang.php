@@ -53,7 +53,7 @@ public function check_loaihang(){
 }
 
 public function listloaihang(){
-	$sql="select * from loaihang";
+	$sql="select * from loaihang order by TenLoai ASC";
 	$this->query($sql);
 	if($this->num_rows() == 0){
 		return 0;
