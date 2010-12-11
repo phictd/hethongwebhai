@@ -16,13 +16,13 @@ public function get_tencongty(){
 	return $this->tencongty;
 }
 public function set_idcongty($idcongty){
-	$this->idloai=$idcongty;
+	$this->idcongty=$idcongty;
 }
 public function get_idcongty(){
 	return $this->idcongty;
 }
 public function set_idloaihang($idloaihang){
-	$this->tid=$idloaihang;
+	$this->idloaihang=$idloaihang;
 }
 public function get_idloaihang(){
 	return $this->idloaihang;
@@ -39,7 +39,7 @@ public function insert_congty(){
 }
 
 public function check_congty(){
-	if($this->get_tencongty() != ""&&$this->get_idloaihang()!=""){
+	if($this->get_tencongty() !="" && $this->get_idloaihang()!=""){
 			$sql="select * from congty where TenCongTy='".$this->get_tencongty()."' and idLoaiHang='".$this->get_idloaihang()."'";
 	}else{
 		return FALSE;
@@ -54,7 +54,7 @@ public function check_congty(){
 }
 
 public function listcongty(){
-	$sql="select * from congty";
+	$sql="select * from congty order by idLoaiHang ASC";
 	$this->query($sql);
 	if($this->num_rows() == 0){
 		return 0;
