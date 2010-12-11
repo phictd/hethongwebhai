@@ -127,7 +127,7 @@ public function check_hanghoa(){
 }
 
 public function listhanghoa(){
-	$sql="select * from hanghoa";
+	$sql="select * from hanghoa ";
 	$this->query($sql);
 	if($this->num_rows() == 0){
 		return 0;
@@ -137,6 +137,24 @@ public function listhanghoa(){
 		}	
 		return $data;
 	}
+}
+public function listhanghoa6($X,$A){
+	$sql="select * from hanghoa limit $X,$A";
+	$this->query($sql);
+	if($this->num_rows() == 0){
+		return 0;
+	}else{
+		while($row=$this->fetch()){
+			$data[]=$row;
+		}	
+		return $data;
+	}
+}
+
+public function dem(){
+$sql="select * from hanghoa";
+	$this->query($sql);
+	return $this->num_rows();
 }
 
 public function listloaihang(){

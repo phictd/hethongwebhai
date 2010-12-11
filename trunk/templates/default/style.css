@@ -256,7 +256,7 @@ span.price{
 float:left;
 width:206px;
 height:auto;
-padding:5px 0px 5px 5px;
+margin:5px 0px 0px 10px;
 }
 .top_prod_box{
     float:left;
@@ -302,3 +302,17 @@ div.prod_details_tab a.prod_details{
     text-decoration:none;
     color:#0fa0dd;
 }*/
+
+.link{
+font:11px verdana;
+border:1px solid green;
+padding:3px;
+}
+
+.active{
+font:11px verdana;
+border:1px solid green;
+padding:3px;
+color:white;
+background:green;
+}
