@@ -10,7 +10,7 @@ public function __destruct(){
 	$this->disconnect();
 }	
 public function set_tenloai($tenloai){
-	$this->username=$tenloai;
+	$this->tenloai=$tenloai;
 }
 public function get_tenloai(){
 	return $this->tenloai;
