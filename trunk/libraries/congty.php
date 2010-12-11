@@ -10,7 +10,7 @@ public function __destruct(){
 	$this->disconnect();
 }	
 public function set_tencongty($tencongty){
-	$this->username=$tencongty;
+	$this->tencongty=$tencongty;
 }
 public function get_tencongty(){
 	return $this->tencongty;
@@ -48,6 +48,7 @@ public function check_congty(){
 	if($this->num_rows() == 1){
 		return FALSE;
 	}else{
+		
 		return TRUE;
 	}
 }
