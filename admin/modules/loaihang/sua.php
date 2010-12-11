@@ -7,6 +7,9 @@ $ten=$_GET['ten'];
 
 $a->set_tenloai($ten);
 $a->set_idloai($id);
-$a->delete_loaihang();
-echo "Welcome Link $id $ten";
+if($a->update_loaihang()){
+	echo "2";
+}else
+	echo "0";
+	
 ?>

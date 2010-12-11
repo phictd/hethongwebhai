@@ -24,11 +24,11 @@ require_once('../../../libraries/loaihang.php');
 		echo "</tr>";
 	}
 	
-	
-
 ?>
     </table>
-    <div id='them'></div>
-    <a href="#" onclick="themloaihang(<?php echo ++$stt;?>)" >Thêm </a>
+    <div id='them'></div><br />
+    <div id="thongbao"></div>
+    <a href="#" onclick="themdong('loaihang',<?php echo ++$stt;?>)" >Thêm </a>
     </div>
+    
 </div> 
