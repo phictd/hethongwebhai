@@ -24,15 +24,15 @@
            	<img src="images/icons/hotro.png" width="150" />
            </div>
            <div class="img1">
-               Mr.Dũng (Kinh doanh)
+               Mr.Thời (Kinh doanh)
               <a href="#"><img src="images/icons/online(1).gif"/></a>
            </div>
            <div class="img1">
-               Mr.Tùng (Kinh doanh)
-              <a href="#"><img src="images/icons/online(1).gif"/></a>
+               Mr.Đạt (Kinh doanh)
+              <a href="#"><img src="images/icons/online(1).gif" /></a>
            </div>
            <div class="img1">
-               Mr.An (Kinh Doanh)
+               Mr.Thuật (Kinh Doanh)
               <a href="#"><img src="images/icons/online(1).gif"/></a>
            </div>
            <div class="img1">
