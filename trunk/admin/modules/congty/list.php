@@ -8,7 +8,7 @@
         	<td class=title width="100px">Xóa</td>                                                
         </tr>
 <?php
-// ini_set( "display_errors", 0);
+ ini_set( "display_errors", 0);
 require_once('../../../libraries/oop.php');
 require_once('../../../libraries/congty.php');
 require_once('../../../libraries/loaihang.php');
@@ -21,7 +21,7 @@ require_once('../../../libraries/loaihang.php');
 		$stt++;
 		echo "<tr height='20px'>";
 		echo "<td align=center width='100px'>$stt</td>";
-		echo "<td align=center width='100px'><select id='loaihang'> ";
+		echo "<td align=center width='100px'><select id='loaihangct".$stt."'> ";
 		foreach($data_loaihang as $item_loaihang){
 			if($item['idLoaiHang']==$item_loaihang['idLoaiHang']) 
 				$selected=" selected ";
@@ -31,9 +31,10 @@ require_once('../../../libraries/loaihang.php');
             <?php
 		}
 		echo "</select></td>";
-		echo "<td align=center width='200px'><input type='text' id='$item[idCongTy]' value='$item[TenCongTy]' size='25'/></td>";
-		echo "<td align=center width='100px'><a href='#' onclick='suacongty($item[idCongTy],document.getElementById(loaihang).value,document.getElementById($item[idCongTy]).value)'>Sửa</a></td>";
-		echo "<td align=center  width='100px'><a href='#' onclick='xoaloaihang($item[idCongTy])'>Xóa</a></td>";
+		echo "<td align=center width='200px'><input type='text' id='$item[idCongTy]' value='$item[TenCongTy]' size='25'/></td>";?>
+			<td align=center width='100px'> <a href='#' onclick="suacongty(<?php echo $item[idCongTy];?>,document.getElementById('loaihangct<?php  echo $stt;?>').value,document.getElementById('<?php echo $item[idCongTy];?>').value)">Sửa</a></td>
+        <?php
+		echo "<td align=center  width='100px'><a href='#' onclick='xoacongty($item[idCongTy])'>Xóa</a></td>";
 		echo "</tr>";
 	}
 	
@@ -41,7 +42,6 @@ require_once('../../../libraries/loaihang.php');
     </table>
     <div id='them'></div><br />
     <div id="thongbao"></div>
-    <div id="thu"></div>
     <a href="#" onclick="themdong('congty',<?php echo ++$stt;?>)" >Thêm </a>
     </div>
     
