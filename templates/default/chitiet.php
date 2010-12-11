@@ -47,12 +47,9 @@
 ?>
 
 
-<center>
+<div class="phantrang">
 	<?php
-	
-	
-	
-		if($C > 1){
+			if($C > 1){
 			$D=$X/$A + 1;
 			if($D != 1){
 				$M= $X - $A;
@@ -72,4 +69,4 @@
 			}
 		}
 	?>
-</center>
+</div>
