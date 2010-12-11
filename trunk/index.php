@@ -5,6 +5,7 @@ require("languages/lang_vn.php");
 require_once("templates/default/top.php");
 require_once("templates/default/left.php");
 require_once("templates/default/info.php");
+//require_once("templates/default/chitiet.php");
 require_once("templates/default/right.php");
 switch($_GET['module']){
 	case "user":
