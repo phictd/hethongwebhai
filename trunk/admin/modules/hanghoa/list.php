@@ -1,34 +1,52 @@
 <div align="center">	
 	<table align="center"  width="600px" id="tableloaihang" >
     	<tr height="20px">
-        	<td class=title width="100px">STT</td>
-        	<td class=title width="300px">Tên Loại</td>
-        	<td class=title width="100px">Sửa</td>
-        	<td class=title width="100px">Xóa</td>                                                
+        	<td class=title width="50px">STT</td>
+        	<td class=title width="100px">Tên Loại</td>
+            <td class=title width="150px">Tên Công Ty</td>
+            <td class=title width="200px">Tên Hàng Hóa</td>
+        	<td class=title width="50px">Sửa</td>
+        	<td class=title width="50px">Xóa</td>                                                
         </tr>
 <?php
-	
+ //ini_set( "display_errors", 0);
 require_once('../../../libraries/oop.php');
+require_once('../../../libraries/congty.php');
 require_once('../../../libraries/loaihang.php');
-	$a= new LoaiHang;
-	$data=$a->listloaihang();
+require_once('../../../libraries/hanghoa.php');
+	$hanghoa=new HangHoa;
+	$congty= new CongTy;
+	$loaihang=new LoaiHang;
+	$data_loaihang=$loaihang->listloaihang();
+	$data_congty=$congty->listcongty();
 	$stt=0;
-	foreach($data as $item){
+	foreach($data_congty as $item){
 		$stt++;
 		echo "<tr height='20px'>";
 		echo "<td align=center width='100px'>$stt</td>";
-		echo "<td align=center width='300px'><input type='text' id='$item[idLoaiHang]' value='$item[TenLoai]' size='25'/></td>";
-		
-		echo "<td align=center width='100px'><a href='#' onclick='sualoaihang($item[idLoaiHang],document.getElementById($item[idLoaiHang]).value)'>Sửa</a></td>";
-		echo "<td align=center  width='100px'><a href='#' onclick='xoaloaihang($item[idLoaiHang])'>Xóa</a></td>";
+		echo "<td align=center width='100px'><select id='loaihangct".$stt."'> ";
+		foreach($data_loaihang as $item_loaihang){
+			if($item['idLoaiHang']==$item_loaihang['idLoaiHang']) 
+				$selected=" selected ";
+			else
+				$selected=' ';?>
+			<option value='<?php echo $item_loaihang['idLoaiHang'];?>' <?php echo $selected;?>><?php echo $item_loaihang['TenLoai'];?></option>
+            <?php
+		}
+		echo "</select></td>";
+		echo "<td align=center width='200px'><input type='text' id='$item[idCongTy]' value='$item[TenCongTy]' size='25'/></td>";
+		echo "<td align=center width='200px'><input type='text' id='$item[idHang]' value='$item[idHang]' size='25'/></td>";?>
+			<td align=center width='100px'> <a href='#' onclick="suacongty(<?php echo $item[idCongTy];?>,document.getElementById('loaihangct<?php  echo $stt;?>').value,document.getElementById('<?php echo $item[idCongTy];?>').value)">Sửa</a></td>
+        <?php
+		echo "<td align=center  width='100px'><a href='#' onclick='xoacongty($item[idCongTy])'>Xóa</a></td>";
 		echo "</tr>";
 	}
 	
-	
-
 ?>
     </table>
-    <div id='them'></div>
-    <a href="#" onclick="themloaihang(<?php echo ++$stt;?>)" >Thêm </a>
+    <div id='them'></div><br />
+    <div id="thongbao"></div>
+    <a href="#" onclick="themdong('congty',<?php echo ++$stt;?>)" >Thêm </a>
     </div>
+    
 </div> 

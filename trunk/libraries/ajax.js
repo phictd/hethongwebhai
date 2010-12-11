@@ -44,6 +44,7 @@ function list(module){
 	switch(module){
 		case 'loaihang':	http.open('get','modules/loaihang/list.php',true);break;
 		case 'congty':		http.open('get','modules/congty/list.php',true); break;
+		case 'hanghoa':		http.open('get','modules/hanghoa/list.php',true); break;
 		default : document.getElementById('ketqua').innerHTML='Không có hành động nào';
 	}
 	http.onreadystatechange=process_list;
@@ -60,6 +61,7 @@ function themdong(module,stt){
 	switch(module){
 	case 'loaihang':http.open('get','modules/loaihang/them.php?stt='+stt,true);break;
 	case 'congty':http.open('get','modules/congty/them.php?stt='+stt,true);break;
+	case 'hanghoa':http.open('get','modules/hanghoa/them.php?stt='+stt,true);break;
 	default : document.getElementById('ketqua').innerHTML='Không có hành động nào';
 	}
 	http.onreadystatechange=process_them;

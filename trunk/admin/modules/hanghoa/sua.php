@@ -1,12 +1,17 @@
 <?php
 require_once('../../../libraries/oop.php');
-require_once('../../../libraries/loaihang.php');
-$a= new LoaiHang;
+require_once('../../../libraries/congty.php');
+$a= new CongTy;
 $id=$_GET['id'];
+$loai=$_GET['loai'];
 $ten=$_GET['ten'];
 
-$a->set_tenloai($ten);
-$a->set_idloai($id);
-$a->delete_loaihang();
-echo "Welcome Link $id $ten";
+$a->set_tencongty($ten);
+$a->set_idcongty($id);
+$a->set_idloaihang($loai);
+if($a->update_congty()){
+	echo "4";
+}else
+	echo "0";
+	
 ?>
