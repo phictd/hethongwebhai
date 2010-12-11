@@ -2,7 +2,6 @@
 class HangHoa extends connect_db{
 public $idhang;
 public $tenhang;
-public $tid;
 public $idcongty;
 public $mota;
 public $ngaycapnhat;
@@ -13,6 +12,8 @@ public $soluong;
 public $ghichu;
 public $solanmua;
 public $anhien;
+public $tid;
+
 public function __construct(){
 	$this->connect();
 }
@@ -41,8 +42,8 @@ public function get_tid(){
 }
 /* */
 
-public function set_idcongty($tidcongty){
-	$this->idcongty=$tidcongty;
+public function set_idcongty($idcongty){
+	$this->idcongty=$idcongty;
 }
 public function get_idcongty(){
 	return $this->idcongty;
@@ -113,8 +114,8 @@ public function insert_hanghoa(){
 }
 
 public function check_hanghoa(){
-	if($this->get_tenhang() != ""){
-			$sql="select * from hanghoa where TenHang='".$this->get_tenhang()."'";
+	if($this->get_tenhang() !="" && $this->get_idhang()!="" && $this->get_idcongty()!=""){
+			$sql="select * from hanghoa where TenHang='".$this->get_tenhang()."' and idHang='".$this->get_idhang()."' and idCongTy='".$this->get_idcongty()."'";
 	}else{
 		return FALSE;
 	}
