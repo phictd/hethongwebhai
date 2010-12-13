@@ -1,5 +1,14 @@
 </div>
 <div id="right">
+<form action="index.php?module=giohang&act=dathang" method="post">
+            <fieldset>
+            <legend>Login</legend>
+            <label>Username:</label> <input type="text" name="txtuser" size="10" /><br />
+            <label>Password:</label> <input type="password" name="txtpass" size="10" /><br />
+            <input type="submit" name="ok" value="Đăng nhập" />
+            <input type="submit" name="dk" value="Đăng ký" />
+            </fieldset>         
+            </form>
 <div id="right_content">
    		<div id="shopping_cart">
         	<h1>Giỏ Hàng</h1>

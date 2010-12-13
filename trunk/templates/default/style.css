@@ -228,6 +228,7 @@ border:1px  solid #6da6b1;
     width:200px;
     height:84px;
     text-align:center;
+	background:url(../../images/icons/cart_bg.gif) no-repeat;
 }
 #right_content h2{
     float:left;
@@ -364,4 +365,17 @@ font-weight:900;
 #info fieldset{
 border:1px solid #0099FF;
 margin:5px;
+}
+#right label{
+width:120px;
+float:left;
+padding:0px;
+font-weight:900;
+margin-top:3px;
+}
+#right input{
+border:1px solid #0099FF;
+margin-bottom:3px;
+background:#FFFFFF;
+color:#009933;
 }
