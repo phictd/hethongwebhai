@@ -180,7 +180,7 @@ public function listloaihang(){
 
 //lay 1 mat hang
        public function getHang(){
-        $sql = "select * from hanghoa where idHang ='".$this->get_MaHang()."'";
+        $sql = "select * from hanghoa,congty where idHang ='".$this->get_MaHang()."'";
         $this->query($sql);
         return $this->fetch();
        }

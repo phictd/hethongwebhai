@@ -339,3 +339,26 @@ width:648px;
 padding: 40px 0px 5px 0px;
 text-align:center;
 }
+#info label{
+width:120px;
+float:left;
+padding-left:25px;
+font-weight:900;
+margin-top:3px;
+}
+#info input, select, textarea{
+border:1px solid #0099FF;
+margin-bottom:3px;
+background:#FFFFFF;
+color:#009933;
+}
+
+#info legend{
+color:#009933;
+font-weight:900;
+}
+
+#info fieldset{
+border:1px solid #0099FF;
+margin:5px;
+}
