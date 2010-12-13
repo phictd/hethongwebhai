@@ -1,16 +1,19 @@
 <?php
 require_once('../../../libraries/oop.php');
-require_once('../../../libraries/congty.php');
-$a= new CongTy;
+require_once('../../../libraries/hanghoa.php');
+$a= new HangHoa;
 $id=$_GET['id'];
-$loai=$_GET['loai'];
+$congty=$_GET['congty'];
 $ten=$_GET['ten'];
+$gia=$_GET['gia'];
 
-$a->set_tencongty($ten);
-$a->set_idcongty($id);
-$a->set_idloaihang($loai);
-if($a->update_congty()){
-	echo "4";
+$a->set_idhang($id);
+$a->set_idcongty($congty);
+$a->set_tenhang($ten);
+$a->set_gia($gia);
+
+if($a->update_hanghoa()){
+	echo "7";
 }else
 	echo "0";
 	

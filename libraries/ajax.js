@@ -18,12 +18,19 @@ function sualoaihang(id,ten){
 	http.send(null);
 }
 
-
 function suacongty(id,loai,ten){
 	http.open('get','modules/congty/sua.php?id='+id+'&loai='+loai+'&ten='+ten,true);
 	http.onreadystatechange=process_tuongtaccsdl;
 	http.send(null);
 }
+
+function suahanghoa(id,congty,ten,gia){	
+	http.open('get','modules/hanghoa/sua.php?id='+id+'&congty='+congty+'&ten='+ten+'&gia='+gia,true);
+	http.onreadystatechange=process_tuongtaccsdl;
+	http.send(null);
+}
+
+
 
 
 function xoaloaihang(id){
@@ -40,6 +47,14 @@ function xoacongty(id){
 
 
 
+
+
+function xemhinh(idHang){
+	http.open('get','modules/hanghoa/xemhinh.php?id='+idHang,true);
+	http.onreadystatechange=process_list;
+	http.send(null);
+}
+
 function list(module){
 	switch(module){
 		case 'loaihang':	http.open('get','modules/loaihang/list.php',true);break;
@@ -50,12 +65,9 @@ function list(module){
 	http.onreadystatechange=process_list;
 	http.send(null);
 }
-function process_list(){
-	if(http.readyState == 4 && http.status == 200){
-		kq=http.responseText;
-		document.getElementById('ketqua').innerHTML=kq;
-	}
-}
+
+
+
 
 function themdong(module,stt){
 	switch(module){
@@ -67,22 +79,51 @@ function themdong(module,stt){
 	http.onreadystatechange=process_them;
 	http.send(null);
 }
-function process_them(){
-	if(http.readyState == 4 && http.status == 200){
-		kq=http.responseText;
-		document.getElementById('them').innerHTML=kq;
-	}
-}
 
 function themloaihangvaocsdl(tenloai){
 	http.open('get','modules/loaihang/themvaocsdl.php?tenloai='+tenloai,true);
 	http.onreadystatechange=process_tuongtaccsdl;
 	http.send(null);		
 }
+
 function themcongtyvaocsdl(idloai,tencongty){	
 	http.open('get','modules/congty/themvaocsdl.php?idloai='+idloai+'&tencongty='+tencongty,true);
 	http.onreadystatechange=process_tuongtaccsdl;
 	http.send(null);		
+}
+
+
+
+congtyhh=0;
+function thaydoiloaihang(idloai,stt){
+	congtyhh=stt;
+	http.open('get','modules/hanghoa/showcongty.php?idloai='+idloai+'&stt='+stt,true);
+	http.onreadystatechange=process_thaydoiloaihang;
+	http.send(null);	
+}
+function process_thaydoiloaihang(){
+	if(http.readyState == 4 && http.status == 200){
+		kq=http.responseText;
+		document.getElementById('congtyhh'+congtyhh).innerHTML=kq;
+	}
+}
+
+
+
+
+
+function process_list(){
+	if(http.readyState == 4 && http.status == 200){
+		kq=http.responseText;
+		document.getElementById('ketqua').innerHTML=kq;
+	}
+}
+
+function process_them(){
+	if(http.readyState == 4 && http.status == 200){
+		kq=http.responseText;
+		document.getElementById('them').innerHTML=kq;
+	}
 }
 
 function process_tuongtaccsdl(){
@@ -98,10 +139,16 @@ function process_tuongtaccsdl(){
 				case '4': document.getElementById('thongbao').innerHTML='Sửa Thành Công';list('congty');break;
 				case '5   ': document.getElementById('thongbao').innerHTML='Xóa Thành Công';list('loaihang');break;
 				case '6   ': document.getElementById('thongbao').innerHTML='Xóa Thành Công';list('congty');break;
-				default : document.getElementById('thongbao').innerHTML='Không có hành động nào';
+				case '7': document.getElementById('thongbao').innerHTML='Sửa Thành Công';list('hanghoa');break;
+				default : document.getElementById('thongbao').innerHTML=kq;
 			}
 			
 		}
 	}
 }
+
+
+
+
+
 

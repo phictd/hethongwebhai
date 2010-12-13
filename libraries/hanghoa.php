@@ -135,7 +135,7 @@ public function check_hanghoa(){
 }
 
 public function listhanghoa(){
-	$sql="select * from hanghoa ";
+	$sql="select * from hanghoa,congty where hanghoa.idCongTy=congty.idCongTy order by idLoaiHang ASC ";
 	$this->query($sql);
 	if($this->num_rows() == 0){
 		return 0;
@@ -147,7 +147,7 @@ public function listhanghoa(){
 	}
 }
 public function listhanghoa6($X,$A){
-	$sql="select * from hanghoa limit $X,$A";
+	$sql="select * from hanghoa,congty where hanghoa.idCongTy=congty.idCongTy order by idLoaiHang ASC limit $X,$A";
 	$this->query($sql);
 	if($this->num_rows() == 0){
 		return 0;
@@ -211,13 +211,31 @@ public function getdata(){
 
 public function update_hanghoa(){
 	if($this->check_hanghoa() == TRUE){
-		$sql="update hanghoa set TenHang='".$this->get_tenhang()."' where idHangHoa='".$this->get_idhang()."'";
+		$sql="update hanghoa set idCongTy='".$this->get_idcongty()."',TenHang='".$this->get_tenhang()."',Gia='".$this->get_gia()."' where idHang='".$this->get_idhang()."'";
 		$this->query($sql);
-		return TRUE;
+		return $sql;
 	}else{
 		return FALSE;
 	}
 }
 
+}
+
+function xulygia($gia){
+	$t1=substr($gia,-3,4);
+	$t2=substr($gia,-6,-3);
+	$t3=substr($gia,0,-6);
+	if($gia>999999) $giakq=$t3.'.'.$t2.'.'.$t1.' VN&#272;';
+	else  $giakq=$t2.'.'.$t1.' VN&#272;';
+	
+	return $giakq;
+}
+function tragialai($gia){	
+	$t1=substr($gia,-12,3);
+	$t2=substr($gia,-16,-13);
+	$t3=substr($gia,0,-17);
+	if(strlen($gia)>17) $giakq=$t3.$t2.$t1;
+	else  $giakq=$t2.$t1;	
+	return $giakq;
 }
 ?>
