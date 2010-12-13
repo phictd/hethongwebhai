@@ -2,7 +2,7 @@
 session_start();
 if($_SESSION['tongsl'] > 0){
 echo "<form method='post' action='index.php?module=giohang&act=capnhat'>";
-echo "<table width='648' border=1 cellpadding='0' cellspacing='0'  bordercolorlight='#FFFF00'>";
+echo "<table width='600' align='center' border=1 cellpadding='0' cellspacing='0'  bordercolorlight='#FFFF00' class='xemgiohang'>";
 echo "<tr>";
 echo "   <td colspan='6' align='center'><font color='#0033CC' size='+2'>Danh Sách Hàng Hóa</font></td>";
 echo "   </tr>";

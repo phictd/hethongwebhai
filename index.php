@@ -16,7 +16,6 @@ switch($_GET['module']){
             break;
     default:
 		require("modules/hanghoa/chitiet.php");
-		//require_once("templates/default/info.php");
 }
 
 require_once("templates/default/right.php");

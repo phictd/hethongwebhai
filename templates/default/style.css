@@ -47,7 +47,10 @@ width:648px;
 border-left:1px solid #FF6600;
 border-right:1px solid #FF6600;
 }
-
+#info .xemgiohang{
+width:628px;
+margin:10px;	
+}
 #right{
 float:left;
 width:200px;
