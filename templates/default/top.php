@@ -15,7 +15,7 @@
 </div>
 <div id="menu">
             <ul>
-            	<li><a href="#" style="border-left:1px solid #CCC;">Home</a></li>
+            	<li><a href="index.php" style="border-left:1px solid #CCC;">Home</a></li>
             	<li><a href="#">Tin tức</a></li>
                 <li><a href="#">Sim số</a></li>
             	<li><a href="#">Giới thiệu</a></li>
