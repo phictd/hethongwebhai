@@ -66,7 +66,7 @@ if($loithongtin != ""){
     
             <fieldset>
             <legend>Mua Hàng</legend>
-            <label>Họ Tên:</label> <input type="text" name="txtuser" size="25" /><br />
+            <label>Họ Tên:</label> <input type="text" name="txttenkh" size="25" /><br />
             <label>Điện Thoại:</label> <input type="text" name="txtdt" size="25" /><br />
             <label>Địa Chỉ:</label> <input type="text" name="txtdc" size="50" /><br />
             <label>Ngày Giao:</label><select name="day"><?php
@@ -92,6 +92,6 @@ if($loithongtin != ""){
 			?>
             </select><br/>
             <label>Note:</label> <textarea name="txt" cols="25" rows="5" ></textarea><br />
-            <label>&nbsp;</label><input type="submit" name="ok" value="Mua"/>
+            <label>&nbsp;</label><input type="submit" name="ok" value="Mua" /> 
             </fieldset>         
             </form>
