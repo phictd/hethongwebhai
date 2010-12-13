@@ -1,4 +1,15 @@
 <div id="right">
+<div id="right_content">
+   		<div id="shopping_cart">
+        	<h1>Giỏ Hàng</h1>
+            
+            <div id="cart_details">
+                <?php session_start(); echo $_SESSION['tongsl']." Mặt hàng";?> <br />
+           <span id="border_cart"></span>
+            Tổng: <span id="price"><?php session_start(); echo $_SESSION['thanhtien']." VND";?></span>
+            </div>
+            <a href="index.php?module=giohang&act=xem"><img src="images/icons/cart.jpg" width="40" height="40" /></a>
+            </div>
 <div id="bg_dongho">
 			<embed type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" quality="high" wmode="transparent" src="images/icons/dongho.swf" width="180" height="180"></embed>
              </div>
