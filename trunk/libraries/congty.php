@@ -65,6 +65,19 @@ public function listcongty(){
 		return $data;
 	}
 }
+public function listcongtytheoloai($idloai){
+	$sql="select * from congty where idLoaiHang=$idloai order by idLoaiHang ASC";
+	$this->query($sql);
+	if($this->num_rows() == 0){
+		return 0;
+	}else{
+		while($row=$this->fetch()){
+			$data[]=$row;
+		}	
+		return $data;
+	}
+}
+
 
 public function delete_congty(){
 	$sql="delete from congty where idCongTy='".$this->get_idcongty()."'";	

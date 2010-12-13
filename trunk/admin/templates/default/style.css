@@ -108,6 +108,12 @@ background:#FFFFFF;
 margin-bottom:3px;
 color: black;
 }
+.num{
+	text-align:right;
+}
+.text{
+	text-align:left;
+}
 
 legend{
 font-weight:900;
