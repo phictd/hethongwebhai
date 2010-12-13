@@ -1,10 +1,10 @@
 <?php
 require_once('../../../libraries/oop.php');
-require_once('../../../libraries/congty.php');
-$a= new CongTy;
+require_once('../../../libraries/hanghoa.php');
+$a= new HangHoa;
 $id=$_GET['id'];
-$a->set_idcongty($id);
-$a->delete_congty();
-echo '6';
+$a->set_idhang($id);
+$a->delete_hanghoa();
+echo '8';
 ?>
    

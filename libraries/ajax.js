@@ -44,6 +44,11 @@ function xoacongty(id){
 	http.onreadystatechange=process_tuongtaccsdl;
 	http.send(null);
 }
+function xoahanghoa(id){
+	http.open('get','modules/hanghoa/xoa.php?id='+id,true);
+	http.onreadystatechange=process_tuongtaccsdl;
+	http.send(null);
+}
 
 
 
@@ -140,6 +145,7 @@ function process_tuongtaccsdl(){
 				case '5   ': document.getElementById('thongbao').innerHTML='Xóa Thành Công';list('loaihang');break;
 				case '6   ': document.getElementById('thongbao').innerHTML='Xóa Thành Công';list('congty');break;
 				case '7': document.getElementById('thongbao').innerHTML='Sửa Thành Công';list('hanghoa');break;
+				case '8   ': document.getElementById('thongbao').innerHTML='Xóa Thành Công';list('hanghoa');break;
 				default : document.getElementById('thongbao').innerHTML=kq;
 			}
 			

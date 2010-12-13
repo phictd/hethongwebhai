@@ -199,12 +199,12 @@ public function listcongty(){
 }
 
 public function delete_hanghoa(){
-	$sql="delete from hanghoa where idHangHoa='".$this->get_idhang()."'";	
+	$sql="delete from hanghoa where idHang='".$this->get_idhang()."'";	
 	$this->query($sql);
 }
 
 public function getdata(){
-	$sql="select * from hanghoa where idHangHoa='".$this->get_idhang()."'";
+	$sql="select * from hanghoa where idHang='".$this->get_idhang()."'";
 	$this->query($sql);
 	return $this->fetch();
 }
