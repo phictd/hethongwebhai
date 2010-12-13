@@ -15,8 +15,8 @@ switch($_GET['module']){
             require("modules/giohang/controller.php");
             break;
     default:
-		//require("modules/hanghoa/chitiet.php");
-		require_once("templates/default/info.php");
+		require("modules/hanghoa/chitiet.php");
+		//require_once("templates/default/info.php");
 }
 
 require_once("templates/default/right.php");

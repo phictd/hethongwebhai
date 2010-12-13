@@ -55,3 +55,4 @@
           	<a href="#"><img src="images/laptop/626.jpg" width="145" /></a>
           </div>
         </div>
+ <div id="info">

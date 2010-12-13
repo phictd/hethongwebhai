@@ -1,3 +1,4 @@
+</div>
 <div id="right">
 <div id="right_content">
    		<div id="shopping_cart">
