@@ -4,8 +4,6 @@ require("libraries/oop.php");
 require("languages/lang_vn.php");
 require_once("templates/default/top.php");
 require_once("templates/default/left.php");
-
-
 switch($_GET['module']){
 	case "user":
             require("modules/user/login.php");
@@ -17,6 +15,7 @@ switch($_GET['module']){
             require("modules/giohang/controller.php");
             break;
     default:
+		//require("modules/hanghoa/chitiet.php");
 		require_once("templates/default/info.php");
 }
 

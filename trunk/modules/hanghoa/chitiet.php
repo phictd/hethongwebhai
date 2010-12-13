@@ -33,7 +33,39 @@
 				}
 ?>
 
-
+<form action="index.php?module=giohang&act=dathang" method="post">
+    
+            <fieldset>
+            <legend>Mua Hàng</legend>
+            <label>Họ Tên:</label> <input type="text" name="txtuser" size="25" /><br />
+            <label>Điện Thoại:</label> <input type="text" name="txtdt" size="25" /><br />
+            <label>Địa Chỉ:</label> <input type="text" name="txtdc" size="50" /><br />
+            <label>Ngày Giao:</label><select name="day"><?php
+											for($i=1;$i<=31;$i++){
+												echo "<option value=$i>$i</option>";
+											}
+											?>
+									</select>
+			Tháng: <select name="month">
+			<?php
+					$data=array("1"=>"Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec");
+					foreach($data as $k=>$v){
+						echo "<option value=$k>$v</option>";
+					}
+			?>	
+				</select>
+			Năm:<select name="year">
+			<?php
+				$now=date("Y");
+				for($i=2009;$i<=$now;$i++){
+					echo "<option value=$i>$i</option>";
+				}
+			?>
+            </select><br/>
+            <label>Note:</label> <textarea name="txt" cols="25" rows="5" ></textarea><br />
+            <label>&nbsp;</label><input type="submit" name="ok" value="Mua"/>
+            </fieldset>         
+            </form>
 <div class="phantrang">
 	<?php
 			if($C > 1){

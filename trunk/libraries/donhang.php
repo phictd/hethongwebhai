@@ -1,11 +1,13 @@
 <?php
 class donhang extends connect_db{
-    private $madh;
-    Private $hoten;
-    private $sodt;
-    private $diachi;
-    private $ngaydat;
-    private $thanhtien;
+    private $idDH;
+    private $idUser;
+    private $ThoiDiemDatHang;
+    private $ThoiDiemGiaoHang;
+    private $TenNguoiNhanHang;
+    private $DiaDiemGiaoHang;
+	private $TinhTrang;
+	private $GhiChu;
     //
     public function  __construct() {
         $this->connect();
