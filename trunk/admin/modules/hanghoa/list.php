@@ -81,7 +81,7 @@ require_once('../../../libraries/hanghoa.php');
         
 			<td align=center width='50px'> <a href='#' onclick=suahanghoa(".$item_hanghoa[idHang].",document.getElementById('congty$stt').value,document.getElementById('hh$stt').value,document.getElementById('gia$stt').value)>Sửa</a></td>";
         
-		echo "<td align=center  width='50px'><a href='#' onclick='xoacongty($item[idCongTy])'>Xóa</a></td>";
+		echo "<td align=center  width='50px'><a href='#' onclick='xoahanghoa($item_hanghoa[idHang])'>Xóa</a></td>";
 		echo "</tr>";
 	}
 	
