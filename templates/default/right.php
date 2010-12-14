@@ -1,25 +1,38 @@
 </div>
 <div id="right">
+<?php
+session_start();
+if(isset($_SESSION['username']) && isset($_SESSION['level'])){
+?>
+<div id="login">Welcome back, <?php echo $_SESSION['username']; ?></div>
+<?php if($_SESSION['level']==2){	?>
+<div><a href="admin/index.php">Trang quan tri</a></div>
+<?php }?>
+<div><a href="index.php?module=user&act=logout">Logout</a></div>
+<?php
+}else{
+echo "<div>";
+echo "<form action='index.php?module=user&act=login' method='post'>";
+          echo " <fieldset>";
+           echo "<legend>Đăng nhập</legend>";
+         echo "  <label>Tên đăng nhập:</label> <br/><input type='text' name='txtuser' size='10' /><br />";
+         echo "  <label>Mật khẩu:</label><br/> <input type='password' name='txtpass' size='10' /><br />";
+         echo "  <input type='submit' name='ok' value='Đăng nhập' />";
+          echo " <a href='index.php?module=user&act=register'><input type='submit' name='dk' value='Đăng ký' /></a>";
+           echo "</fieldset>";
+           echo " </form>";
+echo "</div>";
 
-<form action="index.php?module=user&act=login" method="post">
-            <fieldset>
-            <legend>Đăng nhập</legend>
-            <label>Tên đăng nhập:</label> <br/><input type="text" name="txtuser" size="10" /><br />
-            <label>Mật khẩu:</label><br/> <input type="password" name="txtpass" size="10" /><br />
-            <input type="submit" name="ok" value="Đăng nhập" />
-            <a href="index.php?module=user&act=register"><input type="submit" name="dk" value="Đăng ký" /></a>
-            </fieldset>         
-            </form>
-}
+}?>
 
 <div id="right_content">
    		<div id="shopping_cart">
         	<h1>Giỏ Hàng</h1>
             
             <div id="cart_details">
-                <?php session_start(); echo $_SESSION['tongsl']." Mặt hàng";?> <br />
+                <?php echo $_SESSION['tongsl']." Mặt hàng";?> <br />
            <span id="border_cart"></span>
-            Tổng: <span id="price"><?php session_start(); echo $_SESSION['thanhtien']." VND";?></span>
+            Tổng: <span id="price"><?php echo $_SESSION['thanhtien']." VND";?></span>
             </div>
             <a href="index.php?module=giohang&act=xem"><img src="images/icons/cart.jpg" width="40" height="40" /></a>
             </div>

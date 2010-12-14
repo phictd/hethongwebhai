@@ -10,14 +10,14 @@ public function __construct(){
 public function __destruct(){
 	$this->disconnect();
 }	
-public function set_user($user){
-	$this->username=$user;
+public function set_user($u){
+	$this->username=$u;
 }
 public function get_user(){
 	return $this->username;
 }
-public function set_pass($pass){
-	$this->password=$pass;
+public function set_pass($p){
+	$this->password=$p;
 }
 
 public function get_pass(){
@@ -40,17 +40,7 @@ public function get_id(){
 	return $this->uid;
 }
 
-public function check_login(){
-	$sql="select * from users where Username='".$this->get_user()."' and Password='".$this->get_pass()."'";
-	$this->query($sql);
-	if($this->num_rows() == 0)
-	{
-		return FALSE;
-	}else{
-		return $this->fetch();
-	}
 
-}
 public function insert_user(){
 	if($this->check_user() == TRUE){
 	$sql="insert into user(username,password,level) values('".$this->get_user()."','".$this->get_pass()."','".$this->get_level()."')";
@@ -61,22 +51,21 @@ public function insert_user(){
 	}
 }
 
-public function check_user(){
-	if($this->get_id() != ""){
-			$sql="select * from user where username='".$this->get_user()."' and id != '".$this->get_id()."'";
-	}else{
-		$sql="select * from user where username='".$this->get_user()."'";
-	}
+public function check_login(){
+	$sql="select * from users where Username='".$this->get_user()."' and Password = '".$this->get_pass()."'";
 	$this->query($sql);
-	if($this->num_rows() == 1){
+	if($this->num_rows() == 0){
 		return FALSE;
 	}else{
-		return TRUE;
+		while($row=$this->fetch()){
+			$data[]=$row;
+		}	
+		return $data;
 	}
 }
 
 public function listuser(){
-	$sql="select * from user";
+	$sql="select * from users";
 	$this->query($sql);
 	if($this->num_rows() == 0){
 		return 0;

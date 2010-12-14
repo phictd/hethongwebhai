@@ -3,6 +3,9 @@ switch($_GET['act']){
 	case "login":
 	require("modules/user/login.php");
 	break;
+	case "logout":
+	require("modules/user/logout.php");
+	break;
 	case "register":
 	require("modules/user/register.php");
 	break;
