@@ -27,4 +27,17 @@ if(isset($_POST['ok'])){
 			exit();
 	}
 }
+
+echo "<div>";
+
+echo "<form action='index.php?module=user&act=check_login' method='post'>";
+          echo " <fieldset>";
+           echo "<legend>Đăng nhập</legend>";
+         echo "  <label>Tên đăng nhập:</label> <br/><input type='text' name='txtuser' size='10' /><br />";
+         echo "  <label>Mật khẩu:</label><br/> <input type='password' name='txtpass' size='10' /><br />";
+         echo "  <input type='submit' name='ok' value='Đăng nhập' />";
+          echo " <a href='index.php?module=user&act=register'><input type='submit' name='dk' value='Đăng ký' /></a>";
+           echo "</fieldset>";
+           echo " </form>";
+echo "</div>";
 ?>

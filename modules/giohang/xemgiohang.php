@@ -1,5 +1,8 @@
 <?php
 session_start();
+if($_GET['co']==1){
+echo "<div align='center'><font size='+2' color=#FF0033'>Bạn Cần Đăng Nhập</font></div>";	
+}
 if($_SESSION['tongsl'] > 0){
 echo "<form method='post' action='index.php?module=giohang&act=capnhat'>";
 echo "<table width='600' align='center' border=1 cellpadding='0' cellspacing='0'  bordercolorlight='#FFFF00' class='xemgiohang'>";
@@ -38,7 +41,8 @@ echo "<br/>";
 
 echo "<center>";
     echo "<input name='Button1' type='submit' value='Cập Nhật' style='margin:5px 20px 0px 5px'/>";
-    echo "<a href='index.php?module=giohang&act=dathang'><input name='Button2' type='button' value='Đặt Hàng'/></a>";
+   	echo "<a href='index.php?module=giohang&act=dathang'><input name='Button2' type='button' value='Đặt Hàng'/></a>";
+
 echo "</center>";
 echo "</form>";
 }else{

@@ -12,7 +12,9 @@ if(isset($_SESSION['username']) && isset($_SESSION['level'])){
 <?php
 }else{
 echo "<div>";
-echo "<form action='index.php?module=user&act=login' method='post'>";
+$tam='';
+if($_GET[module]=='giohang') $tam='&co=2';
+echo "<form action='index.php?module=user&act=check_login".$tam."' method='post'>";
           echo " <fieldset>";
            echo "<legend>Đăng nhập</legend>";
          echo "  <label>Tên đăng nhập:</label> <br/><input type='text' name='txtuser' size='10' /><br />";
