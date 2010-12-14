@@ -1,8 +1,6 @@
 <?php
 				require_once('libraries/hanghoa.php');
 				$b= new HangHoa;
-		
-		
 				$A=6;
 				if(isset($_GET['page'])){
 					$C=$_GET['page'];

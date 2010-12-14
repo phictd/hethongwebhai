@@ -55,7 +55,9 @@ margin:10px;
 float:left;
 width:200px;
 }
-
+#right #login{
+color:#F00;	
+}
 #right #bg_dongho{
 position:relative;
 height:240px;
