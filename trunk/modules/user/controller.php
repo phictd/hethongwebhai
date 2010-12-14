@@ -1,7 +1,7 @@
 <?php
 switch($_GET['act']){
-	case "login":
-	require("modules/user/login.php");
+	case "check_login":
+	require("modules/user/check_login.php");
 	break;
 	case "logout":
 	require("modules/user/logout.php");
@@ -20,5 +20,8 @@ switch($_GET['act']){
 	break;
 	case "del":
 	require("modules/user/del.php");
+	break;			
+	case "login":
+	require("modules/user/login.php");
 	break;			
 }

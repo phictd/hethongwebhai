@@ -1,6 +1,7 @@
 <?php
 session_start();
 require_once("libraries/donhang.php");
+if(isset($_SESSION['username'])){
 $donhang = new donhang();
 //$chitiet = new chitietdonhang();
 if(isset($_POST['ok'])){
@@ -60,6 +61,11 @@ if($loithongtin != ""){
 			echo "<li>$err</li>";
 		}
 		echo "</ul>";
+	}
+}
+else{
+	echo "Ban can dang nhap";
+	header("location:index.php?module=giohang&act=xem&co=1");
 	}
 ?>
 <form action="index.php?module=giohang&act=dathang" method="post">
