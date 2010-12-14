@@ -13,7 +13,6 @@ public $soluong;
 public $ghichu;
 public $solanmua;
 public $anhien;
-public $tid;
 
 public function __construct(){
 	$this->connect();
@@ -41,12 +40,6 @@ public function set_idhang($idhang){
 public function get_idhang(){
 	return $this->idhang;
 }
-public function set_tid($tid){
-	$this->tid=$tid;
-}
-public function get_tid(){
-	return $this->tid;
-}
 /* */
 
 public function set_idcongty($idcongty){
@@ -62,7 +55,8 @@ public function get_mota(){
 	return $this->mota;
 }
 public function set_ngaycapnhat($ngaycapnhat){
-	$this->ngaycapnhat=$ngaycapnhat;
+	$tam=date("Y-m-d",$ngaycapnhat);
+	$this->ngaycapnhat=$tam;
 }
 public function get_ngaycapnhat(){
 	return $this->ngaycapnhat;
@@ -119,10 +113,20 @@ public function insert_hanghoa(){
 		return FALSE;
 	}
 }
+public function insert_hanghoatruoc(){
+	if($this->check_hanghoa() == TRUE){
+	$sql="insert into hanghoa(idCongTy,TenHang,NgayCapNhat,Gia) values('".$this->get_idcongty()."', '".$this->get_tenhang()."', '".$this->get_ngaycapnhat()."', '".$this->get_gia()."')";
+	$this->query($sql);
+	return TRUE;
+	}
+	return FALSE;
+}
+
+
 
 public function check_hanghoa(){
-	if($this->get_tenhang() !="" && $this->get_idhang()!="" && $this->get_idcongty()!=""){
-			$sql="select * from hanghoa where TenHang='".$this->get_tenhang()."' and idHang='".$this->get_idhang()."' and idCongTy='".$this->get_idcongty()."'";
+	if($this->get_tenhang() !="" && $this->get_idcongty()!=""&&$this->get_gia()!=""){
+			$sql="select * from hanghoa where TenHang='".$this->get_tenhang()."' and Gia='".$this->get_gia()."'  and idCongTy='".$this->get_idcongty()."'";
 	}else{
 		return FALSE;
 	}
@@ -213,29 +217,32 @@ public function update_hanghoa(){
 	if($this->check_hanghoa() == TRUE){
 		$sql="update hanghoa set idCongTy='".$this->get_idcongty()."',TenHang='".$this->get_tenhang()."',Gia='".$this->get_gia()."' where idHang='".$this->get_idhang()."'";
 		$this->query($sql);
-		return $sql;
+		return TRUE;
 	}else{
 		return FALSE;
 	}
 }
-
-}
-
-function xulygia($gia){
-	$t1=substr($gia,-3,4);
-	$t2=substr($gia,-6,-3);
-	$t3=substr($gia,0,-6);
-	if($gia>999999) $giakq=$t3.'.'.$t2.'.'.$t1.' VN&#272;';
-	else  $giakq=$t2.'.'.$t1.' VN&#272;';
+public function update_chitiet(){
+	if($this->get_idhang()!=""){
+		if($this->get_urlhinh()!="" && $this->get_mota()!=""){	
+			$sql="update hanghoa set UrlHinh='".$this->get_urlhinh()."', MoTa='".$this->get_mota()."' where idHang='".$this->get_idhang()."'";
+			$this->query($sql);			
+		}else{
+			if($this->get_urlhinh()!=""){
+				$sql="update hanghoa set UrlHinh='".$this->get_urlhinh()."' where idHang='".$this->get_idhang()."'";
+				$this->query($sql);				
+			}else{
+				if(	$this->get_mota()!=""){
+					$sql="update hanghoa set MoTa='".$this->get_mota()."' where idHang='".$this->get_idhang()."'";
+					$this->query($sql);	
+				}
+			}
+		}
+		return TRUE;
+	}
+	return FALSE;
 	
-	return $giakq;
 }
-function tragialai($gia){	
-	$t1=substr($gia,-12,3);
-	$t2=substr($gia,-16,-13);
-	$t3=substr($gia,0,-17);
-	if(strlen($gia)>17) $giakq=$t3.$t2.$t1;
-	else  $giakq=$t2.$t1;	
-	return $giakq;
+
 }
 ?>

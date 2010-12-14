@@ -1,5 +1,5 @@
 <div align="center">	
-	<table align="center"  width="800px" id="tableloaihang" >
+	<table align="center"  width="730px" id="tableloaihang" >
     	<tr height="20px">
         	<td class=title width="30px">STT</td>
         	<td class=title width="100px">Tên Loại</td>
@@ -7,8 +7,7 @@
             <td class=title width="100px">Tên Hàng Hóa</td>
             <td class=title width="100px">Giá</td>
             <td class=title width="100px">Số Lượng</td>
-            <td class=title width="100px">Hình</td>
-        	<td class=title width="70px">Mô Tả</td>
+            <td class=title width="100px">Chi Tiết</td>        	
             <td class=title width="50px">Sửa</td>
         	<td class=title width="50px">Xóa</td>                                                
         </tr>
@@ -75,11 +74,9 @@ require_once('../../../libraries/hanghoa.php');
 		echo "<td align=center width='100px'><input type='text' id='hh$stt' value='$item_hanghoa[TenHang]' size='20' class='text'/></td>";
 		echo "<td align=center width='100px'><input type='text' id='gia$stt' value='".$item_hanghoa[Gia]."' size='20' class='num'/></td>";
 		echo "<td align=center  width='70px'><input type='text' id='soluong$item_hanghoa[idHang]' value='$item_hanghoa[SoLuong]' size='20' class='num' disabled='disabled'/></td>";
-		echo "<td align=center width='100px'><a href='#' onclick='xemhinh($item_hanghoa[idHang])'>Hình</a></td>";
+		echo "<td align=center width='100px'><a href='modules/hanghoa/chitiet.php?idhang=$item_hanghoa[idHang]' target='_blank'>Chi Tiết</a></td>";
 		
-		echo "<td align=center  width='70px'><a href='#' onclick='xemmota($item_hanghoa[idHang])'>Mô Tả</a></td>
-        
-			<td align=center width='50px'> <a href='#' onclick=suahanghoa(".$item_hanghoa[idHang].",document.getElementById('congty$stt').value,document.getElementById('hh$stt').value,document.getElementById('gia$stt').value)>Sửa</a></td>";
+		echo "<td align=center width='50px'> <a href='#' onclick=suahanghoa(".$item_hanghoa[idHang].",document.getElementById('congty$stt').value,document.getElementById('hh$stt').value,document.getElementById('gia$stt').value)>Sửa</a></td>";
         
 		echo "<td align=center  width='50px'><a href='#' onclick='xoahanghoa($item_hanghoa[idHang])'>Xóa</a></td>";
 		echo "</tr>";
