@@ -41,7 +41,7 @@ public function get_id(){
 }
 
 public function check_login(){
-	$sql="select * from user where username='".$this->get_user()."' and password='".$this->get_pass()."'";
+	$sql="select * from users where Username='".$this->get_user()."' and Password='".$this->get_pass()."'";
 	$this->query($sql);
 	if($this->num_rows() == 0)
 	{

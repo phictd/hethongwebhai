@@ -1,14 +1,17 @@
 </div>
 <div id="right">
-<form action="index.php?module=giohang&act=dathang" method="post">
+
+<form action="index.php?module=user&act=login" method="post">
             <fieldset>
-            <legend>Login</legend>
-            <label>Username:</label> <input type="text" name="txtuser" size="10" /><br />
-            <label>Password:</label> <input type="password" name="txtpass" size="10" /><br />
+            <legend>Đăng nhập</legend>
+            <label>Tên đăng nhập:</label> <br/><input type="text" name="txtuser" size="10" /><br />
+            <label>Mật khẩu:</label><br/> <input type="password" name="txtpass" size="10" /><br />
             <input type="submit" name="ok" value="Đăng nhập" />
-            <input type="submit" name="dk" value="Đăng ký" />
+            <a href="index.php?module=user&act=register"><input type="submit" name="dk" value="Đăng ký" /></a>
             </fieldset>         
             </form>
+}
+
 <div id="right_content">
    		<div id="shopping_cart">
         	<h1>Giỏ Hàng</h1>

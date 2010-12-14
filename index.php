@@ -6,7 +6,7 @@ require_once("templates/default/top.php");
 require_once("templates/default/left.php");
 switch($_GET['module']){
 	case "user":
-            require("modules/user/login.php");
+            require("modules/user/controller.php");
             break;
         case "hoakieng":
             require("modules/hoakieng/controller.php");
