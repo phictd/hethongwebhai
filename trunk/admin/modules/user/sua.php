@@ -1,12 +1,12 @@
 <?php
 require_once('../../../libraries/oop.php');
-require_once('../../../libraries/loaihang.php');
-$a= new LoaiHang;
-$id=$_GET['id'];
-$ten=$_GET['ten'];
+require_once('../../../libraries/user.php');
+$a= new User;
+$user=$_GET['user'];
+$lv=$_GET['level'];
 
-$a->set_tenloai($ten);
-$a->set_idloai($id);
-$a->delete_loaihang();
-echo "Welcome Link $id $ten";
+$a->set_user($user);
+$a->set_level($lv);
+$a->update_lv();
+	echo "10";
 ?>
