@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 -- 
 -- Host: localhost
--- Generation Time: Dec 12, 2010 at 10:49 AM
+-- Generation Time: Dec 15, 2010 at 11:37 AM
 -- Server version: 5.0.27
 -- PHP Version: 5.2.1
 -- 
@@ -160,11 +160,6 @@ CREATE TABLE `users` (
   `Level` int(11) NOT NULL default '0',
   `NgaySinh` date default NULL,
   `GioiTinh` tinyint(1) default NULL,
-  `Active` int(11) default NULL,
-  `RandomKey` varchar(255) default NULL,
-  `LoginNumber` int(11) default '0',
-  `DisableDate` datetime NOT NULL,
-  `Expiration` int(4) NOT NULL,
   PRIMARY KEY  (`Username`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
@@ -172,7 +167,7 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 -- 
 
-INSERT INTO `users` (`HoTen`, `Username`, `Password`, `DiaChi`, `Dienthoai`, `Email`, `NgayDangKy`, `Level`, `NgaySinh`, `GioiTinh`, `Active`, `RandomKey`, `LoginNumber`, `DisableDate`, `Expiration`) VALUES 
-('admin', 'admin', '12345', '', '', '', '0000-00-00', 2, NULL, NULL, NULL, NULL, 0, '0000-00-00 00:00:00', 0),
-('Lê Văn Tí', 'ti', '123', '456, abc chấm  cơm chấm vê en', '089874563', 'ti@localhost.com', '2009-01-20', 1, '1971-01-01', 1, 1, '1e932f24dc0aa4e7a6ac2beec387416d', 0, '0000-00-00 00:00:00', 0),
-('Nguyễn Văn Tèo', 'teo', '123', '789 gia hu chấm vê en', '32648372', 'teo@localhost.com', '2009-02-07', 1, '1970-01-01', 1, 1, 'cfc69414187bd8ade5c17c797a107525', 0, '0000-00-00 00:00:00', 0);
+INSERT INTO `users` (`HoTen`, `Username`, `Password`, `DiaChi`, `Dienthoai`, `Email`, `NgayDangKy`, `Level`, `NgaySinh`, `GioiTinh`) VALUES 
+('admin', 'admin', '12345', '', '', '', '0000-00-00', 2, NULL, NULL),
+('Lê Văn Tí', 'ti', '123', '456, abc chấm  cơm chấm vê en', '089874563', 'ti@localhost.com', '2009-01-20', 1, '1971-01-01', 1),
+('Nguyễn Văn Tèo', 'teo', '123', '789 gia hu chấm vê en', '32648372', 'teo@localhost.com', '2009-02-07', 1, '1970-01-01', 1);
