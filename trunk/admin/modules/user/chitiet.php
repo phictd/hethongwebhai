@@ -1,11 +1,13 @@
+<link href="calendar.css" rel="stylesheet" type="text/css" />
+<script language="javascript" src="calendar.js"></script>
 <?php 
 //ini_set( "display_errors", 0);
 require_once('../../../libraries/oop.php');
 require_once('../../../libraries/user.php');
 require_once('../../../libraries/function.php');
+require_once('classes/tc_calendar.php');
 
 $username=$_GET['username'];
-
 
 $a=new User;
 $a->set_user($username);
@@ -14,42 +16,70 @@ $hoten=$data[HoTen];
 $diachi=$data[DiaChi];
 $dienthoai=$data[DienThoai];
 $email=$data[Email];
-$ngaydangky=$data[NgayDangKy];
-$ngaysinh=$data[NgaySinh];
+$ngay=$data[NgaySinh];
+$pass=$data[Password];
+
+$namsinh=substr($ngay,0,4);
+$thangsinh=substr($ngay,5,2);
+$ngaysinh=substr($ngay,8,2);
+
 if($data[GioiTinh]==1)$gioitinh='Nam';
 else
 	if($data[GioiTinh]==2)$gioitinh='Nữ';
 else
 	$gioitinh='Không Biết';
 
-if(isset($_POST['ok'])){	
-		if($_POST['txthoten']!="")
-			$hoten=$_POST['txthoten'];
-		if($_POST['txtdiachi']!="")
-			$diachi=$_POST['txtdiachi'];
-		if($_POST['txtdienthoai']!="")
-			$dienthoai=$_POST['dienthoai'];
-		if($_POST['txtemail']!="")
-			$email=$_POST['email'];
-		if($_POST['txtngaydangky']!="")
-			$ngaydangky=$_POST['ngaydangky'];
-		if($_POST['txtngaysinh']!="")
-			$ngaysinh=$_POST['ngaysinh'];		
-		if($_POST['rgioitinh']!="")
-			$gioitinh=$_POST['rgioitinh'];
-		else
-			$gioitinh='Không Biết';
-		if($_POST['txthoten']!="" || $_POST['txtdiachi']!="" || $_POST['txtdienthoai']!="" || $_POST['txtemail']!="" || $_POST['txtngaydangky']!="" || $_POST['txtngaysinh']!="" )
-		{
-			if($a->update_chitiet()){
-				echo " Update Thành Công";			
-			}else
-				echo "Update không thành công";
+if(isset($_POST['ok'])){		
+		
+		$u=new User;
+		$u->set_user($username);
+		$flag=TRUE;	
+		if($_POST['txtpass']!=""){
+			if($_POST['txtpass']==$pass){			
+				if($_POST['txtpass1']==$_POST['txtpass2']){
+					$u->set_pass($_POST['txtpass1']);				
+				}
+				else{
+					$flag=FALSE;
+					echo "Mật khẩu mới không giống nhau.";	
+				}
+			}else{
+				echo "Mật khẩu không đúng.";
+				$flag=FALSE;
+			}
 		}
+		if($flag==TRUE){
+			if($_POST['txthoten']!="")
+				$u->set_hoten($_POST['txthoten']);
+			if($_POST['txtdiachi']!="")
+				$u->set_diachi($_POST['txtdiachi']);
+			if($_POST['txtdienthoai']!="")
+				$u->set_dienthoai($_POST['txtdienthoai']);
+			if($_POST['txtemail']!="")
+				$u->set_email($_POST['txtemail']);
+			if($_POST['txtpass']!="")
+				$u->set_pass($_POST['txtpass1']);
+			
+			$u->set_gioitinh($_POST['rgioitinh']);			
+			
+			$ngaysinh=$_POST['date1_day'];
+			$thangsinh=$_POST['date1_month'];
+			$namsinh=$_POST['date1_year'];
+			
+			$ngay=$namsinh."-".$thangsinh."-".$ngaysinh;			
+			
+			$u->set_ngaysinh($ngay);
+			
+			$u->update_chitiet();	
+			dongcuaso();
+			exit();
+		}
+			
 		
 		
-	dongcuaso();
-	exit();
+		
+		
+
 	
 }
 
@@ -116,7 +146,7 @@ margin-top:3px;
 </head>
 
 <body>
-<form action="chitiet.php?username=<?php echo $username;?>" method="post" name="frm" enctype="multipart/form-data">
+<form action="chitiet.php?username=<?php echo $username;?>" method="post" name="frm" enctype="multipart/form-data" >
 <table width="600px">
 	<tr>
     	<td class="title">Tài Khoản </td>
@@ -128,8 +158,8 @@ margin-top:3px;
         	<fieldset>
             	<legend>Đổi mật khẩu</legend>
         				<label>MK hiện tại </label><input type="password" name="txtpass" size="20" value="<?php if($a->get_pass()!="") echo "******";?>" /><br />
-        				<label>MK mới </label><input type="password" name="txtpassn" size="20" /><br />
-        				<label>Đánh lại MK mới </label><input type="password" name="txtpassn2" size="20" />
+        				<label>MK mới </label><input type="password" name="txtpass1" size="20" /><br />
+        				<label>Đánh lại MK mới </label><input type="password" name="txtpass2" size="20" />
                 
             </fieldset>          
         </td>
@@ -151,18 +181,31 @@ margin-top:3px;
     	<td class="title">Email</td>
         <td class="info"><input type="text" name="txtemail" size="30" value="<?php echo $email;?>"/></td>
     </tr>
-    <tr>
-    	<td class="title">Ngày Đăng Ký</td>
-        <td class="info"><input type="text" name="txtngaydangky" size="30"value="<?php echo $ngaydangky;?>" /></td>
-    </tr>
-    
+        
     <tr>
     	<td class="title">Ngày Sinh</td>
-        <td class="info"><input type="text" name="txtngaysinh" size="30"value="<?php echo $ngaysinh;?>" /></td>
+        <td class="info">
+        <form id="form2" name="form2" method="post" action="">
+		<?php
+	  $myCalendar = new tc_calendar("date1", true);
+	  $myCalendar->setIcon("images/iconCalendar.gif");
+	  $myCalendar->setDate($ngaysinh,$thangsinh,$namsinh);
+	  $myCalendar->setPath("./");
+	  $myCalendar->setYearInterval(1920,  date('Y',time()));
+	  $myCalendar->dateAllow('1960-01-01', '2015-03-01');
+	  //$myCalendar->setHeight(350);	  
+	  //$myCalendar->autoSubmit(true, "form1");
+	  $myCalendar->disabledDay("Sat");
+	  $myCalendar->disabledDay("sun");
+	  $myCalendar->writeScript();
+	  ?>
+      
+      </form>
+      </td>
     </tr>
     <tr>
-    	<td class="title">Giới Tính</td>
-        <td class="info">Nam<input type="radio" name="rgioitinh" value="Nam"/>Nữ     <input type="radio" name="rgioitinh" value="Nữ"/></td>
+    	<td class="title">Giới Tính </td>
+        <td class="info">Nam<input type="radio" name="rgioitinh" value="1" checked="checked"/>Nữ     <input type="radio" name="rgioitinh" value="2"<?php if($gioitinh=='Nữ') echo " checked='checked'";?>/></td>
     </tr>
        
     <tr>
