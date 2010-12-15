@@ -1,4 +1,4 @@
-<link href="calendar.css" rel="stylesheet" type="text/css" />
+
 <script language="javascript" src="calendar.js"></script>
 <?php 
 //ini_set( "display_errors", 0);

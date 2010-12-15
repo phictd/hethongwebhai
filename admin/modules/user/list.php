@@ -19,7 +19,7 @@ require_once('../../../libraries/user.php');
 		$stt++;
 		echo "<tr height='20px'>";
 		echo "<td align=center width='100px'>$stt</td>";
-		echo "<td align=center width='150px'><input type='text' id='$username$stt' value='$item_u[Username]' size='25'/></td>";
+		echo "<td align=center width='150px'><input type='text' id='$username$stt' value='$item_u[Username]' size='25' disabled='disabled'/></td>";
 		echo "<td align=center width='150px'><select id='level$stt'> ";
 		?>
 			<option value='2'>Admin</option>
@@ -31,7 +31,7 @@ require_once('../../../libraries/user.php');
 		?>
 			<td align=center width='100px'> <a href='#' onclick="suauser('<?php echo $item_u[Username];?>',document.getElementById('level<?php  echo $stt;?>').value)">Sửa</a></td>
         <?php
-		echo "<td align=center  width='100px'><a href='#' onclick='xoacongty($item[idCongTy])'>Xóa</a></td>";
+		echo "<td align=center  width='100px'><a href='#' onclick=xoauser('$item_u[Username]')>Xóa</a></td>";
 		echo "</tr>";
 	}
 	
