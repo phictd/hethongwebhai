@@ -85,6 +85,7 @@ function themdong(module,stt){
 	case 'loaihang':http.open('get','modules/loaihang/them.php?stt='+stt,true);break;
 	case 'congty':http.open('get','modules/congty/them.php?stt='+stt,true);break;
 	case 'hanghoa':http.open('get','modules/hanghoa/them.php?stt='+stt,true);break;
+	case 'user':http.open('get','modules/user/them.php?stt='+stt,true);break;
 	default : document.getElementById('ketqua').innerHTML='Không có hành động nào';
 	}
 	http.onreadystatechange=process_them;
@@ -99,6 +100,12 @@ function themloaihangvaocsdl(tenloai){
 
 function themcongtyvaocsdl(idloai,tencongty){	
 	http.open('get','modules/congty/themvaocsdl.php?idloai='+idloai+'&tencongty='+tencongty,true);
+	http.onreadystatechange=process_tuongtaccsdl;
+	http.send(null);		
+}
+
+function themcongtyvaocsdl(ten,lv){	
+	http.open('get','modules/user/themvaocsdl.php?ten='+ten+'&lv='+lv,true);
 	http.onreadystatechange=process_tuongtaccsdl;
 	http.send(null);		
 }

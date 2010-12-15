@@ -178,8 +178,19 @@ public function update_lv(){
 }
 
 public function update_chitiet(){
-	$sql="update users set Password='".$this->get_pass()."', Level='".$this->get_level()."' where Username='".$this->get_user()."'";		
-	$this->query($sql);	
+	$sql="update users set ";
+	if($this->get_hoten()!="") $sql=$sql."HoTen='".$this->get_hoten()."',";
+	if($this->get_diachi()!="") $sql=$sql."DiaChi='".$this->get_diachi()."',";
+	if($this->get_dienthoai()!="") $sql=$sql."DienThoai='".$this->get_dienthoai()."',";
+	if($this->get_email()!="") $sql=$sql."Email='".$this->get_email()."',";
+	if($this->get_ngaysinh()!="") $sql=$sql."NgaySinh='".$this->get_ngaysinh()."',";
+	if($this->get_gioitinh()!="") $sql=$sql."GioiTinh='".$this->get_gioitinh()."',";
+	if($this->get_pass()!="") $sql=$sql."Password='".$this->get_pass()."',";
+	
+	$sql=substr($sql,0,-1);
+		
+	$sql=$sql." where Username='".$this->get_user()."'";		
+	$this->query($sql);
 }
 
 
