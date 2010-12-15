@@ -74,7 +74,6 @@ if(isset($_POST['ok'])){
 			}
 			else{
 				echo "<div align='center' style='margin:10px;'><font size='+1' color='#FF0033'>Đăng ký thành công !</font></div>";	
-				echo $ngaydk;
 			}
 		
 		}
