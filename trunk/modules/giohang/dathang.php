@@ -3,89 +3,66 @@
 session_start();
 require_once("libraries/donhang.php");
 require_once("modules/user/classes/tc_calendar.php");
-
 if(isset($_SESSION['username'])){
-$donhang = new donhang();
-//$chitietdonhang = new chitietdonhang();
-if(isset($_POST['ok'])){
-    if($_POST['txttennn'] == NULL){
-        echo "Xin nhập họ tên<br/>";
-    }else{
-        $tennn = $_POST['txttennn'];
-    }
-    if($_POST['txtdt'] == NULL){
-       echo "Xin nhập số điện thoại<br/>";
-    }else{
-        $dt = $_POST['txtdt'];
-    }
-    if($_POST['txtdc'] == NULL){
-       echo "Xin nhập địa chỉ<br/>";
-    }else{
-        $dc = $_POST['txtdc'];
-    }
-	if($_POST['date1_day'] == 0){
-       echo "Chưa chọn ngày giao<br/>";
-    }else{
-        $ngaygiao = $_POST['date1_day'];
-    }
-	if($_POST['date1_month'] == 0){
-       echo "Chưa chọn tháng<br/>";
-    }else{
-        $thanggiao = $_POST['date1_month'];
-    }
-	if($_POST['date1_day'] == 0){
-       echo "Chưa chọn năm giao<br/>";
-    }else{
-        $namgiao = $_POST['date1_year'];
-    }
-    if($tenkh && $sodt && $dc){
-        $madh = time();
-        $donhang->setMadh($madh);
-        $donhang->setHoTen($tenkh);
-        $donhang->setSoDT($sodt);
-        $donhang->setDiaChi($dc);
-        $ngaydat = date(d);
-        $thangdat = date(m);
-        $namdat = date(Y);
-        $ngay = "$ngaydat-$thangdat-$namdat";
-        $donhang->setNgayDat($ngay);
-        $donhang->setThanhTien($_SESSION['thanhtien']);
-        if($donhang->ThemDonHang() == FALSE){
-            $loithongtin[] = "Thêm không Thành công";
-        }else{
-            for($f=1 ;$f <= $_SESSION['tongsl'];$f++){
-                $chitiet->setMadh($madh);
-                $chitiet->setMahang($_SESSION['mahoa'.$f]);
-                $chitiet->setGia($_SESSION['gia'.$f]);
-                $chitiet->setSoLuong($_SESSION['soluong'.$f]);
-                $chitiet->ThemChiTietHang();
-            }
-            //$loithongtin[] = "Thêm Thành Công";
-            echo "<h3 align='center'>Đã gửi phiếu mua hàng. Xin cảm ơn quý khách !</h3>";
-        }
-    }
-for($i=1;$i<=$_SESSION["tongsl"];$i++){
-session_unregister('mahoa'.$i);
-session_unregister('tenhoa'.$i);
-session_unregister('soluong'.$i);
-session_unregister('gia'.$i);
-}
-$_SESSION["tongsl"]=0;
-$_SESSION['thanhtien'] = 0;
-}
-if($loithongtin != ""){
-		echo "<ul>";
-		foreach($loithongtin as $err){
-			echo "<li>$err</li>";
+	if(isset($_POST['ok'])){
+	$donhang = new donhang();
+	//$chitietdonhang = new chitietdonhang();
+
+		if($_POST['txttennn'] == NULL){
+			echo "Xin nhập họ tên<br/>";
+		}else{
+			$tennn = $_POST['txttennn'];
 		}
-		echo "</ul>";
+		if($_POST['txtdt'] == NULL){
+		   echo "Xin nhập số điện thoại<br/>";
+		}else{
+			$dt = $_POST['txtdt'];
+		}
+		if($_POST['txtdc'] == NULL){
+		   echo "Xin nhập địa chỉ<br/>";
+		}else{
+			$dc = $_POST['txtdc'];
+		}
+		if($_POST['date1_day'] == 0){
+		   echo "Chưa chọn ngày giao<br/>";
+		}else{
+			$ngaygiao = $_POST['date1_day'];
+		}
+		if($_POST['date1_month'] == 0){
+		   echo "Chưa chọn tháng<br/>";
+		}else{
+			$thanggiao = $_POST['date1_month'];
+		}
+		if($_POST['date1_day'] == 0){
+		   echo "Chưa chọn năm giao<br/>";
+		}else{
+			$namgiao = $_POST['date1_year'];
+		}
+		if($tennn && $dt && $dc && $ngaygiao &&  $thanggiao && $namgiao  ){
+			$donhang->set_Username($_SESSION['username']);
+			$donhang->set_TenNguoiNhan($tennn);
+			$donhang->set_DienThoai($dt);
+			$donhang->set_DiaDiemGiaoHang($dc);
+			$tt=0;
+			$donhang->set_TinhTrang($tt);
+			$ngaydat = date('d');
+			$thangdat = date('m');
+			$namdat = date('Y');
+			$dat = "$namdat-$thangdat-$ngaydat";
+			$donhang->set_ThoiDiemDatHang($dat);
+			$giao="$namgiao-$thanggiao-$ngaygiao";
+			$donhang->set_ThoiDiemGiaoHang($giao);
+			if($donhang->ThemDonHang() == FALSE){
+				echo "<div align='center' style='margin:10px;'><font size='+1' color='#FF0033'>Không Tạo Được Phiếu Mua. Có Lỗi Xảy Ra !</font></div>";
+			}else{
+				echo "<div align='center' style='margin:10px;'><font size='+1' color='#999999'>Tạo Phiếu Thành Công. Xin Cảm Ơn Quý Khách !</font></div>";
+			}
+		}
 	}
-}
-else{
-	echo "Ban can dang nhap";
+ }else{
 	header("location:index.php?module=giohang&act=xem&co=1");
-	}
-?>
+	exit(); 
+ }?>
 <form action="index.php?module=giohang&act=dathang" method="post">
     
             <fieldset>
@@ -113,7 +90,7 @@ else{
                   </form><br/>
             <label>Ghi chú:</label> <textarea name="txtghichu" cols="25" rows="5" ></textarea>
             </fieldset>
-            <label>&nbsp;</label><input type="submit" name="ok" value="Mua" />
-            <label>&nbsp;</label><input type="reset" name="reset" value="Mặc định" /> 
+            <label>&nbsp;</label><input style="margin-left:80px; margin-top:5px;" type="submit" name="ok" value="Mua" />
+            <label>&nbsp;</label><input type="reset" name="reset" value="Phiếu Mặc định" /> 
               </fieldset>       
             </form>
