@@ -8,14 +8,11 @@ switch($_GET['module']){
 	case "user":
             require("modules/user/controller.php");
             break;
-        case "hoakieng":
-            require("modules/hoakieng/controller.php");
-            break;
         case "giohang":
             require("modules/giohang/controller.php");
             break;
     default:
-		require("modules/hanghoa/chitiet.php");
+		require("modules/hanghoa/listhanghoa.php");
 }
 
 require_once("templates/default/right.php");
