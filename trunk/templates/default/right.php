@@ -14,7 +14,7 @@ if(isset($_SESSION['username']) && isset($_SESSION['level'])){
 echo "<div>";
 $tam='';
 if($_GET[module]=='giohang') $tam='&co=2';
-echo "<form action='index.php?module=user&act=check_login".$tam."' method='post'>";
+echo "<form action='index.php?module=user&act=check_login".$tam."' method='post' name='f'>";
           echo " <fieldset>";
            echo "<legend>Đăng nhập</legend>";
          echo "  <label>Tên đăng nhập:</label> <br/><input type='text' name='txtuser' size='15' /><br />";
