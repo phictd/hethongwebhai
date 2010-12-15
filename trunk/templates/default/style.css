@@ -271,19 +271,14 @@ border:1px  solid #6da6b1;
     border-top:1px #999999 dashed;
 }
 .product_title{
-color:#ea2222;
-padding:5px 0px 5px 0px;
+color:#000;
+padding:5px 0px 0px 0px;
 font-weight:bold;
 }
-.product_title a{
-text-decoration:none;
-color:#ea2222;
-padding:0px;
-margin:auto;
+.product_title_price{
+color:#00C;
+padding:0px 0px 5px 0px;
 font-weight:bold;
-}
-.product_title a:hover{
-color:#064E5A;
 }
 .product_img{
 /*width:200px;*/

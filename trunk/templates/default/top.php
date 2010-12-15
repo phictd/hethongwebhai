@@ -6,7 +6,7 @@
 <script language="javascript" src="templates/default/menu.js" ></script>
 <script language="javascript" src="templates/default/snowstorm.js"></script>
 <script language="javascript" src="templates/default/chayhinh.js"></script>
-<title>Untitled Document</title>
+<title>SHOPCONGNGHE.COM</title>
 </head>
 
 <body>
