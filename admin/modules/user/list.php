@@ -1,12 +1,12 @@
 <div align="center">	
 	<table align="center"  width="600px" id="tableloaihang" >
     	<tr height="20px">
-        	<td class=title width="50px">STT</td>
+        	<td class=title width="100px">STT</td>
         	<td class=title width="150px">Tài Khoản</td>
             <td class=title width="150px">Chức Vụ</td>
-            <td class=title width="150px">Chi Tiết</td>
-            <td class=title width="50px">Sửa</td>
-        	<td class=title width="50px">Xóa</td>                                                
+            <td class=title width="100px">Chi Tiết</td>
+            <td class=title width="100px">Sửa</td>
+        	<td class=title width="100px">Xóa</td>                                                
         </tr>
 <?php
  ini_set( "display_errors", 0);
@@ -39,7 +39,7 @@ require_once('../../../libraries/user.php');
     </table>
     <div id='them'></div><br />
     <div id="thongbao"></div>
-    <a href="#" onclick="themdong('congty',<?php echo ++$stt;?>)" >Thêm </a>
+    <a href="#" onclick="themdong('user',<?php echo ++$stt;?>)" >Thêm </a>
     </div>
     
 </div> 
