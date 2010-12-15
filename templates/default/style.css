@@ -341,7 +341,8 @@ padding: 40px 0px 5px 0px;
 text-align:center;
 }
 #info label{
-width:120px;
+width:130px;
+clear:left;
 float:left;
 padding-left:25px;
 font-weight:900;
