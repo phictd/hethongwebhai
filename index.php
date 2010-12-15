@@ -8,9 +8,12 @@ switch($_GET['module']){
 	case "user":
             require("modules/user/controller.php");
             break;
-        case "giohang":
-            require("modules/giohang/controller.php");
-            break;
+	case "hanghoa":
+         require("modules/hanghoa/controller.php");
+    	    break;
+    case "giohang":
+        require("modules/giohang/controller.php");
+          break;
     default:
 		require("modules/hanghoa/listhanghoa.php");
 }
