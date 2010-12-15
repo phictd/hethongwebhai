@@ -1,0 +1,737 @@
+table
+{
+margin-left:10px;
+}
+.clearboth {
+	HEIGHT: 0px; CLEAR: both
+}
+.style1 {
+	COLOR: #21409a; FONT-SIZE: 13px; FONT-WEIGHT: bold
+}
+.style2 {
+	COLOR: #21409a
+}
+.style5 {
+	COLOR: #ae0033; FONT-WEIGHT: bold
+}
+.style3 {
+	COLOR: #c41039; FONT-SIZE: 13px; FONT-WEIGHT: bold
+}
+.style7 {
+	COLOR: #ffff00
+}
+.style8 {
+	COLOR: #21409a
+}
+.style9 {
+	COLOR: #000000
+}
+.style14 {
+	COLOR: #e19a28
+}
+.style16 {
+	COLOR: #ffff00; FONT-WEIGHT: bold
+}
+.style17 {
+	FONT-FAMILY: Arial, Helvetica, sans-serif; COLOR: #000000; FONT-SIZE: 11px
+}
+.orderNoItem {
+padding:10px;
+ FONT-SIZE: 11px; FONT-WEIGHT: bold; 
+}
+.style21 {
+	FONT-STYLE: italic; COLOR: #999999
+}
+A:link {
+	COLOR: #21409a; TEXT-DECORATION: none
+}
+A:visited {
+	COLOR: #21409a; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: #ba0d36; TEXT-DECORATION: none
+}
+LI {
+	LIST-STYLE-TYPE: square;
+}
+UL {
+	MARGIN: 0px 0px 0px 10px; PADDING-LEFT: 10px; PADDING-TOP: 0px
+}
+#tipDiv {
+	Z-INDEX: 5; POSITION: absolute; VISIBILITY: hidden
+}
+SELECT {
+	BORDER: #7f9db9 1px solid;
+}
+#topBannerComponent {
+ POSITION: relative; PADDING-LEFT: 20px; WIDTH: 968px; MARGIN-BOTTOM: 0px; HEIGHT: 115px
+}
+#logo {
+	Z-INDEX: 1; POSITION: absolute; WIDTH: 183px; HEIGHT: 65px; TOP: 24px; LEFT: 15px
+}
+#topmenu {
+	Z-INDEX: 1; POSITION: relative; TEXT-ALIGN: left; WIDTH: 400px; BACKGROUND-POSITION: left 50%; FLOAT: left; HEIGHT: 15px; CLEAR: left; TOP: 71px; LEFT: 545px
+}
+#topBannerExtraComponent {
+	POSITION: absolute; TEXT-ALIGN: left; WIDTH: 770px; BOTTOM: 9px; HEIGHT: 13px; LEFT: 22px
+}
+.topBannerExtraComponent {
+	FONT-FAMILY: Arial, Helvetica, sans-serif; LETTER-SPACING: 1px; COLOR: #ffff00; FONT-SIZE: 10px; FONT-WEIGHT: bold
+}
+.topBannerExtraComponentImg {
+	PADDING-BOTTOM: 5px; VERTICAL-ALIGN: middle; PADDING-TOP: 0px
+}
+.topBannerExtraComponent A {
+	COLOR: #ffff00; TEXT-DECORATION: none
+}
+.topBannerExtraComponent A:visited {
+	COLOR: #ffff00; TEXT-DECORATION: none
+}
+.topBannerExtraComponent A:link {
+	COLOR: #ffff00; TEXT-DECORATION: none
+}
+.topBannerExtraComponent A:hover {
+	COLOR: #e19a28; TEXT-DECORATION: none
+}
+.leftmenu {
+	PADDING-LEFT: 15px; 
+}
+.leftmenu A:link {
+	COLOR: #000; FONT-SIZE: 10px
+}
+.leftmenu A:visited {
+	COLOR: #000; FONT-SIZE: 10px
+}
+.leftmenu A:hover {
+	COLOR: #ba0d35
+}
+#topBannerExtraInnerComponentOne {
+ POSITION: absolute; TEXT-ALIGN: center; WIDTH: 770px; BOTTOM: 0px;  HEIGHT: 31px; TOP: 0px; RIGHT: 0px; LEFT: 0px
+}
+#topBannerExtraInnerComponentTwo {
+	 Z-INDEX: 2; POSITION: absolute; TEXT-ALIGN: center; WIDTH: 750px; HEIGHT: 31px; TOP: 0px; RIGHT: 0px; LEFT: 10px
+}
+#tabsContainerComponent {
+	POSITION: absolute; PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; WIDTH: 950px; PADDING-RIGHT: 0px; FLOAT: right; HEIGHT: 60px; RIGHT: 0px; PADDING-TOP: 0px
+}
+#tabsComponent {
+	Z-INDEX: 1; POSITION: absolute; TEXT-ALIGN: center; PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; WIDTH: 100%; PADDING-RIGHT: 0px; HEIGHT: 30px; TOP: 75px; RIGHT: 0px; PADDING-TOP: 0px
+}
+#subTabsComponent {
+	Z-INDEX: 3; POSITION: absolute; TEXT-ALIGN: center; WIDTH: 100%; TOP: 105px; RIGHT: 0px
+}
+#hotnewsDiv {
+	Z-INDEX: 4; POSITION: relative; TEXT-ALIGN: center; BACKGROUND-COLOR: #ffffff; WIDTH: 968px; HEIGHT: 24px; TOP: 0px
+}
+.hotnewsbar {
+	Z-INDEX: 4; TEXT-ALIGN: center; BACKGROUND-COLOR: #e1e1e1; WIDTH: 958px; HEIGHT: 24px
+}
+.hotnews {
+	FONT-FAMILY: Arial, Helvetica, sans-serif; COLOR: #c41039; FONT-SIZE: 10px; FONT-WEIGHT: bold
+}
+#mainDiv {
+	Z-INDEX: 4; TEXT-ALIGN: center; WIDTH: 968px; TOP: 0px
+}
+#topbannerDiv {
+	Z-INDEX: 4; POSITION: relative; TEXT-ALIGN: center; WIDTH: 776px; HEIGHT: 206px; TOP: -201px; RIGHT: 2px; LEFT: 180px
+}
+#timkiemdienthoaiDiv {
+	Z-INDEX: 4; POSITION: relative; TEXT-ALIGN: center; WIDTH: 175px; HEIGHT: 206px; TOP: 5px
+}
+.timkiemdienthoai {
+	FONT-FAMILY: Arial, Helvetica, sans-serif; COLOR: #c41039; FONT-SIZE: 10px; FONT-WEIGHT: bold
+}
+.hethongsieuthi {
+	Z-INDEX: 4; POSITION: relative; TEXT-ALIGN: center; WIDTH: 173px; HEIGHT: 206px; TOP: 5px
+}
+.graytdborder {
+	BORDER-LEFT: #d7d7d7 1px solid; BACKGROUND-COLOR: #ffffff; BORDER-TOP: #d7d7d7 1px solid; BORDER-RIGHT: #d7d7d7 1px solid
+}
+#apDiv1 {
+	Z-INDEX: 5; POSITION: relative; WIDTH: 174px; HEIGHT: 126px; TOP: 362px; LEFT: 6px
+}
+#apDiv2 {
+	Z-INDEX: 6; POSITION: absolute; WIDTH: 563px; HEIGHT: 129px; TOP: 364px; LEFT: 186px
+}
+#apDiv3 {
+	Z-INDEX: 7; POSITION: absolute; WIDTH: 205px; HEIGHT: 132px; TOP: 362px; LEFT: 758px
+}
+.timkiemtukhoa {
+	BORDER-BOTTOM-STYLE: inset; BORDER-RIGHT-STYLE: inset; WIDTH: 152px; FONT-FAMILY: Arial, Helvetica, sans-serif; BORDER-TOP-STYLE: inset; HEIGHT: 15px; COLOR: #0033ff; FONT-SIZE: 10px; BORDER-LEFT-STYLE: inset; FONT-WEIGHT: bold
+}
+#BottomComponent {
+	BACKGROUND-IMAGE: url(../App_Themes/BackGround/css/bottom.gif); Z-INDEX: 4; POSITION: relative; WIDTH: 968px; BACKGROUND-REPEAT: no-repeat; BACKGROUND-POSITION: 50% bottom; MARGIN-BOTTOM: 0px; MARGIN-LEFT: auto; MARGIN-RIGHT: auto
+}
+#BottomComponent B {
+	COLOR: #ffff00; FONT-WEIGHT: bold
+}
+.BottomText {
+	FONT-FAMILY: Arial, Helvetica, sans-serif; COLOR: #ffffff; FONT-SIZE: 11px; FONT-WEIGHT: normal
+}
+.leftseptd {
+	BORDER-LEFT: #ffffff 1px outset; FONT-SIZE: 70%
+}
+.tdcell {
+	CLIP: rect(10px 10px 10px 10px); BORDER-BOTTOM: #d7d7d7 1px solid; BORDER-LEFT: #d7d7d7 1px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; WIDTH: 148px; BOTTOM: 10px; PADDING-RIGHT: 0px; BORDER-TOP: #d7d7d7 1px; TOP: 10px; RIGHT: 10px; BORDER-RIGHT: #d7d7d7 1px solid; PADDING-TOP: 0px; LEFT: 10px
+}
+.tdcell2 {
+	CLIP: rect(10px 10px 10px 10px); BORDER-BOTTOM: #d7d7d7 1px solid; BORDER-LEFT: medium none; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; WIDTH: 148px; BOTTOM: 10px; PADDING-RIGHT: 0px; BORDER-TOP: medium none; TOP: 10px; RIGHT: 10px; BORDER-RIGHT: #d7d7d7 1px solid; PADDING-TOP: 0px; LEFT: 10px
+}
+.tdcell2bottom {
+	CLIP: rect(10px 10px 10px 10px); BORDER-BOTTOM: #d7d7d7 1px solid; BORDER-LEFT: medium none; PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; WIDTH: 148px; BOTTOM: 10px; PADDING-RIGHT: 0px; BORDER-TOP: medium none; TOP: 10px; RIGHT: 10px; BORDER-RIGHT: #d7d7d7 1px; PADDING-TOP: 0px; LEFT: 10px
+}
+.tdcellright {
+	BORDER-BOTTOM: #d7d7d7 1px solid; BORDER-LEFT: #d7d7d7 1px; WIDTH: 148px; BORDER-TOP: #d7d7d7 1px; BORDER-RIGHT: #d7d7d7 1px
+}
+.product {
+	MARGIN: 5px 5px 5px 10px; WIDTH: 130px
+}
+.product P.price {
+	FONT-FAMILY: Arial, Helvetica, sans-serif; COLOR: #ff0000; FONT-SIZE: 11px; FONT-WEIGHT: bold
+}
+.loaisp {
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; COLOR: #999999; FONT-SIZE: 9px; FONT-WEIGHT: normal; TEXT-DECORATION: none
+}
+.loaisp A:link {
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; COLOR: #999999; FONT-SIZE: 9px; FONT-WEIGHT: normal; TEXT-DECORATION: none
+}
+.loaisp A:visited {
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; COLOR: #999999; FONT-SIZE: 9px; FONT-WEIGHT: normal; TEXT-DECORATION: none
+}
+.loaisp A:hover {
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; COLOR: #0066cc; FONT-SIZE: 9px; FONT-WEIGHT: normal; TEXT-DECORATION: underline
+}
+.ad {
+	FONT-FAMILY: Arial, Helvetica, sans-serif; COLOR: #009900; FONT-SIZE: 10px; FONT-WEIGHT: bold
+}
+.producttitle {
+	FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-SIZE: 11px; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+.maintabletitlebg {
+	BACKGROUND-IMAGE: url(../App_Themes/BackGround/maintabletitle.gif); TEXT-ALIGN: left; PADDING-LEFT: 10px; BACKGROUND-REPEAT: no-repeat; FONT-FAMILY: Arial, Helvetica, sans-serif; HEIGHT: 28px; COLOR: #000; MARGIN-LEFT: 20px; FONT-SIZE: 12px; FONT-WEIGHT: bold
+}
+.maintabletitlebgKM {
+	BACKGROUND-IMAGE: url(../App_Themes/BackGround/maintabletitleKM.gif); TEXT-ALIGN: left; PADDING-LEFT: 10px; BACKGROUND-REPEAT: no-repeat; FONT-FAMILY: Arial, Helvetica, sans-serif; HEIGHT: 30px; COLOR: #000; MARGIN-LEFT: 20px; FONT-SIZE: 12px; FONT-WEIGHT: bold
+}
+.maintabletitlebg2 {
+	BACKGROUND-IMAGE: url(../App_Themes/BackGround/maintabletitle.gif); TEXT-ALIGN: left; TEXT-TRANSFORM: uppercase; PADDING-LEFT: 7px; BACKGROUND-REPEAT: no-repeat; FONT-FAMILY: Arial, Helvetica, sans-serif; HEIGHT: 28px; COLOR: #003366; FONT-SIZE: 13px
+}
+.topheader_right {
+	FONT-SIZE: 90%
+}
+.redText {
+	FONT-FAMILY: Arial, Helvetica, sans-serif; COLOR: #bb0d36; FONT-SIZE: 11px; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+.support_bg {
+	BACKGROUND-IMAGE: url(../App_Themes/BackGround/support_bg.gif); BACKGROUND-REPEAT: repeat-x
+}
+.tim_kiem_nang_cao {
+	FONT-SIZE: 70%; PADDING-TOP: 4px
+}
+.tim_kiem_nang_cao A {
+	COLOR: #21409a
+}
+.tim_kiem_nang_cao A:visited {
+	COLOR: #21409a
+}
+.tim_kiem_nang_cao A:hover {
+	COLOR: #ba0d36; TEXT-DECORATION: none
+}
+.timkiemlist {
+	BORDER-BOTTOM-STYLE: inset; BORDER-RIGHT-STYLE: inset; WIDTH: 152px; FONT-FAMILY: Arial, Helvetica, sans-serif; BORDER-TOP-STYLE: inset; HEIGHT: 20px; COLOR: #000; FONT-SIZE: 11px; BORDER-LEFT-STYLE: inset
+}
+.timkiemgia {
+	BORDER-BOTTOM-STYLE: inset; BORDER-RIGHT-STYLE: inset; WIDTH: 74px; FONT-FAMILY: Arial, Helvetica, sans-serif; BORDER-TOP-STYLE: inset; HEIGHT: 20px; COLOR: #0033ff; FONT-SIZE: 11px; BORDER-LEFT-STYLE: inset
+}
+.findchucnang A {
+	FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-SIZE: 11px
+}
+.ChiNhanh {
+	FONT-SIZE: 70%
+}
+.top10dt {
+	COLOR: #000; FONT-SIZE: 65%
+}
+.top10dt A:link {
+	COLOR: #21409a
+}
+.top10dt A:visited {
+	COLOR: #21409a
+}
+.top10dt A:hover {
+	COLOR: #ba0d36
+}
+.top10dt P {
+	PADDING-LEFT: 5px
+}
+.TieuDeBox {
+	FONT-FAMILY: Arial, Verdana, Arial, Helvetica, sans-serif; COLOR: #2b2a87; FONT-SIZE: 11px; TEXT-DECORATION: none
+}
+.TieuDeBoxDoNho {
+	FONT-FAMILY: Arial, Verdana, Arial, Helvetica, sans-serif; COLOR: #e12e40; FONT-SIZE: 12px; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+.serviceList LI {
+	LIST-STYLE-IMAGE: url(../App_Themes/BackGround/flower.gif)
+}
+#list_area {
+	TEXT-ALIGN: center; PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+#list_area .list_tabs {
+	Z-INDEX: 2; POSITION: relative; PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; WIDTH: 596px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+#list_area .list_tabs A {
+	WIDTH: 144px; DISPLAY: block; BACKGROUND: url(../App_Themes/BackGround/tabs07_up.jpg) repeat-x 50% top; FLOAT: left; HEIGHT: 25px; COLOR: #2e4ba0; FONT-SIZE: 68%; FONT-WEIGHT: bold; MARGIN-RIGHT: 2px; PADDING-TOP: 5px
+}
+#list_area .list_tabs A:visited {
+	COLOR: #2e4ba0; FONT-WEIGHT: bold
+}
+#list_area .list_tabs A:link {
+	COLOR: #2e4ba0; FONT-WEIGHT: bold
+}
+#list_area .list_tabs A:hover {
+	COLOR: #fff; TEXT-DECORATION: none
+}
+#list_area .list_tabs A.down {
+	BORDER-BOTTOM: 0px; BACKGROUND: url(../App_Themes/BackGround/tabs07_down.jpg) repeat-x 50% top; COLOR: #000; FONT-WEIGHT: bold
+}
+#list_area .list_tabs A.down:hover {
+	COLOR: #000
+}
+#list_area .list_tabs A.down:visited {
+	COLOR: #000
+}
+#list_area .list_clear {
+	LINE-HEIGHT: 0; HEIGHT: 0px; CLEAR: both; FONT-SIZE: 0px
+}
+#list_area .list_content {
+	Z-INDEX: 1; BORDER-BOTTOM: #d5d5d5 1px solid; POSITION: relative; BORDER-LEFT: #d5d5d5 1px solid; LINE-HEIGHT: 1.5em; BACKGROUND-COLOR: #ffffff; WIDTH: 596px; COLOR: #333333; FONT-SIZE: 11px; BORDER-TOP: #d5d5d5 1px solid; TOP: -1px; BORDER-RIGHT: #d5d5d5 1px solid; LEFT: 0px
+}
+.tintuc LI {
+	WIDTH: 80%; FONT-SIZE: 70%
+}
+.over_footer {
+	FONT-SIZE: 70%; FONT-WEIGHT: bold
+}
+#detail_2 {
+	PADDING-BOTTOM: 10px; PADDING-LEFT: 10px; PADDING-RIGHT: 10px; FONT-SIZE: 70%; PADDING-TOP: 10px
+}
+.titleSPChitiet {
+	TEXT-TRANSFORM: uppercase; COLOR: #003366; FONT-SIZE: 14px; FONT-WEIGHT: bold
+}
+.titleChitiet {
+	FONT-SIZE: 16px; FONT-WEIGHT: bold
+}
+.chitietChucNang {
+	COLOR: #003366; FONT-SIZE: 12px; FONT-WEIGHT: bold
+}
+.chitietChucNang A {
+	COLOR: #003366; FONT-SIZE: 12px; FONT-WEIGHT: bold
+}
+.bodyChitiet TD {
+	FONT-SIZE: 11px; FONT-WEIGHT: normal
+}
+HR {
+	COLOR: #dcdcdc
+}
+.leftBorderTable {
+	BORDER-LEFT: #d7d7d7 1px solid
+}
+.chitietTinhNang {
+	COLOR: #000; FONT-SIZE: 11px; FONT-WEIGHT: bold
+}
+.borderTopBottom {
+	BORDER-BOTTOM: #dcdcdc 1px solid; BORDER-TOP: #dcdcdc 1px solid
+}
+.borderLeftBottom {
+	BORDER-BOTTOM: #dcdcdc 1px solid; BORDER-LEFT: #dcdcdc 1px solid
+}
+.borderBottom {
+	BORDER-BOTTOM: #dcdcdc 1px solid
+}
+.borderRight {
+	BORDER-RIGHT: #dcdcdc 1px solid
+}
+.borderLRTop {
+	BORDER-LEFT: #dcdcdc 1px solid; BORDER-TOP: #dcdcdc 1px solid; BORDER-RIGHT: #dcdcdc 1px solid
+}
+.borderFull {
+	BORDER-BOTTOM: #dcdcdc 1px solid; BORDER-LEFT: #dcdcdc 1px solid; BORDER-TOP: #dcdcdc 1px solid; BORDER-RIGHT: #dcdcdc 1px solid
+}
+.borderTopL {
+	BORDER-LEFT: #dcdcdc 1px solid; BORDER-TOP: #dcdcdc 1px solid
+}
+.borderTopLB {
+	BORDER-BOTTOM: #dcdcdc 1px solid; BORDER-LEFT: #dcdcdc 1px solid; BORDER-TOP: #dcdcdc 1px solid
+}
+.borderTop {
+	BORDER-TOP: #dcdcdc 1px solid
+}
+.borderCellRightBottom {
+	BORDER-BOTTOM: #dcdcdc 1px solid; BORDER-RIGHT: #dcdcdc 1px solid
+}
+.borderCellTopRight {
+	BORDER-TOP: #dcdcdc 1px solid; BORDER-RIGHT: #dcdcdc 1px solid
+}
+.CellPaddingLeft {
+	PADDING-LEFT: 20px
+}
+.borderCellTop {
+	BORDER-TOP: #dcdcdc 1px solid
+}
+.borderCellTopBottom {
+	BORDER-BOTTOM: #dcdcdc 1px solid; BORDER-TOP: #dcdcdc 1px solid
+}
+.borderCellBottom {
+	BORDER-BOTTOM: #dcdcdc 1px solid
+}
+.CellPadding {
+	PADDING-BOTTOM: 5px; PADDING-LEFT: 5px; PADDING-RIGHT: 5px; PADDING-TOP: 5px
+}
+.borderCellLeft {
+	BORDER-LEFT: #dcdcdc 1px solid
+}
+.borderCellLeftRight {
+	BORDER-LEFT: #dcdcdc 1px solid; BORDER-RIGHT: #dcdcdc 1px solid
+}
+.graytdborder1 {
+	BORDER-BOTTOM: #d7d7d7 1px solid; BORDER-LEFT: #d7d7d7 1px solid; BACKGROUND-COLOR: #ffffff; BORDER-TOP: #d7d7d7 1px solid; BORDER-RIGHT: #d7d7d7 1px solid
+}
+.graytdborderLR {
+	BORDER-LEFT: #d7d7d7 1px solid; BACKGROUND-COLOR: #ffffff; BORDER-RIGHT: #d7d7d7 1px solid
+}
+.graytdborderl {
+	BORDER-LEFT: #d7d7d7 1px solid; BACKGROUND-COLOR: #ffffff
+}
+.detail_price {
+	COLOR: #ff0000; FONT-WEIGHT: bold
+}
+#sp_cungloai TD {
+	FONT-SIZE: 70%
+}
+.minform TD {
+	FONT-SIZE: 75%
+}
+.datetime {
+	COLOR: #616161
+}
+.celltb {
+	BORDER-BOTTOM: #d7d7d7 1px solid; PADDING-BOTTOM: 10px; PADDING-LEFT: 5px; PADDING-RIGHT: 5px; PADDING-TOP: 10px
+}
+#DivVietNhanXet {
+	PADDING-BOTTOM: 10px; PADDING-LEFT: 10px; PADDING-RIGHT: 5px; PADDING-TOP: 0px
+}
+.detail_tab {
+	Z-INDEX: 2; BORDER-BOTTOM: 1px; POSITION: relative; TEXT-ALIGN: center; PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; WIDTH: 590px; PADDING-RIGHT: 0px; MARGIN-LEFT: 3px; PADDING-TOP: 0px
+}
+.detail_tab_content {
+	Z-INDEX: 1; BORDER-BOTTOM: 0px; POSITION: relative; BORDER-LEFT: 0px; LINE-HEIGHT: 1.5em; BACKGROUND-COLOR: #ffffff; WIDTH: 100%; COLOR: #333333; BORDER-TOP: #d5d5d5 1px solid; TOP: -1px; BORDER-RIGHT: 0px
+}
+.detail_tab A {
+	WIDTH: 144px; DISPLAY: block; BACKGROUND: url(../App_Themes/BackGround/tabs07_up.jpg) repeat-x 50% top; FLOAT: left; HEIGHT: 25px; COLOR: #2e4ba0; MARGIN-LEFT: 3px; FONT-SIZE: 68%; FONT-WEIGHT: bold; PADDING-TOP: 5px
+}
+.detail_tab A:visited {
+	COLOR: #2e4ba0; FONT-WEIGHT: bold
+}
+.detail_tab A:link {
+	COLOR: #2e4ba0; FONT-WEIGHT: bold
+}
+.detail_tab A:hover {
+	COLOR: #fff; TEXT-DECORATION: none
+}
+.detail_tab A.down {
+	BORDER-BOTTOM: 0px; BACKGROUND: url(../App_Themes/BackGround/tabs07_down.jpg) repeat-x 50% top; COLOR: #000; FONT-WEIGHT: bold
+}
+.detail_tab A.down:hover {
+	COLOR: #000
+}
+.detail_tab A.down:visited {
+	COLOR: #000
+}
+.detail_tab_clear {
+	LINE-HEIGHT: 0; HEIGHT: 0px; CLEAR: both; FONT-SIZE: 0px
+}
+.ThongTinTitle {
+	FONT-FAMILY: Arial, Helvetica, sans-serif; COLOR: #333333; FONT-SIZE: 12px; FONT-WEIGHT: bold
+}
+.maintabletitlebg1 {
+	BACKGROUND-IMAGE: url(../App_Themes/BackGround/maintabletitle1.gif); BACKGROUND-REPEAT: no-repeat; FONT-FAMILY: Arial, Helvetica, sans-serif; COLOR: #003366; FONT-SIZE: 12px
+}
+.price_xam {
+	FONT-STYLE: italic; COLOR: #999999
+}
+.so_sanh TD {
+	FONT-SIZE: 70%
+}
+.timkiemlist1 {
+	BORDER-BOTTOM-STYLE: inset; BORDER-RIGHT-STYLE: inset; WIDTH: 190px; FONT-FAMILY: Arial, Helvetica, sans-serif; BORDER-TOP-STYLE: inset; HEIGHT: 20px; FONT-SIZE: 10px; BORDER-LEFT-STYLE: inset; FONT-WEIGHT: bold
+}
+.tim_kiem TD {
+	FONT-SIZE: 70%
+}
+.tim_kiem .wrapper {
+	BORDER-BOTTOM: #7f9db9 1px solid; BORDER-LEFT: #7f9db9 1px solid; PADDING-BOTTOM: 2px; OVERFLOW-Y: auto; PADDING-LEFT: 2px; WIDTH: 265px; PADDING-RIGHT: 2px; HEIGHT: 100px; BORDER-TOP: #7f9db9 1px solid; BORDER-RIGHT: #7f9db9 1px solid; PADDING-TOP: 2px
+}
+.tim_kiem .listMenu {
+	BORDER-BOTTOM-STYLE: inset; BORDER-RIGHT-STYLE: inset; WIDTH: 270px; FONT-FAMILY: Arial, Helvetica, sans-serif; BORDER-TOP-STYLE: inset; HEIGHT: 20px; FONT-SIZE: 10px; BORDER-LEFT-STYLE: inset; FONT-WEIGHT: bold
+}
+.tim_kiem .timkiemgia1 {
+	BORDER-BOTTOM-STYLE: inset; BORDER-RIGHT-STYLE: inset; WIDTH: 120px; FONT-FAMILY: Arial, Helvetica, sans-serif; BORDER-TOP-STYLE: inset; HEIGHT: 20px; FONT-SIZE: 10px; BORDER-LEFT-STYLE: inset; FONT-WEIGHT: bold
+}
+.HangDienthoai UL {
+	MARGIN-LEFT: 4px
+}
+.HangDienthoai LI {
+	LIST-STYLE-POSITION: outside; LIST-STYLE-IMAGE: url(../App_Themes/BackGround/arrow.gif)
+}
+.HangDienthoai LI A {
+	COLOR: #000
+}
+.HangDienthoai LI A:visited {
+	COLOR: #000
+}
+.titleProduct {
+	LINE-HEIGHT: 13px; FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-SIZE: 11px; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+.tin_tuc TD {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 15px; PADDING-RIGHT: 15px; FONT-SIZE: 70%; PADDING-TOP: 0px
+}
+.tin_tuc .Title {
+	PADDING-BOTTOM: 15px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT-SIZE: 150%; FONT-WEIGHT: bold; PADDING-TOP: 15px
+}
+.tintuc {
+	MARGIN: 5px 10px
+}
+.titleTintucLarge {
+	FONT-SIZE: 16px; FONT-WEIGHT: bold
+}
+.tintucTitle {
+	FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-SIZE: 12px; FONT-WEIGHT: bold
+}
+.detailcellbar {
+	BORDER-BOTTOM: #cccccc 1px solid; BORDER-RIGHT-WIDTH: 1px; BORDER-RIGHT-COLOR: #cccccc; BORDER-LEFT-COLOR: #cccccc; BORDER-TOP: #cccccc 1px solid; BORDER-LEFT-WIDTH: 1px
+}
+.tintucshortdisp {
+	MARGIN: 10px 0px 10px 20px; FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-SIZE: 11px; FONT-WEIGHT: normal
+}
+.imageBorder {
+	BORDER-BOTTOM: #dcdcdc 1px solid; BORDER-LEFT: #dcdcdc 1px solid; BORDER-TOP: #dcdcdc 1px solid; BORDER-RIGHT: #dcdcdc 1px solid
+}
+.largeImageBorder {
+	BORDER-BOTTOM: #dcdcdc 2px solid; BORDER-LEFT: #dcdcdc 2px solid; BORDER-TOP: #dcdcdc 2px solid; BORDER-RIGHT: #dcdcdc 2px solid
+}
+.newdetail {
+	FONT-SIZE: 70%
+}
+.download TD {
+	FONT-SIZE: 70%
+}
+.download IMG {
+	BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; BORDER-TOP: 0px; BORDER-RIGHT: 0px
+}
+.download .line {
+	BACKGROUND: url(../App_Themes/BackGround/line_download.jpg) repeat-x 50% bottom; COLOR: #fff
+}
+.bottommenu A {
+	FONT-FAMILY: Arial, Helvetica, sans-serif; COLOR: #000; FONT-SIZE: 11px
+}
+.bottomList LI {
+	LINE-HEIGHT: 18px; MARGIN-LEFT: -4px; LIST-STYLE-IMAGE: url(../App_Themes/BackGround/bullet1.gif)
+}
+.bottomList A:link {
+	COLOR: #ffffff; TEXT-DECORATION: none
+}
+.bottomList A:visited {
+	COLOR: #ffffff; TEXT-DECORATION: none
+}
+.bottomList A:hover {
+	COLOR: #95bdfe; TEXT-DECORATION: none
+}
+.copyright {
+	FONT-FAMILY: Arial, Helvetica, sans-serif; COLOR: #ffffff; FONT-SIZE: 10px
+}
+.copyright A:link {
+	COLOR: #ffffff; TEXT-DECORATION: none
+}
+.copyright A:hover {
+	COLOR: #95bdfe
+}
+.copyright A:visited {
+	COLOR: #ffffff; TEXT-DECORATION: none
+}
+.lineHeight {
+	LINE-HEIGHT: 18px
+}
+.titleThongTin {
+	COLOR: #ba0d35; FONT-SIZE: 12px; FONT-WEIGHT: bold
+}
+.maintabletitle {
+	BACKGROUND-IMAGE: url(../App_Themes/BackGround/maintabletitle.gif); PADDING-LEFT: 10px; BACKGROUND-REPEAT: no-repeat; FONT-FAMILY: Arial, Helvetica, sans-serif; HEIGHT: 28px; COLOR: #333333; MARGIN-LEFT: 20px; FONT-SIZE: 12px; FONT-WEIGHT: bold
+}
+.tuyen_dung TD {
+	LINE-HEIGHT: 18px; FONT-SIZE: 70%
+}
+.cellBgColor {
+	BACKGROUND-COLOR: #dcdcdc
+}
+.cellBgColor1 {
+	BACKGROUND-COLOR: #f5f5f5
+}
+.cellBgColor2 {
+	BACKGROUND-COLOR: #cccccc
+}
+.cellBgColor3 {
+	BACKGROUND-COLOR: #eeeeee
+}
+.cellBgColor4 {
+	BACKGROUND-COLOR: #f8f8f8
+}
+.cellPadding1 {
+	PADDING-BOTTOM: 10px; PADDING-LEFT: 10px; PADDING-RIGHT: 10px; PADDING-TOP: 10px
+}
+.gioi_thieu TD {
+	LINE-HEIGHT: 18px; FONT-SIZE: 70%
+}
+.gioi_thieu IMG {
+	MARGIN: 0px 10px 0px 0px
+}
+.floatleft_new {
+	PADDING-BOTTOM: 2px; MARGIN: 0px 20px 0px 0px; PADDING-LEFT: 2px; PADDING-RIGHT: 2px; FLOAT: left; PADDING-TOP: 2px
+}
+.lienhe TD {
+	LINE-HEIGHT: 18px; FONT-SIZE: 70%
+}
+.phukien TD {
+	LINE-HEIGHT: 18px; FONT-SIZE: 70%
+}
+.phukien .price {
+	COLOR: #ff0000; FONT-WEIGHT: bold
+}
+.phukien SPAN {
+	FONT-WEIGHT: normal
+}
+.price {
+	FONT-FAMILY: Arial, Helvetica, sans-serif; COLOR: #ff0000; FONT-SIZE: 11px; FONT-WEIGHT: bold
+}
+.emailgioithieu TD {
+	FONT-SIZE: 70%
+}
+.search_laptop TD {
+	FONT-SIZE: 70%
+}
+.chitiet_giohang TD {
+	BORDER-BOTTOM: #dcdcdc 1px solid; BORDER-RIGHT: #dcdcdc 1px solid
+}
+.chitiet_giohang {
+	BORDER-LEFT: #dcdcdc 1px solid; BORDER-TOP: #dcdcdc 1px solid
+}
+.boldText {
+	FONT-WEIGHT: bold
+}
+.textField3 {
+	WIDTH: 344px; FONT-FAMILY: Arial, Helvetica, sans-serif; HEIGHT: 16px; COLOR: #000000; FONT-SIZE: 11px
+}
+.card {
+	FONT-FAMILY: Arial,Helvetica,sans-serif; FONT-SIZE: 11px
+}
+.styleRed {
+	COLOR: #ff0000
+}
+.BlockshoppingCard1 {
+	BACKGROUND-IMAGE: url(../App_Themes/BackGround/centerLoginBar.jpg); BORDER-LEFT: #e5e5e5 1px outset; BACKGROUND-REPEAT: no-repeat; FONT-SIZE: 70%
+}
+.suggest_link {
+	BACKGROUND-COLOR: #ffffff; COLOR: #000000
+}
+.suggest_link_over {
+	BACKGROUND-COLOR: #3366cc; COLOR: #ffffff
+}
+.dvtxtSearchText {
+	BORDER-BOTTOM: #000000 1px solid; POSITION: relative; TEXT-ALIGN: left; BORDER-LEFT: #000000 1px solid; PADDING-BOTTOM: 0px; BACKGROUND-COLOR: #ffffff; MARGIN: 0px; PADDING-LEFT: 0px; WIDTH: 98%; PADDING-RIGHT: 0px; FONT-SIZE: 11px; BORDER-TOP: #000000 1px solid; BORDER-RIGHT: #000000 1px solid; PADDING-TOP: 0px
+}
+.divSuggest {
+	PADDING-BOTTOM: 4px; PADDING-LEFT: 4px; WIDTH: 100%; PADDING-RIGHT: 4px; PADDING-TOP: 4px
+}
+#thongbao_text {
+	BORDER-BOTTOM: #7f9db9 1px solid; BORDER-LEFT: #7f9db9 1px solid; PADDING-BOTTOM: 10px; PADDING-LEFT: 10px; WIDTH: 400px; PADDING-RIGHT: 10px; HEIGHT: 50px; FONT-SIZE: 12px; BORDER-TOP: #7f9db9 1px solid; BORDER-RIGHT: #7f9db9 1px solid; PADDING-TOP: 10px
+}
+.content_khuyenmai {
+	FONT-SIZE: 12px; PADDING-TOP: 10px
+}
+.logoBoder {
+	BORDER-BOTTOM: #cccccc 1px solid; BORDER-LEFT: #cccccc 1px solid; BORDER-TOP: #cccccc 1px solid; BORDER-RIGHT: #cccccc 1px solid
+}
+.cellBoder TD {
+	BORDER-BOTTOM: #dcdcdc 1px solid; BORDER-LEFT: #dcdcdc 1px solid
+}
+.fontSize12 {
+	FONT-SIZE: 12px
+}
+.fontSize11 {
+	FONT-SIZE: 11px
+}
+.support_online {
+	FONT-SIZE: 12px; FONT-WEIGHT: bold
+}
+.theBestSim {
+	PADDING-BOTTOM: 1px; PADDING-LEFT: 1px; WIDTH: 100%; PADDING-RIGHT: 1px; FONT-SIZE: 12px; PADDING-TOP: 1px
+}
+.theBestSim TH {
+	BACKGROUND-COLOR: #f4f3ef; FONT-WEIGHT: bold
+}
+.theBestSim TD {
+	BACKGROUND-COLOR: #fbf8f8; HEIGHT: 25px
+}
+.borderTinhNangTable {
+	BORDER-TOP: #dcdcdc 1px solid
+}
+.borderTinhNangTable TD {
+	BORDER-BOTTOM: #dcdcdc 1px solid; BORDER-LEFT: #dcdcdc 1px solid
+}
+.table_padding_left {
+	PADDING-LEFT: 20px
+}
+.NoDisplay {
+	DISPLAY: none
+}
+#navigation {
+	POSITION: relative; TEXT-ALIGN: left; BACKGROUND-COLOR: #ffff21; WIDTH: 968px; BACKGROUND-REPEAT: no-repeat; FLOAT: left; HEIGHT: 160px; CLEAR: both; TOP: 0px; PADDING-TOP: 20px
+}
+#navContent {
+	POSITION: relative; WIDTH: 968px; FLOAT: left; HEIGHT: 150px; TOP: 0px; LEFT: 5px
+}
+.class_link {
+	COLOR: #003366; TEXT-DECORATION: none
+}
+.dispNavBlock {
+	PADDING-LEFT: 15px; DISPLAY: block; FLOAT: left; HEIGHT: 150px; PADDING-TOP: 0px
+}
+.titleNav {
+	PADDING-LEFT: 5px; COLOR: #ba0d35; FONT-SIZE: 11px; FONT-WEIGHT: bold
+}
+#blueLine {
+	POSITION: relative; BACKGROUND-COLOR: #003366; WIDTH: 968px; BACKGROUND-REPEAT: repeat; FLOAT: left; HEIGHT: 2px; CLEAR: both; OVERFLOW: hidden; TOP: 0px
+}
+#bottom {
+	POSITION: relative; BACKGROUND-COLOR: #ffff21; WIDTH: 968px; BACKGROUND-REPEAT: repeat; FLOAT: left; HEIGHT: 80px; CLEAR: both; TOP: 0px
+}
+#logoBottom {
+	POSITION: relative; WIDTH: 158px; FLOAT: left; HEIGHT: 35px; TOP: 15px; LEFT: 20px
+}
+#footerLink {
+	POSITION: relative; WIDTH: 500px; FLOAT: left; HEIGHT: 33px; FONT-SIZE: 11px; TOP: 20px; LEFT: 40px
+}
+#footerLink A:link {
+	COLOR: #333333; TEXT-DECORATION: none
+}
+#footerLink A:visited {
+	COLOR: #333333; TEXT-DECORATION: none
+}
+#footerLink A:hover {
+	COLOR: #ba0d35; TEXT-DECORATION: none
+}
+.navList {
+	PADDING-BOTTOM: 0px; LINE-HEIGHT: 22px; LIST-STYLE-TYPE: none; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT-SIZE: 11px; FONT-WEIGHT: normal; PADDING-TOP: 0px
+}
+.navList LI {
+	LIST-STYLE-TYPE: none; LIST-STYLE-IMAGE: none
+}

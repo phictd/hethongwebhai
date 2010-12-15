@@ -16,10 +16,10 @@
 <div id="menu">
             <ul>
             	<li><a href="index.php" style="border-left:1px solid #CCC;">Home</a></li>
-            	<li><a href="#">Tin tức</a></li>
-                <li><a href="#">Sim số</a></li>
-            	<li><a href="#">Giới thiệu</a></li>
-            	<li><a href="#">Tuyển dụng</a></li>
-            	<li><a href="#" style="border-right:4px solid #9C0;">Liên hệ</a></li>
+            	<li><a href="index.php?module=test&act=tintuc">Tin tức</a></li>
+                <li><a href="index.php?module=test&act=simso">Sim số</a></li>
+            	<li><a href="index.php?module=test&act=gioithieu">Giới thiệu</a></li>
+            	<li><a href="index.php?module=test&act=tuyendung">Tuyển dụng</a></li>
+            	<li><a href="index.php?module=test&act=lienhe" style="border-right:4px solid #9C0;">Liên hệ</a></li>
             </ul>    
     </div>

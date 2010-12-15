@@ -1,0 +1,48 @@
+
+#main11
+{
+width:596px;
+margin:5px ;
+border:1px solid #CCCCCC;
+}
+h1
+{
+font-family:Arial, Helvetica, sans-serif;
+font-size:25px;
+color:#CC9900;
+}
+h2,h3
+{
+font:Arial, Helvetica, sans-serif;
+font-size:14px;
+}
+h2,h3:hover
+{
+color:#CC6600
+}
+h4
+{
+color:#CC6600;
+font-size:24px;
+}
+p
+{
+margin:10px;
+font-size:14px;
+}
+.legend
+{
+background:#CCCCCC;
+color:#CC6633;
+font:Arial, Helvetica, sans-serif 14px;
+}
+.rounded_corner { 
+-moz-border-radius:10px; 
+-webkit-border-radius:10px; 
+
+}
+img
+{
+border:1px solid #CCCCCC;
+padding:1px;
+}
