@@ -1,6 +1,6 @@
 <?php
 session_start();
-$i = $i=$_GET["id"];
+$i = $_GET["id"];
 $tt = $_SESSION['thanhtien'];
 $tt = $tt - ($_SESSION['gia'.$i]*$_SESSION['soluong'.$i]);
 $_SESSION['thanhtien'] = $tt;

@@ -91,7 +91,7 @@ public function get_gioitinh(){
 
 public function insert_user(){
 	if($this->check_user() == TRUE){
-	$sql="insert into user(Username,Password,Level,HoTen,DiaChi,DienThoai,Email,NgayDangKy,NgaySinh,GioiTinh) values('".$this->get_user()."','".$this->get_pass()."','".$this->get_level()."','".$this->get_hoten()."','".$this->get_diachi()."','".$this->get_dienthoai()."','".$this->get_email()."','".$this->get_ngaydangky()."','".$this->get_ngaysinh()."','".$this->get_gioitinh()."')";
+	$sql="insert into users(Username,Password,Level,HoTen,DiaChi,DienThoai,Email,NgayDangKy,NgaySinh,GioiTinh) values('".$this->get_user()."','".$this->get_pass()."','".$this->get_level()."','".$this->get_hoten()."','".$this->get_diachi()."','".$this->get_dienthoai()."','".$this->get_email()."','".$this->get_ngaydangky()."','".$this->get_ngaysinh()."','".$this->get_gioitinh()."')";
 	$this->query($sql);
 	return TRUE;
 	}else{
@@ -108,7 +108,15 @@ public function check_user(){
 		return TRUE;
 	}
 }
-
+public function check_email(){
+	$sql="select * from users where Email='".$this->get_email();
+	$this->query($sql);
+	if($this->num_rows() == 1){
+		return FALSE;
+	}else{
+		return TRUE;
+	}
+}
 
 public function check_login(){
 	$sql="select * from users where Username='".$this->get_user()."' and Password = '".$this->get_pass()."'";
