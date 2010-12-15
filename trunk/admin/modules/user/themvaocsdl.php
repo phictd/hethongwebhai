@@ -9,14 +9,16 @@ require_once('../../../libraries/function.php');
 	$a->set_user($ten);
 	$a->set_level($lv);
 	$a->set_pass('123456');
-	$a->set_gioitinh(1);
 	$a->set_ngaydangky(date("Y-m-d",time()));
 	$a->set_ngaysinh(date("Y-m-d",time()));
-	if($a->insert_user_admin()){
-		echo "1";
-	}else{
+	if($a->get_user()!="")
+		if($a->insert_user_admin()){
+			echo "11";
+		}else{
+			echo "0";
+		}
+	else
 		echo "0";
-	}
 	
 
 ?>

@@ -1,10 +1,10 @@
 <?php
 require_once('../../../libraries/oop.php');
-require_once('../../../libraries/loaihang.php');
-$a= new LoaiHang;
-$id=$_GET['id'];
-$a->set_idloai($id);
-$a->delete_loaihang();
-echo '5';
+require_once('../../../libraries/user.php');
+$a=new User;
+$user=$_GET['id'];
+$a->set_user($user);
+$a->delete_user();
+echo '12';
 ?>
    
