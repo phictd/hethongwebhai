@@ -24,7 +24,7 @@
 					echo "<div class='product_title'>$item1[TenHang]</div>";
 					echo "<div class='product_title'>$item1[Gia]</div>";
 				   	echo "<a style='margin-right:10px;' href='index.php?module=giohang&act=them&ma=$item1[idHang]&slhang=1'><img src='images/icons/cart.gif'/></a>";
-					echo "<a href='index.php?module=hoakieng&act=detail&id=$itemhoakieng[ma]' >ChiTiết</a>";
+					echo "<a href='index.php?module=hanghoang&act=chitiet&id=$item1[idHang]' >ChiTiết</a>";
 					echo "</div>";
 					echo "</div>";
 					
