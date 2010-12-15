@@ -7,7 +7,6 @@ $ngaysinh = $_POST['date1_day'];
 $thangsinh = $_POST['date1_month'];
 $namsinh = $_POST['date1_year'];
 $lv=1;
-echo $_POST['data1_day'];
 if(isset($_POST['ok'])){
 	if($_POST['txtuser'] == NULL){
 		echo "Tên đăng nhập không để trống <br />";
