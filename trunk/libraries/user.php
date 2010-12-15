@@ -99,6 +99,17 @@ public function insert_user(){
 	}
 }
 
+public function insert_user_admin(){
+	if($this->check_user() == TRUE){
+	$sql="insert into users(Username,Password,NgayDangKy,NgaySinh) values('".$this->get_user()."','".$this->get_pass()."','".$this->get_ngaydangky()."','".$this->get_ngaysinh()."')";
+	$this->query($sql);
+	return TRUE;
+	}else{
+		return FALSE;
+	}
+}
+
+
 public function check_user(){
 	$sql="select * from users where Username='".$this->get_user();
 	$this->query($sql);
