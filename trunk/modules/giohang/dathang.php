@@ -3,6 +3,7 @@
 session_start();
 require_once("libraries/donhang.php");
 require_once("modules/user/classes/tc_calendar.php");
+$id= time();
 if(isset($_SESSION['username'])){
 	if(isset($_POST['ok'])){
 	$donhang = new donhang();
@@ -39,6 +40,7 @@ if(isset($_SESSION['username'])){
 			$namgiao = $_POST['date1_year'];
 		}
 		if($tennn && $dt && $dc && $ngaygiao &&  $thanggiao && $namgiao  ){
+			$donhang->set_idDonHang($id);
 			$donhang->set_Username($_SESSION['username']);
 			$donhang->set_TenNguoiNhan($tennn);
 			$donhang->set_DienThoai($dt);
@@ -59,10 +61,13 @@ if(isset($_SESSION['username'])){
 			}
 		}
 	}
- }else{
+	unset($_SESSION['tongsl']);
+	unset($_SESSION['thanhtien']);
+ }
+ else{
 	header("location:index.php?module=giohang&act=xem&co=1");
-	exit(); 
- }?>
+ }
+	 ?>
 <form action="index.php?module=giohang&act=dathang" method="post">
     
             <fieldset>
