@@ -1,6 +1,6 @@
 <?php
 class donhang extends connect_db{
-    private $idDH;
+    private $idDonHang;
     private $idUser;
     private $ThoiDiemDatHang;
     private $ThoiDiemGiaoHang;

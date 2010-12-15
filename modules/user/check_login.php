@@ -22,6 +22,7 @@ if(isset($_POST['ok'])){
 		}else{
 				foreach($data1 as $user1){
 				$_SESSION['username']=$user1[Username];
+				$_SESSION['hoten']=$user1[HoTen];
 				$_SESSION['level']=$user1[Level];
 				}
 				if($_GET['co']==2)

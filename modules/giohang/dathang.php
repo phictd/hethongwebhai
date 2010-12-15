@@ -3,22 +3,23 @@
 session_start();
 require_once("libraries/donhang.php");
 require_once("modules/user/classes/tc_calendar.php");
+
 if(isset($_SESSION['username'])){
 $donhang = new donhang();
-//$chitiet = new chitietdonhang();
+//$chitietdonhang = new chitietdonhang();
 if(isset($_POST['ok'])){
-    if($_POST['txtten'] == null){
-        $loithongtin[] = "Vui lòng Nhập Tên";
+    if($_POST['txttennn'] == NULL){
+        echo "Xin nhập họ tên";
     }else{
-        $tenkh = $_POST['txtten'];
+        $tennn = $_POST['txttennn'];
     }
-    if($_POST['txtsodt'] == null){
-        $loithongtin[] = "Vui Lòng Nhập Số Điện Thoại";
+    if($_POST['txtdt'] == NULL){
+       echo "Xin nhập số điện thoại";
     }else{
-        $sodt = $_POST['txtsodt'];
+        $dt = $_POST['txtdt'];
     }
-    if($_POST['txtdc'] == null){
-        $loithongtin[] ="Vui Lòng Nhập Địa Chỉ";
+    if($_POST['txtdc'] == NULL){
+       echo "Xin nhập địa chỉ";
     }else{
         $dc = $_POST['txtdc'];
     }
@@ -45,7 +46,7 @@ if(isset($_POST['ok'])){
                 $chitiet->ThemChiTietHang();
             }
             //$loithongtin[] = "Thêm Thành Công";
-            echo "<h3 align='center'>Đã Gửi Đơn hàng .Thanks You!</h3>";
+            echo "<h3 align='center'>Đã gửi phiếu mua hàng. Xin cảm ơn quý khách !</h3>";
         }
     }
 for($i=1;$i<=$_SESSION["tongsl"];$i++){
@@ -74,7 +75,7 @@ else{
     
             <fieldset>
             <legend align="center"><font color="#0066FF" size="+2">Phiếu Mua Hàng</font></legend>
-            <label>Họ Tên:</label> <input type="text" name="txttenkh" size="25" /><br />
+            <label>Họ Tên Người Nhận:</label> <input type="text" name="txttennn" size="25" value="<?php echo $_SESSION['hoten']; ?>"/><br />
             <label>Điện Thoại:</label> <input type="text" name="txtdt" size="25" /><br />
             <label>Địa Chỉ:</label> <input type="text" name="txtdc" size="50" /><br />
             <label>Ngày Giao:</label> <form id="form2" name="form2" method="post" action="">
@@ -93,7 +94,7 @@ else{
                   ?>
                   
                   </form><br/>
-            <label>Note:</label> <textarea name="txt" cols="25" rows="5" ></textarea><br />
+            <label>Note:</label> <textarea name="txtghichu" cols="25" rows="5" ></textarea><br />
             <label>&nbsp;</label><input type="submit" name="ok" value="Mua" /> 
             </fieldset>         
             </form>
