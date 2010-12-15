@@ -1,4 +1,4 @@
-<form action="index.php?module=user&act=register" method="post">
+<form action="index.php?module=user&act=process_register" method="post">
             <fieldset>
             <legend align="center"><font size="+1">Đăng Ký Thành Viên</font></legend>
             <fieldset>

@@ -9,6 +9,9 @@ switch($_GET['act']){
 	case "register":
 	require("modules/user/register.php");
 	break;
+	case "process_register":
+	require("modules/user/process_register.php");
+	break;
 	case "add":
 	require("modules/user/add.php");
 	break;
