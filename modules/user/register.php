@@ -1,6 +1,13 @@
+<script language="javascript" src="calendar.js"></script>
 <?php
 session_start();
+require_once('modules/user/classes/tc_calendar.php');
 require("libraries/user.php");
+$ngaysinh = $_POST['date1_day'];
+$thangsinh = $_POST['date1_month'];
+$namsinh = $_POST['date1_year'];
+$lv=1;
+echo $_POST['data1_day'];
 if(isset($_POST['ok'])){
 	if($_POST['txtuser'] == NULL){
 		echo "Tên đăng nhập không để trống <br />";
@@ -40,7 +47,7 @@ if(isset($_POST['ok'])){
 		$dt=$_POST['txtdt'];
 	}
 	if($u && $p &&  $e &&  $ht &&  $dc &&  $dt){
-		$lv=0;
+		$lv=1;
 		$dk = new User;
 		$dk->set_user($u);
 		$dk->set_pass($p);
@@ -49,11 +56,13 @@ if(isset($_POST['ok'])){
 		$dk->set_diachi($dc);
 		$dk->set_dienthoai($dt);
 		$dk->set_level($lv);
-		 $ngaydk = date(d);
-        $thangdk = date(m);
-        $namdk = date(Y);
-        $ngay = "$ngaydk-$thangdk-$namdk";
-		$dk->set_ngaydangky($ngay);
+		$ngaydk = date("d");
+        $thangdk = date("m");
+        $namdk = date("Y");
+        $ngaydk = "$namdk-$thangdk-$ngaydk";
+        $ngaysinh = "$namsinh-$thangsinh-$ngaysinh";
+		$dk->set_ngaydangky($ngaydk);
+		$dk->set_ngaysinh($ngaysinh);
 		if($dk->check_user()==FALSE){
 			echo "<div align='center' style='margin:10px;'><font size='+1' color='#FF0033'>Tên này đã có người dùng</font></div>";
 		}
@@ -66,6 +75,7 @@ if(isset($_POST['ok'])){
 			}
 			else{
 				echo "<div align='center' style='margin:10px;'><font size='+1' color='#FF0033'>Đăng ký thành công !</font></div>";	
+				echo $ngaydk;
 			}
 		
 		}
@@ -98,34 +108,28 @@ if(isset($_POST['ok'])){
             <legend>Thông Tin Cá Nhân</legend>
             <label>Họ tên:</label> <input type="text" name="txtht" size="30" /><br />					
             <label>Địa chỉ:</label> <input type="text" name="txtdc" size="50" /><br />
-            <label>Ngày sinh:</label><select name="day"><?php
-											for($i=1;$i<=31;$i++){
-												echo "<option value=$i>$i</option>";
-											}
-											?>
-									</select>
-			Tháng: <select name="month">
-			<?php
-					$data=array("1"=>"Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec");
-					foreach($data as $k=>$v){
-						echo "<option value=$k>$v</option>";
-					}
-			?>	
-				</select>
-			Năm:<select name="year">
-			<?php
-				$now=date("Y");
-				for($i=1975;$i<=$now;$i++){
-					echo "<option value=$i>$i</option>";
-				}
-			?>
-            </select><br/>
+            <label>Ngày sinh:</label> <form id="form2" name="form2" method="post" action="">
+                    <?php
+                  $myCalendar = new tc_calendar("date1", true);
+                  $myCalendar->setIcon("images/iconCalendar.gif");
+                  $myCalendar->setDate($ngaysinh,$thangsinh,$namsinh);
+                  $myCalendar->setPath("user/calendar_form.php");
+                  $myCalendar->setYearInterval(1920,  date("Y"));
+                  $myCalendar->dateAllow('1960-01-01', '2015-03-01');
+                  //$myCalendar->setHeight(350);	  
+                  //$myCalendar->autoSubmit(true, "form1");
+                  $myCalendar->disabledDay("Sat");
+                  $myCalendar->disabledDay("sun");
+                  $myCalendar->writeScript();
+                  ?>
+                  
+                  </form><br/>
             <label>Giới tính:</label><input type="radio" name="gioitinh" value="1" checked="checked"/>Nam
             							<input type="radio" name="gioitinh" value="0" />Nữ<br/>
             <label>Điện thoại:</label> <input type="text" name="txtdt" size="12" />
             </fieldset>
             <label>&nbsp;</label><input style="margin-left:80px; color:#333;" type="submit" name="ok" value="Đăng ký" />
             				<input type="reset" name="reset" style="color:#333;" value="Nhập lại" />
-            </fieldset>         
+            </fieldset>        
             </form>
  <?php }?>
