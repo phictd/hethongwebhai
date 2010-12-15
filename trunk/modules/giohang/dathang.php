@@ -1,6 +1,8 @@
+<script language="javascript" src="modules/user/calendar.js"></script>
 <?php
 session_start();
 require_once("libraries/donhang.php");
+require_once("modules/user/classes/tc_calendar.php");
 if(isset($_SESSION['username'])){
 $donhang = new donhang();
 //$chitiet = new chitietdonhang();
@@ -71,32 +73,26 @@ else{
 <form action="index.php?module=giohang&act=dathang" method="post">
     
             <fieldset>
-            <legend>Mua Hàng</legend>
+            <legend align="center"><font color="#0066FF" size="+2">Phiếu Mua Hàng</font></legend>
             <label>Họ Tên:</label> <input type="text" name="txttenkh" size="25" /><br />
             <label>Điện Thoại:</label> <input type="text" name="txtdt" size="25" /><br />
             <label>Địa Chỉ:</label> <input type="text" name="txtdc" size="50" /><br />
-            <label>Ngày Giao:</label><select name="day"><?php
-											for($i=1;$i<=31;$i++){
-												echo "<option value=$i>$i</option>";
-											}
-											?>
-									</select>
-			Tháng: <select name="month">
-			<?php
-					$data=array("1"=>"Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec");
-					foreach($data as $k=>$v){
-						echo "<option value=$k>$v</option>";
-					}
-			?>	
-				</select>
-			Năm:<select name="year">
-			<?php
-				$now=date("Y");
-				for($i=2009;$i<=$now;$i++){
-					echo "<option value=$i>$i</option>";
-				}
-			?>
-            </select><br/>
+            <label>Ngày Giao:</label> <form id="form2" name="form2" method="post" action="">
+                    <?php
+                  $myCalendar = new tc_calendar("date1", true);
+                  $myCalendar->setIcon("images/iconCalendar.gif");
+                  $myCalendar->setDate($ngaysinh,$thangsinh,$namsinh);
+                  $myCalendar->setPath("user/calendar_form.php");
+                  $myCalendar->setYearInterval(date("Y"),  date("Y")+1);
+                  $myCalendar->dateAllow('1960-01-01', '2015-03-01');
+                  //$myCalendar->setHeight(350);	  
+                  //$myCalendar->autoSubmit(true, "form1");
+                  $myCalendar->disabledDay("Sat");
+                  $myCalendar->disabledDay("sun");
+                  $myCalendar->writeScript();
+                  ?>
+                  
+                  </form><br/>
             <label>Note:</label> <textarea name="txt" cols="25" rows="5" ></textarea><br />
             <label>&nbsp;</label><input type="submit" name="ok" value="Mua" /> 
             </fieldset>         
