@@ -8,7 +8,7 @@
                 <li><a href="index.php?module=xuatkho">Xuất Kho</a></li>  
             	<li><a href="index.php?module=nhapkho">Nhập Kho</a></li>
             	<li><a href="index.php?module=donhang">Đơn Hàng</a></li>
-                <li><a href="index.php?module=user">User</a></li>
+                <li><a href="#" onclick="list('user')">User</a></li>
 				<li><a href="../index.php">Trang Chủ</a></li>
                 <li><a href="../libraries/logout.php">Thoát</a></li>                                                                              
             </ul>

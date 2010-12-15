@@ -8,7 +8,7 @@ $congty=new CongTy;
 $data_loaihang=$loaihang->listloaihang();
 
 $temp=0;
-echo "<table width='800px'>
+echo "<table width='730px'>
 		<tr height='20px'>
 			<td width='30px' align='center'>$stt</td>
 			<td width='100px'>
@@ -36,8 +36,7 @@ echo "		</select>
 			<td width='100px' align='center'><input type='text' size='20' id='hh$stt' value='tên hàng'/></td>
 			<td width='100px' align='center'><input type='text' size='20' id='gia$stt' value='0' class='num'/></td>
 			<td width='100px' align='center'><input type='text' size='20' id='soluong'value='0' disabled='disabled' class='num'/></td>
-			<td width='100px' align='center'>Hình</td>
-			<td width='70px' align='center'>Mô Tả</td>
+			<td width='100px' align='center'>Chi Tiết</td>
 			
 			<td width='50px' align='center'>";?><a href='#' onclick="themhanghoavaocsdl(document.getElementById('congty<?php echo $stt;?>').value,document.getElementById('hh<?php echo $stt;?>').value,document.getElementById('gia<?php echo $stt;?>').value)">Thêm</a>
 			<?php

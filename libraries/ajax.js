@@ -30,6 +30,11 @@ function suahanghoa(id,congty,ten,gia){
 	http.send(null);
 }
 
+function suauser(u,l){	
+	http.open('get','modules/user/sua.php?user='+u+'&level='+l,true);
+	http.onreadystatechange=process_tuongtaccsdl;
+	http.send(null);
+}
 
 
 
@@ -65,6 +70,7 @@ function list(module){
 		case 'loaihang':	http.open('get','modules/loaihang/list.php',true);break;
 		case 'congty':		http.open('get','modules/congty/list.php',true); break;
 		case 'hanghoa':		http.open('get','modules/hanghoa/list.php',true); break;
+		case 'user':		http.open('get','modules/user/list.php',true); break;
 		default : document.getElementById('ketqua').innerHTML='Không có hành động nào';
 	}
 	http.onreadystatechange=process_list;
@@ -154,6 +160,7 @@ function process_tuongtaccsdl(){
 				case '7': document.getElementById('thongbao').innerHTML='Sửa Thành Công';list('hanghoa');break;
 				case '8   ': document.getElementById('thongbao').innerHTML='Xóa Thành Công';list('hanghoa');break;
 				case '9': document.getElementById('thongbao').innerHTML='Thêm Thành Công';list('hanghoa');break;
+				case '10': document.getElementById('thongbao').innerHTML='Sửa Thành Công';list('user');break;
 				default : document.getElementById('thongbao').innerHTML=kq;
 			}
 			
