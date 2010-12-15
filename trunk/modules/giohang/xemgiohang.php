@@ -7,25 +7,25 @@ if($_SESSION['tongsl'] > 0){
 echo "<form method='post' action='index.php?module=giohang&act=capnhat'>";
 echo "<table width='600' align='center' border=1 cellpadding='0' cellspacing='0'  bordercolorlight='#FFFF00' class='xemgiohang'>";
 echo "<tr>";
-echo "   <td colspan='6' align='center'><font color='#0033CC' size='+2'>Danh Sách Hàng Hóa</font></td>";
-echo "   </tr>";
-echo "   <tr>";
- echo "    <td width='45' align='center'><strong>STT</strong></td>";
-  echo "   <td width='150' align='center'><strong>Tên Hàng</strong></td>";
- echo "    <td width='75' align='center'><strong>Giá</strong></td>";
-  echo "   <td width='75' align='center'><strong>Số Lượng</strong></td>";
-  echo "   <td width='100' align='center'><strong>Thành Tiền</strong></td>";
-  echo "   <td width='50' align='center'><strong>Xóa</strong></td>";
- echo "  </tr>";
+echo "<td colspan='6' align='center'><font color='#0033CC' size='+2'>Danh Sách Hàng Hóa</font></td>";
+echo "</tr>";
+echo "<tr>";
+ echo "<td width='45' align='center'><strong>STT</strong></td>";
+  echo "<td width='150' align='center'><strong>Tên Hàng</strong></td>";
+ echo "<td width='75' align='center'><strong>Giá</strong></td>";
+  echo "<td width='75' align='center'><strong>Số Lượng</strong></td>";
+  echo "<td width='100' align='center'><strong>Thành Tiền</strong></td>";
+  echo "<td width='50' align='center'><strong>Xóa</strong></td>";
+ echo "</tr>";
 
     for($j = 1; $j <= $_SESSION['tongsl']; $j++){
     echo "<tr>";
-    echo " <td width='45'>$j</td>";
-    echo "<td width='175'>".$_SESSION['tenhang'.$j]."</td>";
-    echo "<td width='50'>".$_SESSION['gia'.$j]."</td>";
-    echo "<td width='75'><input type='text' size='5' onKeyUp='CheckNumber(this)' name='C$j' value='".$_SESSION['soluong'.$j]."'/></td>";
-    echo "<td width='100'>".$_SESSION['gia'.$j]*$_SESSION['soluong'.$j]."</td>";
-    echo "<td width='50'><a href='index.php?module=giohang&act=xoa&id=$j'>xóa</a></td>";
+    echo " <td width='45' align='center'>$j</td>";
+    echo "<td width='175' align='center'>".$_SESSION['tenhang'.$j]."</td>";
+    echo "<td width='50' align='center'>".$_SESSION['gia'.$j]."</td>";
+    echo "<td width='75' align='center'><input type='text' size='5' onKeyUp='CheckNumber(this)' name='C$j' value='".$_SESSION['soluong'.$j]."'/></td>";
+    echo "<td width='100' align='center'>".$_SESSION['gia'.$j]*$_SESSION['soluong'.$j]."</td>";
+    echo "<td width='50' align='center'><a href='index.php?module=giohang&act=xoa&id=$j'>xóa</a></td>";
     echo "</tr>";
 
     $tong=$tong+$_SESSION['gia'.$j]*$_SESSION['soluong'.$j] ;
