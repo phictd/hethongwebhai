@@ -4,6 +4,11 @@ session_start();
 require_once("libraries/donhang.php");
 require_once("libraries/chitietdonhang.php");
 require_once("modules/user/classes/tc_calendar.php");
+	$b=4;
+	$c=5;
+//	for($f=1;$f<=$_SESSION['tongsl'];$f++){
+		echo $_SESSION['username'];
+	//}
 if(isset($_POST['ok'])){
 	if(isset($_SESSION['username'])){
 		$id= time();
@@ -55,22 +60,40 @@ if(isset($_POST['ok'])){
 			$donhang->set_ThoiDiemDatHang($dat);
 			$giao="$namgiao-$thanggiao-$ngaygiao";
 			$donhang->set_ThoiDiemGiaoHang($giao);
+			//for($a=1; $a<=3; $a++){		
+			//$a=$a+1;
+			//$b=$b+1;
+			//$c=$c+1;
+			
+			
+			//$chitietdonhang->set_idDonHang($a);
+			//$chitietdonhang->set_idHang($b);
+			//$chitietdonhang->set_SoLuong($c);
+			//$chitietdonhang->ThemChiTietDonHang();
+			
+			//$chitietdonhang->set_idDonHang($c);
+			//$chitietdonhang->set_idHang($b);
+			//$chitietdonhang->set_SoLuong($a);
+				//$chitietdonhang->ThemChiTietDonHang();
 			if($donhang->ThemDonHang() == FALSE){
 				echo "<div align='center' style='margin:10px;'><font size='+1' color='#FF0033'>Không Tạo Được Phiếu Mua. Có Lỗi Xảy Ra !</font></div>";
 			}else{
-				echo "<div align='center' style='margin:10px;'><font size='+1' color='#999999'>Tạo Phiếu Thành Công. Xin Cảm Ơn Quý Khách !</font></div>";
 				
-				$chitietdonhang->set_idDonHang($id);
-				for($f = 1; $f <= $_SESSION['tongsl']; $f++){
-					
-					$chitietdonhang->set_idHang($_SESSION['mahang'.$f]);
-					$chitietdonhang->set_SoLuong($_SESSION['soluong'.$f]);
-					echo $chitietdonhang->ThemChiTietDonHang();
-				}
+				//for($f = 1; $f <= $_SESSION['tongsl']; $f++){
+					//$chitietdonhang->set_idDonHang($id);
+					//$chitietdonhang->set_idHang($_SESSION['mahang'.$f]);
+					//$chitietdonhang->set_SoLuong($_SESSION['soluong'.$f]);
+					//$chitietdonhang->ThemChiTietDonHang();
+					//echo $chitietdonhang->ThemChiTietDonHang();
+				//}
+				
+				echo "<div align='center' style='margin:10px;'><font size='+1' color='#999999'>Tạo Phiếu Thành Công. Xin Cảm Ơn Quý Khách !</font></div>";
 			}
 		}
- 	}else{
+
+	}else{
 		header("location:index.php?module=giohang&act=xem&co=1");
+		exit();
 	}
 }else{
 ?>
@@ -106,4 +129,4 @@ if(isset($_POST['ok'])){
               </fieldset>       
             </form>
             
- <?php }?>
+<?php }?>

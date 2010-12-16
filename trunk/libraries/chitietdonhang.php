@@ -41,8 +41,10 @@ class ChiTietDonHang extends connect_db{
 		if($this->get_SoLuong()!="")$sql=$sql."'".$this->get_SoLuong()."',";
 		$sql=substr($sql,0,-1);
 		$sql=$sql.")";		
+       		
         $this->query($sql);
-		return $sql;
+        
+            return TRUE;
     }
     //xoa
     public function XoaChitietDonHang(){

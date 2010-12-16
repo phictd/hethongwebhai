@@ -5,10 +5,11 @@
              <?php
 				require_once('libraries/oop.php');
 				require_once('libraries/loaihang.php');
+				require_once('libraries/hanghoa.php');
 				$a= new LoaiHang;
 				$data=$a->listloaihang();
 				foreach($data as $item){
-					echo "<li><a href='#'>$item[TenLoai] </a>";
+					echo "<li><a href='index.php?module=hanghoa&act=lhhloai&idloai=$item[idLoaiHang]'>$item[TenLoai] </a>";
 					echo "<ul>";
 					$a->set_idloai($item[idLoaiHang]);
 					$datact=$a->listcongty();
