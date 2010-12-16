@@ -13,7 +13,7 @@ public $soluong;
 public $ghichu;
 public $solanmua;
 public $anhien;
-
+public $idloai;
 public function __construct(){
 	$this->connect();
 }
@@ -41,7 +41,12 @@ public function get_idhang(){
 	return $this->idhang;
 }
 /* */
-
+public function set_idloai($idloai){
+	$this->idloai=$idloai;
+}
+public function get_idloai(){
+	return $this->idloai;
+}
 public function set_idcongty($idcongty){
 	$this->idcongty=$idcongty;
 }
@@ -154,8 +159,21 @@ public function listhanghoa(){
 	}
 }
 
+public function listhanghoatheoloai($X,$A){
+		$sql="select * from hanghoa ,congty,loaihang where hanghoa.idCongTy=congty.idCongTy and loaihang.idLoaiHang=congty.idLoaiHang and loaihang.idLoaiHang='".$this->get_idloai()."' limit $X,$A ";
+		$this->query($sql);
+		if($this->num_rows() == 0){
+			return 0;
+		}else{
+			while($row=$this->fetch()){
+				$data[]=$row;
+			}	
+			return $data;
+		}
+}
+
 public function listhanghoa6($X,$A){
-	$sql="select * from hanghoa,congty where hanghoa.idCongTy=congty.idCongTy order by idLoaiHang ASC limit $X,$A";
+	$sql="select * from hanghoa limit $X,$A";
 	$this->query($sql);
 	if($this->num_rows() == 0){
 		return 0;
@@ -169,6 +187,13 @@ public function listhanghoa6($X,$A){
 
 public function dem(){
 $sql="select * from hanghoa";
+	$this->query($sql);
+	return $this->num_rows();
+}
+
+
+public function dem1(){
+$sql="select * from hanghoa ,congty,loaihang where hanghoa.idCongTy=congty.idCongTy and loaihang.idLoaiHang=congty.idLoaiHang and loaihang.idLoaiHang='".$this->get_idloai()."' ";
 	$this->query($sql);
 	return $this->num_rows();
 }
@@ -193,18 +218,6 @@ public function listloaihang(){
         return $this->fetch();
        }
 
-public function listcongty(){
-	$sql="select * from congty where idLoaiHang='".$this->get_idloai()."'";	
-	$this->query($sql);
-	if($this->num_rows() == 0){
-		return 0;
-	}else{
-		while($row=$this->fetch()){
-			$data[]=$row;
-		}	
-		return $data;
-	}
-}
 
 public function delete_hanghoa(){
 	$sql="delete from hanghoa where idHang='".$this->get_idhang()."'";	

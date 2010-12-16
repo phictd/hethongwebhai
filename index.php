@@ -13,7 +13,6 @@ switch($_GET['module']){
     	    break;
     case "giohang":
         require("modules/giohang/controller.php");
-	
           break;
 		  case"test":
 		  require("modules/test/controller.php");
