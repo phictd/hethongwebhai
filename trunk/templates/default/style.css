@@ -87,7 +87,7 @@ margin-bottom:10px;
 #left h1{
 height:30px;
 line-height:30px;
-background: url(../../images/icons/Page%201_r222_c2.png) no-repeat;
+background:url(../../images/icons/sanpham.png) repeat-x;
 color:#FFFFFF;
 font-size:14px;
 text-align:center;
@@ -112,7 +112,7 @@ border-top:1px solid #CCCCCC;
 }
 
 #left ul a:hover{
-background:url(../../images/icons/Page%201124_r2_c2.png) repeat-x;
+background:url(../../images/icons/sanpcon.png) repeat-x;
 }
 
  /*top menu*/
@@ -229,8 +229,6 @@ border:1px  solid #6da6b1;
 }*/
 
 #shopping_cart{
-	text-decoration:none;
-	list-style-type:none;
     width:200px;
     height:84px;
     text-align:center;
