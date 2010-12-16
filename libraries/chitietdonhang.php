@@ -10,20 +10,20 @@ class ChiTietDonHang extends connect_db{
     public function  __destruct() {
         $this->disconnect();
     }        
-    public function set_idDonHang($iddh){
-        $this->idDonHang = $iddh;
+    public function set_idDonHang($i){
+        $this->idDonHang = $i;
     }
     public function get_idDonHang(){
         return $this->idDonHang;
     }
-    public function set_idHang($idh){
-        $this->idHang = $idh;
+    public function set_idHang($ic){
+        $this->idHang = $ic;
     }
     public function get_idHang(){
         return $this->idHang;
     }
-	public function set_SoLuong($sl){
-        $this->SoLuong = $sl;
+	public function set_SoLuong($l){
+        $this->SoLuong = $l;
     }
     public function get_SoLuong(){
         return $this->SoLuong;
@@ -41,12 +41,8 @@ class ChiTietDonHang extends connect_db{
 		if($this->get_SoLuong()!="")$sql=$sql."'".$this->get_SoLuong()."',";
 		$sql=substr($sql,0,-1);
 		$sql=$sql.")";		
-		
-		
         $this->query($sql);
-        
-            return TRUE;
-        
+		return $sql;
     }
     //xoa
     public function XoaChitietDonHang(){

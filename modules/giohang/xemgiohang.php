@@ -41,7 +41,7 @@ echo "<br/>";
 
 echo "<center>";
     echo "<input name='Button1' type='submit' value='Cập Nhật' style='margin:5px 20px 0px 5px'/>";
-   	echo "<a href='index.php?module=giohang&act=dathang'><input name='Button2' type='button' value='Đặt Hàng'/></a>";
+   	echo "<a href='index.php?module=giohang&act=dathang'><input name='dh' type='submit' value='Đặt Hàng'/></a>";
 
 echo "</center>";
 echo "</form>";

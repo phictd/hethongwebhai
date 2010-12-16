@@ -5,12 +5,10 @@ require_once("libraries/donhang.php");
 require_once("libraries/chitietdonhang.php");
 require_once("modules/user/classes/tc_calendar.php");
 if(isset($_POST['ok'])){
-if(isset($_SESSION['username'])){
-	
-	$id= time();
-	$donhang = new donhang();
-	$chitietdonhang= new ChiTietDonHang;
-	//$chitietdonhang = new chitietdonhang();
+	if(isset($_SESSION['username'])){
+		$id= time();
+		$donhang = new donhang;
+		$chitietdonhang= new ChiTietDonHang;
 
 		if($_POST['txttennn'] == NULL){
 			echo "Xin nhập họ tên<br/>";
@@ -43,9 +41,6 @@ if(isset($_SESSION['username'])){
 			$namgiao = $_POST['date1_year'];
 		}
 		if($tennn && $dt && $dc && $ngaygiao &&  $thanggiao && $namgiao  ){
-			//$chitietdonhang->set_idDonHang($id);
-			//$chitietdonhang->set_idHang();
-			//$chitietdonhang->set_SoLuong($_SESSION['tongsl']);
 			$donhang->set_idDonHang($id);
 			$donhang->set_Username($_SESSION['username']);
 			$donhang->set_TenNguoiNhan($tennn);
@@ -64,17 +59,21 @@ if(isset($_SESSION['username'])){
 				echo "<div align='center' style='margin:10px;'><font size='+1' color='#FF0033'>Không Tạo Được Phiếu Mua. Có Lỗi Xảy Ra !</font></div>";
 			}else{
 				echo "<div align='center' style='margin:10px;'><font size='+1' color='#999999'>Tạo Phiếu Thành Công. Xin Cảm Ơn Quý Khách !</font></div>";
+				
+				$chitietdonhang->set_idDonHang($id);
+				for($f = 1; $f <= $_SESSION['tongsl']; $f++){
 					
-				unset($_SESSION['tongsl']);
-				unset($_SESSION['thanhtien']);
+					$chitietdonhang->set_idHang($_SESSION['mahang'.$f]);
+					$chitietdonhang->set_SoLuong($_SESSION['soluong'.$f]);
+					echo $chitietdonhang->ThemChiTietDonHang();
+				}
 			}
 		}
- }
- else{
-	header("location:index.php?module=giohang&act=xem&co=1");
- }
+ 	}else{
+		header("location:index.php?module=giohang&act=xem&co=1");
+	}
 }else{
-	 ?>
+?>
 <form action="index.php?module=giohang&act=dathang" method="post">
     
             <fieldset>
@@ -107,4 +106,4 @@ if(isset($_SESSION['username'])){
               </fieldset>       
             </form>
             
-           <?php }?>
+ <?php }?>
