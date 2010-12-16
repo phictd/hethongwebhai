@@ -39,6 +39,8 @@ width:1000px;
 float:left;
 width:150px;
 background:#325456;
+margin-top:10px;
+
 }
 
 #info{
@@ -83,9 +85,9 @@ margin-bottom:10px;
 }
 
 #left h1{
-height:25px;
-line-height:25px;
-background:#999933;
+height:30px;
+line-height:30px;
+background: url(../../images/icons/Page%201_r222_c2.png) no-repeat;
 color:#FFFFFF;
 font-size:14px;
 text-align:center;
@@ -100,7 +102,7 @@ margin:0px;
 #left ul a{
 text-decoration:none;
 color:#666666;
-line-height:18px;
+line-height:25px;
 background:#EEEEEE url(../../images/icons/arrow.gif) no-repeat 11px 7px;
 display:block;
 width:125px;
@@ -110,7 +112,7 @@ border-top:1px solid #CCCCCC;
 }
 
 #left ul a:hover{
-background: #99CC33 11px 7px;
+background:url(../../images/icons/Page%201124_r2_c2.png) repeat-x;
 }
 
  /*top menu*/
@@ -129,16 +131,16 @@ text-decoration:none;
 width:165px;
 float:left;
 text-align:center;
-background:#9C0;
+background:url(../../images/icons/Page%201_r2_c12.png) no-repeat;
 color:#FFFFFF;
 font-weight:900;
 border-left:1px solid #FFFFFF;
-height:25px;
-line-height:25px;
+height:35px;
+line-height:35px;
 }
 
 #menu ul a:hover{
-background:#FF9999;
+background:url(../../images/icons/Page%201_r2_c2.png) no-repeat;
 }
 
 /*menu left*/
