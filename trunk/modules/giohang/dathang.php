@@ -2,11 +2,13 @@
 <?php
 session_start();
 require_once("libraries/donhang.php");
+require_once("libraries/chitietdonhang.php");
 require_once("modules/user/classes/tc_calendar.php");
-$id= time();
 if(isset($_SESSION['username'])){
 	if(isset($_POST['ok'])){
+	$id= time();
 	$donhang = new donhang();
+	$chitietdonhang= new ChiTietDonHang;
 	//$chitietdonhang = new chitietdonhang();
 
 		if($_POST['txttennn'] == NULL){
@@ -40,6 +42,9 @@ if(isset($_SESSION['username'])){
 			$namgiao = $_POST['date1_year'];
 		}
 		if($tennn && $dt && $dc && $ngaygiao &&  $thanggiao && $namgiao  ){
+			//$chitietdonhang->set_idDonHang($id);
+			//$chitietdonhang->set_idHang();
+			//$chitietdonhang->set_SoLuong($_SESSION['tongsl']);
 			$donhang->set_idDonHang($id);
 			$donhang->set_Username($_SESSION['username']);
 			$donhang->set_TenNguoiNhan($tennn);
