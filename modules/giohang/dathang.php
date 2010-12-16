@@ -4,8 +4,9 @@ session_start();
 require_once("libraries/donhang.php");
 require_once("libraries/chitietdonhang.php");
 require_once("modules/user/classes/tc_calendar.php");
+if(isset($_POST['ok'])){
 if(isset($_SESSION['username'])){
-	if(isset($_POST['ok'])){
+	
 	$id= time();
 	$donhang = new donhang();
 	$chitietdonhang= new ChiTietDonHang;
@@ -36,7 +37,7 @@ if(isset($_SESSION['username'])){
 		}else{
 			$thanggiao = $_POST['date1_month'];
 		}
-		if($_POST['date1_day'] == 0){
+		if($_POST['date1_year'] == 0){
 		   echo "Chưa chọn năm giao<br/>";
 		}else{
 			$namgiao = $_POST['date1_year'];
@@ -63,15 +64,16 @@ if(isset($_SESSION['username'])){
 				echo "<div align='center' style='margin:10px;'><font size='+1' color='#FF0033'>Không Tạo Được Phiếu Mua. Có Lỗi Xảy Ra !</font></div>";
 			}else{
 				echo "<div align='center' style='margin:10px;'><font size='+1' color='#999999'>Tạo Phiếu Thành Công. Xin Cảm Ơn Quý Khách !</font></div>";
+					
+				unset($_SESSION['tongsl']);
+				unset($_SESSION['thanhtien']);
 			}
 		}
-	}
-	unset($_SESSION['tongsl']);
-	unset($_SESSION['thanhtien']);
  }
  else{
 	header("location:index.php?module=giohang&act=xem&co=1");
  }
+}else{
 	 ?>
 <form action="index.php?module=giohang&act=dathang" method="post">
     
@@ -86,7 +88,7 @@ if(isset($_SESSION['username'])){
                     <?php
                   $myCalendar = new tc_calendar("date1", true);
                   $myCalendar->setIcon("images/iconCalendar.gif");
-                  $myCalendar->setDate($ngaysinh,$thangsinh,$namsinh);
+                  $myCalendar->setDate(date('d'),date('m'),date('Y'));
                   $myCalendar->setPath("user/calendar_form.php");
                   $myCalendar->setYearInterval(date("Y"),  date("Y")+1);
                   $myCalendar->dateAllow('1960-01-01', '2015-03-01');
@@ -104,3 +106,5 @@ if(isset($_SESSION['username'])){
             <label>&nbsp;</label><input type="reset" name="reset" value="Phiếu Mặc định" /> 
               </fieldset>       
             </form>
+            
+           <?php }?>
