@@ -14,23 +14,23 @@ if(isset($_GET["ma"])) {
             $_SESSION['thanhtien'] +=$_SESSION['gia'.$i];
 			$_SESSION["soluong".$i]=$_SESSION['soluong'.$i]+1;
 			break;
-			}
+		}
 	}
-if ($kt==0){
-if($datahang != 0){
-    $_SESSION['tongsl']++;
-    $i = $_SESSION['tongsl'];
-    session_register("mahang".$i);
-    $_SESSION["mahang".$i] = $datahang[idHang];
-    session_register("tenhang".$i);
-    $_SESSION['tenhang'.$i] = $datahang[TenHang];
-    session_register("gia".$i);
-    $_SESSION["gia".$i] = $datahang[Gia];
-    session_register("soluong".$i);
-    $_SESSION["soluong".$i] = $slhang;
-    $_SESSION['thanhtien'] = $_SESSION['thanhtien']+($_SESSION['gia'.$i]*$_SESSION['soluong'.$i]);
-}
-}
+	if ($kt==0){
+		if($datahang != 0){
+			$_SESSION['tongsl']++;
+			$i = $_SESSION['tongsl'];
+			session_register("mahang".$i);
+			$_SESSION["mahang".$i] = $datahang[idHang];
+			session_register("tenhang".$i);
+			$_SESSION['tenhang'.$i] = $datahang[TenHang];
+			session_register("gia".$i);
+			$_SESSION["gia".$i] = $datahang[Gia];
+			session_register("soluong".$i);
+			$_SESSION["soluong".$i] = $slhang;
+			$_SESSION['thanhtien'] = $_SESSION['thanhtien']+($_SESSION['gia'.$i]*$_SESSION['soluong'.$i]);
+		}
+	}
 }
 ob_clean();
 header("location:index.php");

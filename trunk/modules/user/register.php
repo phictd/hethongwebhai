@@ -73,6 +73,7 @@ if(isset($_POST['ok'])){
 				echo "<div align='center' style='margin:10px;'><font size='+1' color='#FF0033'>Đăng ký thất bại</font></div>";
 			}
 			else{
+				$dk->insert_user();
 				echo "<div align='center' style='margin:10px;'><font size='+1' color='#FF0033'>Đăng ký thành công !</font></div>";	
 			}
 		
