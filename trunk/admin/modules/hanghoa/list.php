@@ -87,7 +87,6 @@ require_once('../../../libraries/hanghoa.php');
     <div id='them'></div><br />
     <div id="thongbao"></div>
     <a href="#" onclick="themdong('hanghoa',<?php echo ++$stt;?>)" >Thêm </a>
-    </div>
-    
+    </div>    
 </div> 
 

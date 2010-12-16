@@ -70,9 +70,9 @@ public function update_phieunhap(){
 		if($this->get_ngaynhap()!="") $sql=$sql."NgayNhap='".$this->get_ngaynhap()."',";
 		if($this->get_tongtien()!="")$sql=$sql."TongTien='".$this->get_tongtien()."',";
 		if($this->get_ghichu()!="")$sql=$sql."GhiChu='".$this->get_ghichu()."',";
+		$sql=substr($sql,0,-1);
 		$sql=$sql." where idPhieuNhap='".$this->get_idphieunhap()."'";
-		$this->query($sql);
-		return $sql;	
+		$this->query($sql);			
 }
 
 }
