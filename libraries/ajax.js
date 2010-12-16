@@ -36,7 +36,7 @@ function suauser(u,l){
 	http.send(null);
 }
 function suaphieunhap(id,ghichu){	
-	http.open('get','modules/phieunhap/sua.php?user='+id+'&ghichu='+ghichu,true);
+	http.open('get','modules/nhapkho/sua.php?id='+id+'&ghichu='+ghichu,true);
 	http.onreadystatechange=process_tuongtaccsdl;
 	http.send(null);
 }
@@ -64,6 +64,12 @@ function xoauser(id){
 	http.onreadystatechange=process_tuongtaccsdl;
 	http.send(null);
 }
+function xoaphieunhap(id){	
+	http.open('get','modules/nhapkho/xoa.php?id='+id,true);
+	http.onreadystatechange=process_tuongtaccsdl;
+	http.send(null);
+}
+
 
 
 
@@ -168,6 +174,8 @@ function process_tuongtaccsdl(){
 				case '10': document.getElementById('thongbao').innerHTML='Sửa Thành Công';list('user');break;
 				case '11': document.getElementById('thongbao').innerHTML='Thêm Thành Công';list('user');break;
 				case '12   ': document.getElementById('thongbao').innerHTML='Xóa Thành Công';list('user');break;
+				case '13': document.getElementById('thongbao').innerHTML='Sửa Thành Công';list('nhapkho');break;
+				case '14   ': document.getElementById('thongbao').innerHTML='Xóa Thành Công';list('nhapkho');break;
 				default : document.getElementById('thongbao').innerHTML=kq;
 			}
 			

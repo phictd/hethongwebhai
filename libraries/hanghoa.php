@@ -139,7 +139,10 @@ public function check_hanghoa(){
 }
 
 public function listhanghoa(){
-	$sql="select * from hanghoa,congty where hanghoa.idCongTy=congty.idCongTy order by idLoaiHang ASC ";
+	if($this->get_idhang()!="")	
+		$sql="select * from hanghoa,congty,loaihang where hanghoa.idCongTy=congty.idCongTy and loaihang.idLoaiHang=congty.idLoaiHang and hanghoa.idHang='".$this->get_idhang()."' ";
+	else	
+		$sql="select * from hanghoa,congty where hanghoa.idCongTy=congty.idCongTy order by idLoaiHang ASC ";
 	$this->query($sql);
 	if($this->num_rows() == 0){
 		return 0;
@@ -150,6 +153,7 @@ public function listhanghoa(){
 		return $data;
 	}
 }
+
 public function listhanghoa6($X,$A){
 	$sql="select * from hanghoa,congty where hanghoa.idCongTy=congty.idCongTy order by idLoaiHang ASC limit $X,$A";
 	$this->query($sql);

@@ -126,6 +126,6 @@ class donhang extends connect_db{
 	$this->query($sql);
         echo $sql;
 	return $this->fetch();
-}
+	}
 }
 ?>
