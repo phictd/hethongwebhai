@@ -70,6 +70,8 @@ if(isset($_POST['ok'])){
 				
 				echo "<div align='center' style='margin:10px;'><font size='+1' color='#999999'>Tạo Phiếu Thành Công. Xin Cảm Ơn Quý Khách !</font></div>";
 			}
+		unset($_SESSION['tongsl']);
+		unset($_SESSION['thanhtien']);
 		}
 
 	}else{
