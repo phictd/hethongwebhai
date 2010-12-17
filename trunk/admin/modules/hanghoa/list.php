@@ -12,7 +12,7 @@
         	<td class=title width="50px">Xóa</td>                                                
         </tr>
 <?php
- //ini_set( "display_errors", 0);
+ ini_set( "display_errors", 0);
 require_once('../../../libraries/oop.php');
 require_once('../../../libraries/congty.php');
 require_once('../../../libraries/loaihang.php');

@@ -10,6 +10,7 @@ switch($_GET['module']){
 	case 'user':	echo "<script language='javascript'>list('user')</script>";	break;
 	case 'nhapkho':echo "<script language='javascript'>list('nhapkho')</script>";	break;
 	case 'xuatkho':echo "<script language='javascript'>list('xuatkho')</script>";	break;
+	case 'donhang':echo "<script language='javascript'>list('donhang')</script>";	break;
 	default: 		echo "<script language='javascript'>list('loaihang')</script>";break;
 }
 	

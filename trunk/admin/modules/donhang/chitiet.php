@@ -1,7 +1,7 @@
 <?php 
 require_once('../../../libraries/oop.php');
-require_once('../../../libraries/phieunhap.php');
-require_once('../../../libraries/chitietphieunhap.php');
+require_once('../../../libraries/donhang.php');
+require_once('../../../libraries/chitietdonhang.php');
 require_once('../../../libraries/hanghoa.php');
 require_once('../../../libraries/loaihang.php');
 require_once('../../../libraries/function.php');
@@ -84,41 +84,19 @@ if(isset($_POST['dong'])){
 	exit();
 }
 $id=$_GET['id'];
-if(isset($_POST['ok'])){
-	$idhang=$_POST['hanghoa'];
-	$soluong=$_POST['soluong'];
-	echo "<script>alert(".$idhang." ".$soluong.")</script>";
-	$chitiet=new ChiTietPhieuNhap;
-	$chitiet->set_idhang($idhang);
-	$chitiet->set_idphieunhap($id);
-	$chitiet->set_soluong($soluong);
-	$chitiet->insert_chitietphieunhap();
-	header("location:chitiet.php?id=$id");	
-}
 
-$a=new PhieuNhap;
-$a->set_idphieunhap($id);
-if(isset($_POST['xoa'])){	
-	$a->delete_phieunhap();
+$a=new DonHang;
+$a->set_idDonHang($id);
+if(isset($_POST['dong'])){		
+	dongcuaso();
+	exit();
+}
+if(isset($_POST['xoa'])){		
+	$a->XoaDonHang();
 	dongcuaso();
 	exit();
 }
 $data=$a->getdata();
-
-$ngaynhap=$data['NgayNhap'];
-
-$nam=substr($ngaynhap,0,4);
-$thang=substr($ngaynhap,5,2);
-$ngay=substr($ngaynhap,8,2);
-$ngaynhap=$ngay.'-'.$thang.'-'.$nam;
-
-$tongtien=$data['TongTien'];
-$ghichu=$data['GhiChu'];
-
-$chitiet=new ChiTietPhieuNhap;
-$chitiet->set_idphieunhap($id);
-$data_chitiet=$chitiet->listchitietphieunhap();
-
 
 ?>
 
@@ -126,7 +104,7 @@ $data_chitiet=$chitiet->listchitietphieunhap();
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Chi Tiết Phiếu Nhập</title>
+<title>Chi Tiết Hóa Đơn</title>
 <style type="text/css">
 @charset "utf-8";
 *{
@@ -203,24 +181,32 @@ a{text-decoration:none
 
 <table width="600px">
 	<tr>
-    	<td class="title"> Mã Phiếu Nhập</td>
-        <td class="info"><h3><?php if($data==0) echo "Phiếu này đã bị xóa";else echo $id;?></h3></td>
+    	<td class="title"> Mã Hóa Đơn</td>
+        <td class="info"><h3><?php echo $id;?></h3></td>
     </tr>
     <tr>
-    	<td class="title">Ngày Nhập</td>
-        <td class="info" ><input type="text" name="txthoten" size="30" value="<?php echo $ngaynhap;?>" disabled="disabled" class="center" /></td>        
+    	<td class="title">Ngày Đặt</td>
+        <td class="info" ><input type="text" name="txthoten" size="30" value="<?php echo $data[0]['ThoiDiemDatHang'];?>" disabled="disabled" class="center" /></td>        
+    </tr>
+     <tr>
+    	<td class="title">Ngày Giao</td>
+        <td class="info" ><input type="text" name="txthoten" size="30" value="<?php echo $data[0]['ThoiDiemGiaoHang'];?>" disabled="disabled" class="center" /></td>        
     </tr>
     <tr>
-    	<td class="title">Tổng Tiền</td>
-        <td class="info"><input type="text" name="txthoten" size="30" value="<?php echo $tongtien;?>" disabled="disabled" class="center"/></td>
+    	<td class="title">Điện Thoại</td>
+        <td class="info"><input type="text" name="txthoten" size="30" value="<?php echo $data[0]['DienThoai'];?>" disabled="disabled" class="center"/></td>
+    </tr>
+     <tr>
+    	<td class="title">Địa điểm</td>
+        <td class="info"><input type="text" name="txthoten" size="30" value="<?php echo $data[0]['DiaDiemGiaoHang'];?>" disabled="disabled" class="center"/></td>
     </tr>
     <tr>
     	<td class="title">Ghi Chú</td>
-        <td class="info"><input type="text" name="txtdiachi" size="30" value="<?php echo $ghichu;?>" disabled="disabled" class="center"/></td>
+        <td class="info"><input type="text" name="txtdiachi" size="30" value="<?php echo $data[0]['GhiChu'];?>" disabled="disabled" class="center"/></td>
     </tr>    
 </table>
 <fieldset>
-            	<legend>Chi Tiết Phiếu Nhập</legend>
+            	<legend>Chi Tiết Đơn Hàng</legend>
         				<table width="600px">
                         <tr>
                             <td class="title1" width="50px"> STT</td>
@@ -230,6 +216,9 @@ a{text-decoration:none
                             <td class="title1"width="100px"> Số Lượng</td>                            
                         </tr>
                         <?php
+						$chitiet=new ChiTietDonHang;
+						$chitiet->set_idDonHang($id);
+						$data_chitiet=$chitiet->listChiTietDonhang();						
 						if($data_chitiet==0)
 							echo "<tr>
                             		<td class='info1' colspan='5'> Không có chi tiết nào trong phiếu này</td>
@@ -252,11 +241,11 @@ a{text-decoration:none
 							}							
 						}?>
 						<tr>
-                            		<td class='info1' colspan='5'><a href="#" onclick="themdongchitiet('<?php echo ++$stt;?>')" ><input type="button" id="themct" value="Thêm Sản Phẩm" /> </a><input type='submit' name='xoa' value='Xóa Phiếu Nhập'/><input type='submit' name='dong' value='Đóng'/></td>
+                            		<td class='info1' colspan='5'><a href="#" onClick="themdongchitiet('<?php echo ++$stt;?>')" ><input type="button" id="themct" value="Thêm Sản Phẩm" /> </a><input type='submit' name='xoa' value='Xóa Đơn Hàng'/><input type='submit' name='dong' value='Đóng'/></td>
 								</tr>
                     </table>
-                    <div id="them"></div>
                     
+                    <div id="them"></div>
                 
             </fieldset>  
 </form>

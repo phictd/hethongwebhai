@@ -1,4 +1,5 @@
 <?php
+ini_set( "display_errors", 0);
 require_once('../../../libraries/oop.php');
 require_once('../../../libraries/phieunhap.php');
 $stt=$_GET['stt'];
