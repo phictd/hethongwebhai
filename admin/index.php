@@ -1,6 +1,6 @@
 <?php
 ob_start();
-if(isset($_SESSION['username'])&&$_SESSION['level']==2){
+
 	require("../libraries/oop.php");
 	require("../languages/lang_vn.php");
 	require_once("templates/default/top.php");
@@ -21,8 +21,5 @@ if(isset($_SESSION['username'])&&$_SESSION['level']==2){
 	<?php
 	require_once("templates/default/bottom.php");
 	ob_end_flush();
-}else{
-	echo "<script> alert('Bạn cần đăng nhập với nick admin');";
-	echo "location.href='../index.php'</script>";	
-}
+
 ?>
