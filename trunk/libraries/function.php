@@ -41,7 +41,8 @@ function locdau($a){
 	"U","U","U","U","U","U","U","U","U","U","U",
 	"Y","Y","Y","Y","Y",
 	"D");
-return str_replace($marTViet,$marKoDau,$a);
+$a=str_replace($marTViet,$marKoDau,$a);
+return str_replace(" ","",$a);
 }
 
 function xulygia($gia){
