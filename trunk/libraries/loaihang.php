@@ -67,6 +67,7 @@ public function listloaihang(){
 
 public function listcongty(){
 	$sql="select * from congty where idLoaiHang='".$this->get_idloai()."'";	
+
 	$this->query($sql);
 	if($this->num_rows() == 0){
 		return 0;

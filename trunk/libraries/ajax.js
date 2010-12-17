@@ -72,9 +72,6 @@ function xoaphieunhap(id){
 
 
 
-
-
-
 function xemhinh(idHang){
 	http.open('get','modules/hanghoa/xemhinh.php?id='+idHang,true);
 	http.onreadystatechange=process_list;
@@ -121,6 +118,12 @@ function themhanghoavaocsdl(idcongty,tenhang,gia){
 	http.send(null);		
 }
 
+
+function themphieunhapvaocsdl(id,ghichu){	
+	http.open('get','modules/nhapkho/themphieunhapvaocsdl.php?idphieu='+id+'&ghichu='+ghichu,true);
+	http.onreadystatechange=process_tuongtaccsdl;
+	http.send(null);		
+}
 
 
 congtyhh=0;
@@ -176,6 +179,7 @@ function process_tuongtaccsdl(){
 				case '12   ': document.getElementById('thongbao').innerHTML='Xóa Thành Công';list('user');break;
 				case '13': document.getElementById('thongbao').innerHTML='Sửa Thành Công';list('nhapkho');break;
 				case '14   ': document.getElementById('thongbao').innerHTML='Xóa Thành Công';list('nhapkho');break;
+				case '15': document.getElementById('thongbao').innerHTML='Thêm Thành Công';list('nhapkho');break;
 				default : document.getElementById('thongbao').innerHTML=kq;
 			}
 			
