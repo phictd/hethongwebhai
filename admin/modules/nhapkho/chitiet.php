@@ -1,18 +1,100 @@
-
-<script language="javascript" src="calendar.js"></script>
 <?php 
-//ini_set( "display_errors", 0);
-
 require_once('../../../libraries/oop.php');
 require_once('../../../libraries/phieunhap.php');
 require_once('../../../libraries/chitietphieunhap.php');
 require_once('../../../libraries/hanghoa.php');
+require_once('../../../libraries/loaihang.php');
 require_once('../../../libraries/function.php');
+?>
+<script language="javascript" type="text/javascript">
+function obj(){
+	td=navigator.appName;
+	if(td == "Microsoft Internet Explorer"){
+		dd= new ActiveXObject("Microsoft.XMLHTTP");	
+	}else{
+		dd= new XMLHttpRequest();	
+	}
+	return dd;
+}
+
+http=obj();
+
+function themdongchitiet(stt){		
+	http.open('get','themchitiet.php?stt='+stt,true);
+	http.onreadystatechange=process_them;
+	http.send(null);
+}
+
+function process_them(){
+	if(http.readyState == 4 && http.status == 200){
+		kq=http.responseText;
+		document.getElementById('them').innerHTML=kq;
+	}
+}
+
+function thaydoiloaihang(idloai){
+	http.open('get','showcongty.php?idloai='+idloai,true);
+	http.onreadystatechange=process_thaydoiloaihang;
+	http.send(null);	
+}
+function layidcongty(idloai){
+	http.open('get','layid.php?idloai='+idloai,true);
+	http.onreadystatechange=process_layidcongty;
+	http.send(null);	
+}
+
+function process_layidcongty(){
+	if(http.readyState == 4 && http.status == 200){
+		kq=http.responseText;
+		alert(kq);
+		thaydoicongty(kq);
+	}
+}
+
+function process_thaydoiloaihang(){
+	if(http.readyState == 4 && http.status == 200){
+		kq=http.responseText;layidcongty(idloai);
+		document.getElementById('congtyhh').innerHTML=kq;
+		
+	
+	}
+}
+
+function thaydoicongty(idcongty){
+	http.open('get','showhanghoa.php?idcongty='+idcongty,true);
+	http.onreadystatechange=process_thaydoicongty;
+	http.send(null);	
+}
+function process_thaydoicongty(){
+	if(http.readyState == 4 && http.status == 200){
+		kq=http.responseText;
+		document.getElementById('hanghoahh').innerHTML=kq;
+	}
+}
+
+
+
+</script>
+<?php 
+ini_set( "display_errors", 0);
+
+
 if(isset($_POST['dong'])){	
 	dongcuaso();
 	exit();
 }
 $id=$_GET['id'];
+if(isset($_POST['ok'])){
+	$idhang=$_POST['hanghoa'];
+	$soluong=$_POST['soluong'];
+	echo "<script>alert(".$idhang." ".$soluong.")</script>";
+	$chitiet=new ChiTietPhieuNhap;
+	$chitiet->set_idhang($idhang);
+	$chitiet->set_idphieunhap($id);
+	$chitiet->set_soluong($soluong);
+	$chitiet->insert_chitietphieunhap();
+	header("location:chitiet.php?id=$id");	
+}
 
 $a=new PhieuNhap;
 $a->set_idphieunhap($id);
@@ -22,6 +104,7 @@ if(isset($_POST['xoa'])){
 	exit();
 }
 $data=$a->getdata();
+
 $ngaynhap=$data['NgayNhap'];
 
 $nam=substr($ngaynhap,0,4);
@@ -43,7 +126,7 @@ $data_chitiet=$chitiet->listchitietphieunhap();
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Thông Tin Người Dùng</title>
+<title>Chi Tiết Phiếu Nhập</title>
 <style type="text/css">
 @charset "utf-8";
 *{
@@ -110,6 +193,8 @@ margin-top:3px;
 tr{
 	height:20px;
 }
+a{text-decoration:none
+}
 </style>
 </head>
 
@@ -119,7 +204,7 @@ tr{
 <table width="600px">
 	<tr>
     	<td class="title"> Mã Phiếu Nhập</td>
-        <td class="info"><h3><?php echo $id;?></h3></td>
+        <td class="info"><h3><?php if($data==0) echo "Phiếu này đã bị xóa";else echo $id;?></h3></td>
     </tr>
     <tr>
     	<td class="title">Ngày Nhập</td>
@@ -138,16 +223,16 @@ tr{
             	<legend>Chi Tiết Phiếu Nhập</legend>
         				<table width="600px">
                         <tr>
-                            <td class="title1"> STT</td>
-                            <td class="title1"> Loại Sản Phẩm</td>
-                            <td class="title1"> Công Ty Sản Phẩm</td>
-                            <td class="title1"> Tên Sản Phẩm</td>
-                            <td class="title1"> Số Lượng</td>                            
+                            <td class="title1" width="50px"> STT</td>
+                            <td class="title1" width="150px"> Loại Sản Phẩm</td>
+                            <td class="title1"width="150px"> Công Ty Sản Phẩm</td>
+                            <td class="title1"width="150px"> Tên Sản Phẩm</td>
+                            <td class="title1"width="100px"> Số Lượng</td>                            
                         </tr>
                         <?php
 						if($data_chitiet==0)
 							echo "<tr>
-                            		<td class='info1' colspan='4'> Không có chi tiết nào trong phiếu này</td>
+                            		<td class='info1' colspan='5'> Không có chi tiết nào trong phiếu này</td>
 								</tr>";
 						else{
 							$stt=0;
@@ -155,23 +240,23 @@ tr{
 							foreach($data_chitiet as $item_chitiet){
 								$stt++;
 								echo"<tr>
-										<td class='info1'>$stt</td>";								
+										<td class='info1' width='50px'>$stt</td>";								
 								$hanghoa->set_idhang($item_chitiet['idHang']);
 								$data_hanghoa=$hanghoa->listhanghoa();		
-								echo"<td class='info1'><input type='text' id='loai$stt' size='30' value='".$data_hanghoa[0][TenLoai]."' disabled='disabled' class='center'/></td>
-										<td class='info1'><input type='text' id='congty$stt' size='30' value='".$data_hanghoa[0][TenCongTy]."' disabled='disabled' class='center'/></td>
-										<td class='info1'><input type='text' id='tensanpham$stt' size='30' value='".$data_hanghoa[0][TenHang]."' disabled='disabled' class='center'/></td>
-										<td class='info1'><input type='text' name='soluong$stt' size='30' value='$item_chitiet[SoLuong]' disabled='disabled' class='right'/></td>
+								echo"<td class='info1' width='150px'><input type='text' id='loai$stt' size='30' value='".$data_hanghoa[0][TenLoai]."' disabled='disabled' class='center'/></td>
+										<td class='info1' width='150px'><input type='text' id='congty$stt' size='30' value='".$data_hanghoa[0][TenCongTy]."' disabled='disabled' class='center'/></td>
+										<td class='info1' width='150px'><input type='text' id='tensanpham$stt' size='30' value='".$data_hanghoa[0][TenHang]."' disabled='disabled' class='center'/></td>
+										<td class='info1' width='100px'><input type='text' name='soluong$stt' size='30' value='$item_chitiet[SoLuong]' disabled='disabled' class='right'/></td>
 									 ";
-								echo "</tr>";
-								
-							}
-							
-						}
-						echo "<tr>
-                            		<td class='info1' colspan='5'><input type='submit' name='xoa' value='Xóa Phiếu Nhập'/><input type='submit' name='dong' value='Đóng'/></td>
-								</tr>";?>  
+								echo "</tr>";								
+							}							
+						}?>
+						<tr>
+                            		<td class='info1' colspan='5'><a href="#" onclick="themdongchitiet('<?php echo ++$stt;?>')" ><input type="button" id="themct" value="Thêm Sản Phẩm" /> </a><input type='submit' name='xoa' value='Xóa Phiếu Nhập'/><input type='submit' name='dong' value='Đóng'/></td>
+								</tr>
                     </table>
+                    <div id="them"></div>
+                    
                 
             </fieldset>  
 </form>

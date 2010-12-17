@@ -36,7 +36,7 @@ public function get_ghichu(){
 }
 
 public function insert_phieunhap(){	
-	$sql="insert into phieunhap(NgayNhap,TongTien,GhiChu) values('".$this->get_ngaynhap()."','".$this->get_tongtien()."','".$this->get_ghichu()."')";
+	$sql="insert into phieunhap(idPhieuNhap,NgayNhap,TongTien,GhiChu) values('".$this->get_idphieunhap()."','".$this->get_ngaynhap()."','".$this->get_tongtien()."','".$this->get_ghichu()."')";
 	$this->query($sql);	
 }
 

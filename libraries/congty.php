@@ -77,7 +77,19 @@ public function listcongtytheoloai($idloai){
 		return $data;
 	}
 }
+public function listhanghoa(){
+	$sql="select * from hanghoa where idCongTy='".$this->get_idcongty()."' order by idCongTy ASC";
 
+	$this->query($sql);
+	if($this->num_rows() == 0){
+		return 0;
+	}else{
+		while($row=$this->fetch()){
+			$data[]=$row;
+		}	
+		return $data;
+	}
+}
 
 public function delete_congty(){
 	$sql="delete from congty where idCongTy='".$this->get_idcongty()."'";	

@@ -43,7 +43,7 @@ require_once('../../../libraries/phieunhap.php');
     </table>
     <div id='them'></div><br />
     <div id="thongbao"></div>
-    <a href="#" onclick="themdong('congty',<?php echo ++$stt;?>)" >Thêm </a>
+    <a href="#" onclick="themdong('nhapkho',<?php echo ++$stt;?>)" >Thêm </a>
     </div>
     
 </div> 
