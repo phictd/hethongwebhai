@@ -15,8 +15,16 @@ background-image:url(../../images/icons/bg.jpg);
 #top{
 	height:150px;
 	width:1000px;
+	position:relative;
+	float:left;
 }
-
+#top #tim{
+	color:#FFF;
+	position:absolute;
+right:0px;
+top:100px;
+float:right;
+}
 
 #bottom{
 font-size:11px;

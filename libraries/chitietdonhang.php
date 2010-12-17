@@ -28,7 +28,7 @@ class ChiTietDonHang extends connect_db{
     public function get_SoLuong(){
         return $this->SoLuong;
     }
-    public function ThemChiTietDonHang(){
+ /*   public function ThemChiTietDonHang(){
         $sql = "insert into chitietdonhang(";
 		if($this->get_idDonHang()!="")$sql=$sql."idDonHang,";
 		if($this->get_idHang()!="")$sql=$sql."idHang,";
@@ -45,7 +45,18 @@ class ChiTietDonHang extends connect_db{
         $this->query($sql);
         
             return TRUE;
+    }*/
+public function ThemChiTietDonHang(){
+	 $sql = "insert into chitietdonhang(idDonHang,idHang,SoLuong) values('".$this->get_idDonHang()."','".$this->get_idHang()."','".
+        $this->get_SoLuong()."')";
+        $this->query($sql);
+        if(mysql_errno () !=""){
+            return FALSE;
+        }else{
+            return TRUE;
+        }
     }
+	
     //xoa
     public function XoaChitietDonHang(){
         echo "ham xoa don hang";

@@ -14,6 +14,7 @@ public $ghichu;
 public $solanmua;
 public $anhien;
 public $idloai;
+public $tim;
 public function __construct(){
 	$this->connect();
 }
@@ -107,6 +108,13 @@ public function set_anhien($anhien){
 }
 public function get_anhien(){
 	return $this->anhien;
+}
+
+public function set_tim($i){
+	$this->tim=$i;
+}
+public function get_tim(){
+	return $this->tim;
 }
 /* */
 public function insert_hanghoa(){
@@ -239,6 +247,22 @@ public function update_hanghoa(){
 		return FALSE;
 	}
 }
+
+
+public function tim(){
+	$sql="select * from hanghoa where hanghoa.TenHang or hang.Gia LIKE '%".$this->get_tim()."%' ";
+	$this->query($sql);
+	if($this->num_rows() == 0){
+		return 0;
+	}else{
+		while($row=$this->fetch()){
+			$data[]=$row;
+		}	
+		return $data;
+	}
+}
+
+
 public function update_chitiet(){
 	if($this->get_idhang()!=""){
 		if($this->get_urlhinh()!="" && $this->get_mota()!=""){	
@@ -262,4 +286,6 @@ public function update_chitiet(){
 }
 
 }
+
+
 ?>
