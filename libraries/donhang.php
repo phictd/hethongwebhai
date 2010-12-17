@@ -1,5 +1,5 @@
 <?php 
-class donhang extends connect_db{
+class DonHang extends connect_db{
     private $idDonHang;
     private $Username;
     private $ThoiDiemDatHang;
@@ -101,11 +101,9 @@ class donhang extends connect_db{
     }
     //xoa
     public function XoaDonHang(){
-        echo "ham xoa don hang";
-        $sql = "delete from chitietdonhang where madh ='".$this->getMadh()."'";
+        $sql = "delete from donhang where idDonHang ='".$this->get_idDonHang()."'";
         $this->query($sql);
-        $sql2 = "delete from donhang where madh ='".$this->getMadh()."'";
-        $this->query($sql2);
+       
     }
     //list
     public function listDonhang(){
@@ -121,11 +119,25 @@ class donhang extends connect_db{
         }
        }
        //get 1 don hang
-       public function XemChiTiet(){
-	$sql="select * from donhang,chitietdonhang where donhang.madh = chitietdonhang.madh and donhang.madh='".$this->getMadh()."'";
+    public function getdata(){
+	$sql="select * from donhang where  idDonHang='".$this->get_idDonHang()."'";
+	
 	$this->query($sql);
-        echo $sql;
-	return $this->fetch();
+    if($this->num_rows() == 0){
+            return 0;
+        }else{
+            while($dong = $this->fetch()){
+                $data[] = $dong;
+            }
+            return $data;
+        }
 	}
+	
+	public function update_donhang(){
+		$sql="update donhang set GhiChu='".$this->get_GhiChu()."'";
+		$sql=$sql." where idDonHang='".$this->get_idDonHang()."'";
+		
+		 $this->query($sql);			
+}
 }
 ?>

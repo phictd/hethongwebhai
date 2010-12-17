@@ -1,10 +1,10 @@
 <?php
 require_once('../../../libraries/oop.php');
-require_once('../../../libraries/phieunhap.php');
-$a= new PhieuNhap;
+require_once('../../../libraries/donhang.php');
+$a= new DonHang;
 $id=$_GET['id'];
-$a->set_idphieunhap($id);
-$a->delete_phieunhap();
-echo '14';
+$a->set_idDonHang($id);
+$a->XoaDonHang();
+echo '17';
 ?>
    

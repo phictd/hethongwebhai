@@ -49,14 +49,14 @@ class ChiTietDonHang extends connect_db{
     //xoa
     public function XoaChitietDonHang(){
         echo "ham xoa don hang";
-        $sql = "delete from chitietdonhang where madh ='".$this->getMadh()."'";
+        $sql = "delete from chitietdonhang where idDonHang ='".$this->getidDonHang()."'";
         $this->query($sql);
-        $sql2 = "delete from donhang where madh ='".$this->getMadh()."'";
+        $sql2 = "delete from donhang where idDonHang ='".$this->getidDonHang()."'";
         $this->query($sql2);
     }
     //list
     public function listChiTietDonhang(){
-        $sql = "select * from donhang";
+        $sql = "select * from chitietdonhang where idDonHang='".$this->get_idDonHang()."'";
         $this->query($sql);
         if($this->num_rows() == 0){
             return 0;
@@ -68,11 +68,26 @@ class ChiTietDonHang extends connect_db{
         }
        }
        //get 1 don hang
-       public function XemChiTietDonHang(){
-	$sql="select * from donhang,chitietdonhang where donhang.madh = chitietdonhang.madh and donhang.madh='".$this->getMadh()."'";
+    public function XemChiTietDonHang(){
+	$sql="select * from donhang,chitietdonhang where donhang.idDonHang = chitietdonhang.idDonHang and donhang.idDonHang='".$this->getidDonHang()."'";
 	$this->query($sql);
         echo $sql;
 	return $this->fetch();
 }
+
+public function getdata(){
+        $sql = "select * from chitietdonhang where idDonHang='".$this->get_idDonHang()."'";
+        $this->query($sql);
+        if($this->num_rows() == 0){
+            return 0;
+        }else{
+            while($dong = $this->fetch()){
+                $data[] = $dong;
+            }
+            return $data;
+        }
+       }
+
+
 }
 ?>

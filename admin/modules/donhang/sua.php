@@ -1,15 +1,15 @@
 <?php
 require_once('../../../libraries/oop.php');
-require_once('../../../libraries/phieunhap.php');
-$a= new PhieuNhap;
+require_once('../../../libraries/donhang.php');
+$a= new DonHang;
 $id=$_GET['id'];
 $ghichu=$_GET['ghichu'];
 
 
-$a->set_idphieunhap($id);
-$a->set_ghichu($ghichu);
-$a->update_phieunhap();
-echo "13";
+$a->set_idDonHang($id);
+$a->set_GhiChu($ghichu);
+$a->update_donhang();
+echo "16";
 
 	
 ?>

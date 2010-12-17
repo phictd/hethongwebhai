@@ -41,6 +41,11 @@ function suaphieunhap(id,ghichu){
 	http.send(null);
 }
 
+function suadonhang(id,ghichu){
+	http.open('get','modules/donhang/sua.php?id='+id+'&ghichu='+ghichu,true);
+	http.onreadystatechange=process_tuongtaccsdl;
+	http.send(null);
+}
 
 
 function xoaloaihang(id){
@@ -69,6 +74,12 @@ function xoaphieunhap(id){
 	http.onreadystatechange=process_tuongtaccsdl;
 	http.send(null);
 }
+function xoadonhang(id){
+	http.open('get','modules/donhang/xoa.php?id='+id,true);
+	http.onreadystatechange=process_tuongtaccsdl;
+	http.send(null);
+}
+
 
 
 
@@ -180,6 +191,8 @@ function process_tuongtaccsdl(){
 				case '13': document.getElementById('thongbao').innerHTML='Sửa Thành Công';list('nhapkho');break;
 				case '14   ': document.getElementById('thongbao').innerHTML='Xóa Thành Công';list('nhapkho');break;
 				case '15': document.getElementById('thongbao').innerHTML='Thêm Thành Công';list('nhapkho');break;
+				case '16': document.getElementById('thongbao').innerHTML='Sửa Thành Công';list('donhang');break;
+				case '17   ': document.getElementById('thongbao').innerHTML='Xóa Thành Công';list('donhang');break;
 				default : document.getElementById('thongbao').innerHTML=kq;
 			}
 			
