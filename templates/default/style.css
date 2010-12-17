@@ -293,6 +293,8 @@ font-weight:bold;
 .product_img{
 /*width:200px;*/
 padding:5px 0px 5px 0px;
+clear:left;
+float:left;
 }
 
 
