@@ -26,7 +26,7 @@
            </div>
            <div class="img1">
                Mr.Thời (Kinh doanh)
-              <a href="#"><img src="images/icons/online(1).gif"/></a>
+              <a href="ymsgr:SendIM?pilot_viet"><img src="images/icons/online(1).gif"/></a>
            </div>
            <div class="img1">
                Mr.Đạt (Kinh doanh)

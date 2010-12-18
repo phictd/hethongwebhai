@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 -- 
 -- Host: localhost
--- Generation Time: Jan 23, 2008 at 01:24 PM
+-- Generation Time: Dec 17, 2010 at 01:30 PM
 -- Server version: 5.0.27
 -- PHP Version: 5.2.1
 -- 
@@ -161,7 +161,7 @@ CREATE TABLE `hanghoa` (
 INSERT INTO `hanghoa` (`idHang`, `idCongTy`, `TenHang`, `MoTa`, `NgayCapNhat`, `Gia`, `UrlHinh`, `SoLanXem`, `SoLuong`, `GhiChu`, `SoLanMua`, `AnHien`) VALUES 
 (1, 3, 'aaaaaaa', '123', '2010-10-03', 123000, 'images/laptop/727_mainimage.jpg', 0, 0, 'none', 0, 'H'),
 (2, 5, '222222222', '222222222', '2010-10-03', 2222222, 'images/laptop/laptop1.jpg', 0, 0, 'none', 0, 'H'),
-(3, 1, '11111333333333', '13333333333333333', '2010-10-03', 13333333, 'images/laptop/123456.jpg', 0, 0, 'none', 0, 'H'),
+(3, 1, '11111', '13333333333333333', '2010-10-03', 13333333, 'images/laptop/123456.jpg', 0, 0, 'none', 0, 'H'),
 (4, 5, '777777777', '7777777777', '2010-10-03', 7777777, 'images/laptop/laptop1.jpg', 0, 0, 'none', 0, 'H'),
 (5, 3, 'latop1', 'tot', '2010-12-07', 1000, 'images/laptop/727_mainimage.jpg', 0, 0, 'f', 0, 'H'),
 (6, 3, 'laptop2', 'erg', '2010-12-06', 2000, 'images/laptop/727_mainimage.jpg', 0, 0, 'g', 0, 'H'),
@@ -173,28 +173,28 @@ INSERT INTO `hanghoa` (`idHang`, `idCongTy`, `TenHang`, `MoTa`, `NgayCapNhat`, `
 (12, 3, '2882', 'htr', '2010-12-11', 200000, 'images/laptop/781.jpg', 0, 0, '', 0, 'H'),
 (13, 3, 'yuhkuy', 'yjty', '2010-12-11', 4247, 'images/laptop/786.jpg', 0, 0, '', 0, 'H'),
 (14, 3, '57575757', 'gr', '2010-12-11', 2727, 'images/laptop/861_mainimage.jpg', 0, 0, '', 0, 'H'),
-(15, 5, 'Rado-M8', '<p>\r\n	<font color="blue"><b>M??º«u 8 :</b></font> Rado d&acirc;y ??‘&aacute; , ni??»m t??»± h&agrave;o c??»§a gi??»›i ch??¡i ??‘??»“ng h??»“ 1 th??»i . Ki??»ƒu d&aacute;ng ??‘??º¹p , sang tr??»ng ??‘&atilde; kh??º³ng ??‘??»‹nh v??»‹ th??º¿ c??»§a n&oacute; , c&oacute; l??º½ k&ocirc; c??º§n n&oacute;i nhi??»u v??» em n&agrave;y . M??º·t sarphie , d&acirc;y sarphie ch??»‘ng tr??º§y to&agrave;n b??»™ , c&oacute; 2 m??º«u nam n??»¯ . Gi&aacute; h??»£p l&iacute; : <font color="red"><b>500 ng&agrave;n / 1 c&aacute;i</b></font></p>\r\n', '2010-12-16', 500000, 'images/Dong Ho/8_med.JPG', 0, 0, '', 0, 'H'),
-(16, 5, 'Rado - rtu', '<p>\r\n	<font color="blue"><b>M??º«u 180 :</b></font> RADO ??‘&aacute; to&agrave;n b??»™ . H&agrave;ng si&ecirc;u cao c??º¥p . C??»±c k&igrave; ??‘??º¹p . H&igrave;nh ??º£nh n&oacute;i l&ecirc;n t??º¥t c??º£ , nh&igrave;n th??»±c t??º¿ c&ograve;n ??‘??º¹p h??¡n h&igrave;nh , ??‘eo c??»±c k&igrave; sang . Gi&aacute; <font color="red"><b>hi??»‡n gi??» gi??º£m ch??»‰ c&ograve;n 1 tri??»‡u 600 ng&agrave;n 1 c&aacute;i ( c&oacute; c??º·p nam n??»¯ )</b></font></p>\r\n', '2010-12-16', 1600000, 'images/Dong Ho/180_thumb.jpg', 0, 0, '', 0, 'H'),
-(17, 5, 'Rado - HY12', '<p>\r\n	<font color="blue"><b>M??º«u 191 :</b></font> RADO ??‘&aacute; 6 kim . H&agrave;ng si&ecirc;u cao c??º¥p . Ki??º¿ng ??‘&aacute; , v??» ??‘&aacute; , ni??»ng ??‘&aacute; , d&acirc;y ??‘&aacute; ch??»‘ng tr??º§y . 6 kim 1 l??»‹ch , ??‘??»“ng h??»“ ??‘&aacute; kim ( h&agrave;ng hi??º¿m , k&ocirc; c&oacute; c&aacute;i 6 kim n&agrave;o m&agrave; ch??»‘ng tr??º§y to&agrave;n b??»™ ??‘&acirc;u nh&eacute;&nbsp; ) . Nh&igrave;n th??»±c t??º¿ c??»±c k&igrave; ??‘??º¹p . Gi&aacute; <font color="red"><b>2 tri??»‡u 250 ng&agrave;n 1 c&aacute;i </b></font></p>\r\n', '2010-12-16', 2500000, 'images/Dong Ho/191_thumb.jpg', 0, 0, '', 0, 'H'),
-(18, 5, 'Rado - TP223', '<p>\r\n	<font color="blue"><b>M??º«u 267 :</b></font> RADO ??‘&aacute; 6 kim ch??»‘ng tr??º§y to&agrave;n b??»™ ??‘??»“ng h??»“ , l??»‹ch ng&agrave;y , b??º¥m gi??» th??»ƒ thao . Gi&aacute; <font color="red"><b>1 tri??»‡u 500 ng&agrave;n</b></font> 1 c&aacute;i</p>\r\n', '2010-12-16', 1500000, 'images/Dong Ho/267_thumb.jpg', 0, 0, '', 0, 'H'),
-(19, 5, 'Rado - M??º«u 269', '<p>\r\n	<font color="blue"><b>M??º«u 269 :</b></font> RADO ch??»‘ng tr??º§y to&agrave;n b??»™ . Em n&agrave;y th&igrave; k&ocirc; c??º§n n&oacute;i nhi??»u , h&igrave;nh ??º£nh ch??»©ng minh t??º¥t c??º£ . H??»™t ??‘??°??»£c ??‘&iacute;nh 4 ch??º¥u gi??»¯ b??º±ng inox ch??»© k&ocirc; ph??º£i d&aacute;n keo nh&eacute; . Gi&aacute; <font color="red"><b>2 tri??»‡u 200 ng&agrave;n</b></font> 1 c&aacute;i <font color="green"><b>( m??º«u ??‘??º¯t h&agrave;ng nh??º¥t trong m&ugrave;a valentine v&agrave; 8/3 )</b></font></p>\r\n', '2010-12-16', 2200000, 'images/Dong Ho/rado269_thumb.jpg', 0, 0, '', 0, 'H'),
-(20, 5, 'Rado -ER', '<p>\r\n	<span style="color: rgb(0, 0, 255);"><strong>M??º«u 302 :</strong></span> Rado 6 kim 1 l??»‹ch d&acirc;y ??‘&aacute; , v??» ??‘&aacute; , ki??º¿ng ??‘&aacute; ch??»‘ng tr??º§y to&agrave;n b??»™ . Gi&aacute; <font color="Red"><b>2 tri??»‡u 400 ng&agrave;n 1 c&aacute;i</b></font></p>\r\n', '2010-12-16', 2400000, 'images/Dong Ho/302_thumb.jpg', 0, 0, '', 0, 'H'),
-(21, 5, 'Rado - M??º«u 360', '<p>\r\n	<b><font color="Blue">M??º«u 360 :</font> RADO </b>d&acirc;y ??‘&aacute; , v??» ??‘&aacute; ceramic ch??»‘ng tr??º§y , ki??º¿ng ??‘&aacute; sarphie ch??»‘ng tr??º§y . N&oacute;i chung <font color="Magenta"><b>to&agrave;n b??»™ ??‘??»“ng h??»“ ch??»‘ng tr??º§y</b></font> tr??»« n??º¯p ??‘&iacute;t b??º±ng inox k&ocirc; ch??»‘ng tr??º§y . Gi&aacute;<b> <font color="Red">1 tri??»‡u 100 ng&agrave;n 1 c&aacute;i</font></b></p>\r\n', '2010-12-16', 1100000, 'images/Dong Ho/360_thumb.jpg', 0, 0, '', 0, 'H'),
-(22, 5, 'Rado - M??º«u 362', '<p>\r\n	<b><font color="Blue">M??º«u 362 :</font> <font color="Black">RADO </font></b><font color="Black">d&acirc;y ??‘&aacute; , v??» ??‘&aacute; ceramic ch??»‘ng tr??º§y , ki??º¿ng ??‘&aacute; sarphie ch??»‘ng tr??º§y</font> . N&oacute;i chung l&agrave; <b><font color="Magenta">ch??»‘ng tr??º§y to&agrave;n b??»™ ??‘??»“ng h??»“</font></b> tr??»« n??º¯p ??‘&iacute;t . 6 kim 1 l??»‹ch , ??‘??»“ng h??»“ th??»ƒ thao chronograph . <b><font color="Red">Gi&aacute; 2 tri??»‡u 400 ng&agrave;n 1 c&aacute;i</font></b></p>\r\n', '2010-12-16', 2400000, 'images/Dong Ho/362_thumb.jpg', 0, 0, '', 0, 'H'),
-(23, 1, '????»“ng h??»“ ??‘??´i Casio', '', '2010-12-16', 2000000, 'images/Dong Ho/1184.jpg', 0, 0, '', 0, 'H'),
-(24, 1, 'BEM-112SG', '<br />\r\n', '2010-12-16', 2200000, 'images/Dong Ho/1186.jpg', 0, 0, '', 0, 'H'),
-(25, 1, 'G-011D-2BDR', '', '2010-12-16', 1900000, 'images/Dong Ho/3557.jpg', 0, 0, '', 0, 'H'),
-(26, 1, 'AW-591 ', '<br />\r\n', '2010-12-16', 2020000, 'images/Dong Ho/1181.jpg', 0, 0, '', 0, 'H'),
-(27, 1, 'EFA-122D ', '<br />\r\n', '2010-12-16', 2500000, 'images/Dong Ho/1193.jpg', 0, 0, '', 0, 'H'),
-(28, 1, 'BEM-112D ', '<br />\r\n', '2010-12-16', 2100000, 'images/Dong Ho/1185.jpg', 0, 0, '', 0, 'H'),
-(29, 1, ':BG-1224B ', '<br />\r\n', '2010-12-16', 1700000, 'images/Dong Ho/1189.jpg', 0, 0, '', 0, 'H'),
-(30, 1, 'BG-1301 ', '<br />\r\n', '2010-12-16', 1500000, 'images/Dong Ho/311.jpg', 0, 0, '', 0, 'H'),
-(31, 1, 'BG-160-4V ', '<br />\r\n', '2010-12-16', 1976000, 'images/Dong Ho/3779.jpg', 0, 0, '', 0, 'H'),
-(32, 1, 'BG-1220-4AV ', '<br />\r\n', '2010-12-16', 1652000, 'images/Dong Ho/3778.jpg', 0, 0, '', 0, 'H'),
-(33, 1, 'MSG-164CG-1V ', '<br />\r\n', '2010-12-16', 1563000, 'images/Dong Ho/3777.jpg', 0, 0, '', 0, 'H'),
-(34, 1, 'BG-194AF, 195V ', '<br />\r\n', '2010-12-16', 1766000, 'images/Dong Ho/3771.jpg', 0, 0, '', 0, 'H'),
-(35, 1, ':BG-180M ', '<br />\r\n', '2010-12-16', 1506000, 'images/Dong Ho/3770.jpg', 0, 0, '', 0, 'H'),
-(36, 1, '????»“ng h??»“ Baby-G', '<br />\r\n', '2010-12-16', 1963000, 'images/Dong Ho/3768.jpg', 0, 0, '', 0, 'H'),
+(15, 5, 'Rado-M8', '<p>\r\n	<font color="blue"><b>M??º«u 8 :</b></font> Rado d&acirc;y ??‘&aacute; , ni??»m t??»± h&agrave;o c??»§a gi??»›i ch??¡i ??‘??»“ng h??»“ 1 th??»i . Ki??»ƒu d&aacute;ng ??‘??º¹p , sang tr??»ng ??‘&atilde; kh??º³ng ??‘??»‹nh v??»‹ th??º¿ c??»§a n&oacute; , c&oacute; l??º½ k&ocirc; c??º§n n&oacute;i nhi??»u v??» em n&agrave;y . M??º·t sarphie , d&acirc;y sarphie ch??»‘ng tr??º§y to&agrave;n b??»™ , c&oacute; 2 m??º«u nam n??»¯ . Gi&aacute; h??»£p l&iacute; : <font color="red"><b>500 ng&agrave;n / 1 c&aacute;i</b></font></p>\r\n', '2010-12-16', 500000, 'images/DongHo/8_med.JPG', 0, 0, '', 0, 'H'),
+(16, 5, 'Rado - rtu', '<p>\r\n	<font color="blue"><b>M??º«u 180 :</b></font> RADO ??‘&aacute; to&agrave;n b??»™ . H&agrave;ng si&ecirc;u cao c??º¥p . C??»±c k&igrave; ??‘??º¹p . H&igrave;nh ??º£nh n&oacute;i l&ecirc;n t??º¥t c??º£ , nh&igrave;n th??»±c t??º¿ c&ograve;n ??‘??º¹p h??¡n h&igrave;nh , ??‘eo c??»±c k&igrave; sang . Gi&aacute; <font color="red"><b>hi??»‡n gi??» gi??º£m ch??»‰ c&ograve;n 1 tri??»‡u 600 ng&agrave;n 1 c&aacute;i ( c&oacute; c??º·p nam n??»¯ )</b></font></p>\r\n', '2010-12-16', 1600000, 'images/DongHo/180_thumb.jpg', 0, 0, '', 0, 'H'),
+(17, 5, 'Rado - HY12', '<p>\r\n	<font color="blue"><b>M??º«u 191 :</b></font> RADO ??‘&aacute; 6 kim . H&agrave;ng si&ecirc;u cao c??º¥p . Ki??º¿ng ??‘&aacute; , v??» ??‘&aacute; , ni??»ng ??‘&aacute; , d&acirc;y ??‘&aacute; ch??»‘ng tr??º§y . 6 kim 1 l??»‹ch , ??‘??»“ng h??»“ ??‘&aacute; kim ( h&agrave;ng hi??º¿m , k&ocirc; c&oacute; c&aacute;i 6 kim n&agrave;o m&agrave; ch??»‘ng tr??º§y to&agrave;n b??»™ ??‘&acirc;u nh&eacute;&nbsp; ) . Nh&igrave;n th??»±c t??º¿ c??»±c k&igrave; ??‘??º¹p . Gi&aacute; <font color="red"><b>2 tri??»‡u 250 ng&agrave;n 1 c&aacute;i </b></font></p>\r\n', '2010-12-16', 2500000, 'images/DongHo/191_thumb.jpg', 0, 0, '', 0, 'H'),
+(18, 5, 'Rado - TP223', '<p>\r\n	<font color="blue"><b>M??º«u 267 :</b></font> RADO ??‘&aacute; 6 kim ch??»‘ng tr??º§y to&agrave;n b??»™ ??‘??»“ng h??»“ , l??»‹ch ng&agrave;y , b??º¥m gi??» th??»ƒ thao . Gi&aacute; <font color="red"><b>1 tri??»‡u 500 ng&agrave;n</b></font> 1 c&aacute;i</p>\r\n', '2010-12-16', 1500000, 'images/DongHo/267_thumb.jpg', 0, 0, '', 0, 'H'),
+(19, 5, 'Rado - M269', '<p>\r\n	<font color="blue"><b>M??º«u 269 :</b></font> RADO ch??»‘ng tr??º§y to&agrave;n b??»™ . Em n&agrave;y th&igrave; k&ocirc; c??º§n n&oacute;i nhi??»u , h&igrave;nh ??º£nh ch??»©ng minh t??º¥t c??º£ . H??»™t ??‘??°??»£c ??‘&iacute;nh 4 ch??º¥u gi??»¯ b??º±ng inox ch??»© k&ocirc; ph??º£i d&aacute;n keo nh&eacute; . Gi&aacute; <font color="red"><b>2 tri??»‡u 200 ng&agrave;n</b></font> 1 c&aacute;i <font color="green"><b>( m??º«u ??‘??º¯t h&agrave;ng nh??º¥t trong m&ugrave;a valentine v&agrave; 8/3 )</b></font></p>\r\n', '2010-12-16', 2200000, 'images/DongHo/rado269_thumb.jpg', 0, 0, '', 0, 'H'),
+(20, 5, 'Rado -ER', '<p>\r\n	<span style="color: rgb(0, 0, 255);"><strong>M??º«u 302 :</strong></span> Rado 6 kim 1 l??»‹ch d&acirc;y ??‘&aacute; , v??» ??‘&aacute; , ki??º¿ng ??‘&aacute; ch??»‘ng tr??º§y to&agrave;n b??»™ . Gi&aacute; <font color="Red"><b>2 tri??»‡u 400 ng&agrave;n 1 c&aacute;i</b></font></p>\r\n', '2010-12-16', 2400000, 'images/DongHo/302_thumb.jpg', 0, 0, '', 0, 'H'),
+(21, 5, 'Rado - M??º«u 360', '<p>\r\n	<b><font color="Blue">M??º«u 360 :</font> RADO </b>d&acirc;y ??‘&aacute; , v??» ??‘&aacute; ceramic ch??»‘ng tr??º§y , ki??º¿ng ??‘&aacute; sarphie ch??»‘ng tr??º§y . N&oacute;i chung <font color="Magenta"><b>to&agrave;n b??»™ ??‘??»“ng h??»“ ch??»‘ng tr??º§y</b></font> tr??»« n??º¯p ??‘&iacute;t b??º±ng inox k&ocirc; ch??»‘ng tr??º§y . Gi&aacute;<b> <font color="Red">1 tri??»‡u 100 ng&agrave;n 1 c&aacute;i</font></b></p>\r\n', '2010-12-16', 1100000, 'images/DongHo/360_thumb.jpg', 0, 0, '', 0, 'H'),
+(22, 5, 'Rado - M 362', '<p>\r\n	<b><font color="Blue">M??º«u 362 :</font> <font color="Black">RADO </font></b><font color="Black">d&acirc;y ??‘&aacute; , v??» ??‘&aacute; ceramic ch??»‘ng tr??º§y , ki??º¿ng ??‘&aacute; sarphie ch??»‘ng tr??º§y</font> . N&oacute;i chung l&agrave; <b><font color="Magenta">ch??»‘ng tr??º§y to&agrave;n b??»™ ??‘??»“ng h??»“</font></b> tr??»« n??º¯p ??‘&iacute;t . 6 kim 1 l??»‹ch , ??‘??»“ng h??»“ th??»ƒ thao chronograph . <b><font color="Red">Gi&aacute; 2 tri??»‡u 400 ng&agrave;n 1 c&aacute;i</font></b></p>\r\n', '2010-12-16', 2400000, 'images/DongHo/362_thumb.jpg', 0, 0, '', 0, 'H'),
+(23, 1, ' Casio', '', '2010-12-16', 2000000, 'images/DongHo/1184.jpg', 0, 0, '', 0, 'H'),
+(24, 1, 'BEM-112SG', '<br />\r\n', '2010-12-16', 2200000, 'images/DongHo/1186.jpg', 0, 0, '', 0, 'H'),
+(25, 1, 'G-011D-2BDR', '', '2010-12-16', 1900000, 'images/DongHo/3557.jpg', 0, 0, '', 0, 'H'),
+(26, 1, 'AW-591 ', '<br />\r\n', '2010-12-16', 2020000, 'images/DongHo/1181.jpg', 0, 0, '', 0, 'H'),
+(27, 1, 'EFA-122D ', '<br />\r\n', '2010-12-16', 2500000, 'images/DongHo/1193.jpg', 0, 0, '', 0, 'H'),
+(28, 1, 'BEM-112D ', '<br />\r\n', '2010-12-16', 2100000, 'images/DongHo/1185.jpg', 0, 0, '', 0, 'H'),
+(29, 1, ':BG-1224B ', '<br />\r\n', '2010-12-16', 1700000, 'images/DongHo/1189.jpg', 0, 0, '', 0, 'H'),
+(30, 1, 'BG-1301 ', '<br />\r\n', '2010-12-16', 1500000, 'images/DongHo/311.jpg', 0, 0, '', 0, 'H'),
+(31, 1, 'BG-160-4V ', '<br />\r\n', '2010-12-16', 1976000, 'images/DongHo/3779.jpg', 0, 0, '', 0, 'H'),
+(32, 1, 'BG-1220-4AV ', '<br />\r\n', '2010-12-16', 1652000, 'images/DongHo/3778.jpg', 0, 0, '', 0, 'H'),
+(33, 1, 'MSG-164CG-1V ', '<br />\r\n', '2010-12-16', 1563000, 'images/DongHo/3777.jpg', 0, 0, '', 0, 'H'),
+(34, 1, 'BG-194AF, 195V ', '<br />\r\n', '2010-12-16', 1766000, 'images/DongHo/3771.jpg', 0, 0, '', 0, 'H'),
+(35, 1, ':BG-180M ', '<br />\r\n', '2010-12-16', 1506000, 'images/DongHo/3770.jpg', 0, 0, '', 0, 'H'),
+(36, 1, 'Baby-G', '<br />\r\n', '2010-12-16', 1963000, 'images/DongHo/3768.jpg', 0, 0, '', 0, 'H'),
 (38, 6, 'TIVI LCD Samsung LA40C650-40', '<br />\r\n', '2010-12-16', 12500000, 'images/TiVi/resize_14081_26c450.jpg', 0, 0, '', 0, 'H'),
 (39, 6, 'TIVI LCD Samsung L37c0C650-40', '<br />\r\n', '2010-12-16', 18500000, 'images/TiVi/resize_14611_19C350.jpg', 0, 0, '', 0, 'H'),
 (40, 6, 'TIVI LCD Samsung LA469250-40', '<br />\r\n', '2010-12-16', 17200000, 'images/TiVi/resize_13935_LA37C530.jpg', 0, 0, '', 0, 'H'),
@@ -214,10 +214,10 @@ INSERT INTO `hanghoa` (`idHang`, `idCongTy`, `TenHang`, `MoTa`, `NgayCapNhat`, `
 (55, 4, 'TCL Slimmaster CRT 21M93S', '<p>\r\n	H&atilde;ng s??º£n xu??º¥t: <b class="highlight yellow">TCL</b> / Lo??º¡i <b class="highlight yellow">tivi</b>: Slim / ????»™ l??»›n m&agrave;n h&igrave;nh: 21inch / Video ??‘i k&egrave;m: -, / Digital tuner: -, / T&iacute;nh n??ƒng 1: &Acirc;m thanh v&ograve;m SRS, -, / T&iacute;nh n??ƒng 2: -, / T&iacute;nh n??ƒng 3: Thu ??‘??°??»£c truy??»n h&igrave;nh c&aacute;p, / T??»‰ l??»‡ h&igrave;nh: -, Tr??»ng l??°??»£ng (Kg).: 0 / Xu??º¥t x??»©: - /</p>\r\n', '2010-12-16', 2299000, 'images/TiVi/small_vds1259977358.jpg', 0, 0, '', 0, 'H'),
 (56, 4, 'TCL Ultraslim CRT 21K9US', '<br />\r\n', '2010-12-16', 1689000, 'images/TiVi/small_iwl1279275510.jpg', 0, 0, '', 0, 'H'),
 (58, 4, 'TCL Health LED 32DE200', '<br />\r\n', '2010-12-16', 8963000, 'images/TiVi/small_eso1285914983.jpg', 0, 0, '', 0, 'H'),
-(59, 4, 'TCL L46P10 Full HD', '<br />\r\n', '2010-12-16', 31990000, 'images/TiVi/small_knp1259830058.jpg', 0, 0, '', 0, 'H'),
+(59, 4, 'TCL L46P10', '<br />\r\n', '2010-12-16', 31990000, 'images/TiVi/small_knp1259830058.jpg', 0, 0, '', 0, 'H'),
 (60, 4, 'TCL L42P10FZ', '<br />\r\n', '2010-12-16', 18600000, 'images/TiVi/small_stk1285318373.jpg', 0, 0, '', 0, 'H'),
 (61, 4, 'TCL L42E9AF', '<br />\r\n', '2010-12-16', 9800000, 'images/TiVi/small_rcn1254840276.jpg', 0, 0, '', 0, 'H'),
-(62, 4, 'TCL L46E9AF 46-inch Full HD', '<br />\r\n', '2010-12-16', 16850000, 'images/TiVi/small_lpi1254839396.jpg', 0, 0, '', 0, 'H');
+(62, 4, 'TCL L46E9AF 46-inch', '<br />\r\n', '2010-12-16', 16850000, 'images/TiVi/small_lpi1254839396.jpg', 0, 0, '', 0, 'H');
 
 -- --------------------------------------------------------
 
@@ -229,7 +229,7 @@ CREATE TABLE `loaihang` (
   `idLoaiHang` int(10) unsigned NOT NULL auto_increment,
   `TenLoai` varchar(50) character set utf8 collate utf8_unicode_ci NOT NULL,
   PRIMARY KEY  (`idLoaiHang`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
 
 -- 
 -- Dumping data for table `loaihang`

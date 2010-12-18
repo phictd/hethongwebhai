@@ -28,12 +28,6 @@ public function get_tenhang(){
 	return $this->tenhang;
 }
 
-public function set_MaHang($mahang){
-            $this->ma = $mahang;
-}      
-public function get_MaHang(){
-   return $this->ma;
-}
 
 public function set_idhang($idhang){
 	$this->idhang=$idhang;
@@ -221,7 +215,7 @@ public function listloaihang(){
 
 //lay 1 mat hang
        public function getHang(){
-        $sql = "select * from hanghoa where idHang ='".$this->get_MaHang()."'";
+        $sql = "select * from hanghoa where idHang ='".$this->get_idhang()."'";
         $this->query($sql);
         return $this->fetch();
        }

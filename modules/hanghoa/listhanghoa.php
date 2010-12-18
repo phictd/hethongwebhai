@@ -1,4 +1,5 @@
 <?php
+				 ini_set( "display_errors", 0);
 				require_once('libraries/hanghoa.php');
 				$b= new HangHoa;
 				$A=9;

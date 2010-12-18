@@ -1,9 +1,10 @@
 <?php
+				 ini_set( "display_errors", 0);
 				require_once('libraries/hanghoa.php');
 				$m=$_GET['idloai'];
 				$b= new HangHoa;
 				$b->set_idloai($m);
-				$A=6;
+				$A=9;
 				if(isset($_GET['page'])){
 					$C=$_GET['page'];
 				}else{
@@ -50,7 +51,7 @@
 			}
 			if($D != $C){
 				$M=$X + $A;
-				echo "<a index.php?module=hanghoa&act=lhhloai&idloai=$item[idLoaiHang]&start=$M&page=$C class=link>tiep</a>";
+				echo "<a index.php?module=hanghoa&act=lhhloai&idloai=$item[idLoaiHang]&start=$M&page=$C class=link>>></a>";
 			}
 		}
 	?>
