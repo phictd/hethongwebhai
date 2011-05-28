@@ -9,76 +9,83 @@ $namsinh = $_POST['date1_year'];
 $lv=1;
 if(isset($_POST['ok'])){
 	if($_POST['txtuser'] == NULL){
-		echo "Tên đăng nhập không để trống <br />";
+		$loi[] = "Tên đăng nhập không để trống <br />";
 	}else{
 		$u=$_POST['txtuser'];
 	}
 	if($_POST['txtpass'] == NULL){
-		echo "Mật khẩu không để trống <br />";
+		$loi[] = "Mật khẩu không để trống <br />";
 	}else{
 		if($_POST['txtpass'] != $_POST['txtrepass']){
-			echo "Nhắc lại mật khẩu không đúng";
+			$loi[] = "Nhắc lại mật khẩu không đúng";
 		}else{
 			$p=$_POST['txtpass'];
 		}
 	}
 	if($_POST['txtemail'] == NULL){
-		echo "Email không để trống <br />";
+		$loi[] = "Email không để trống <br />";
 	}else{
 		$e=$_POST['txtemail'];
 	}
-	if($_POST['txtmxn'] == NULL || $_SESSION['ma'] != $_POST['txtmxn']){
-		echo "Mã xác nhận không đúng<br />";
+	if($_POST['txtmxn'] == NULL || $_POST['txtmxn'] != $_SESSION["security_code"]){
+		$loi[] = "Mã xác nhận không đúng<br />";
 	}
 	if($_POST['txtht'] == NULL){
-		echo "Họ tên không để trống <br />";
+		$loi[] = "Họ tên không để trống <br />";
 	}else{
 		$ht=$_POST['txtht'];
 	}
 	if($_POST['txtdc'] == NULL){
-		echo "Địa chỉ không để trống <br />";
+		$loi[] = "Địa chỉ không để trống <br />";
 	}else{
 		$dc=$_POST['txtdc'];
 	}
 	if($_POST['txtdt'] == NULL){
-		echo "Số điện thoại không để trống <br />";
+		$loi[] = "Số điện thoại không để trống <br />";
 	}else{
 		$dt=$_POST['txtdt'];
 	}
-	if($u && $p &&  $e &&  $ht &&  $dc &&  $dt){
-		$lv=1;
-		$dk = new User;
-		$dk->set_user($u);
-		$dk->set_pass($p);
-		$dk->set_email($e);
-		$dk->set_hoten($ht);
-		$dk->set_diachi($dc);
-		$dk->set_dienthoai($dt);
-		$dk->set_level($lv);
-		$ngaydk = date("d");
-        $thangdk = date("m");
-        $namdk = date("Y");
-        $ngaydk = "$namdk-$thangdk-$ngaydk";
-        $ngaysinh = "$namsinh-$thangsinh-$ngaysinh";
-		$dk->set_ngaydangky($ngaydk);
-		$dk->set_ngaysinh($ngaysinh);
-		if($dk->check_user()==FALSE){
-			echo "<div align='center' style='margin:10px;'><font size='+1' color='#FF0033'>Tên này đã có người dùng</font></div>";
-		}
-		if($dk->check_email()==FALSE){
-			echo "<div align='center' style='margin:10px;'><font size='+1' color='#FF0033'>Email này đã có người dùng</font></div>";
-		}
-		else{
-			if($dk->insert_user()==FALSE){
-				echo "<div align='center' style='margin:10px;'><font size='+1' color='#FF0033'>Đăng ký thất bại</font></div>";
+	if($loi != ""){
+			echo "<ul>";
+				foreach($loi as $err){
+					echo "<li>$err</li>";
+		}	
+				echo "</ul>";
+	}else{
+		if($u && $p &&  $e &&  $ht &&  $dc &&  $dt){
+			$lv=1;
+			$dk = new User;
+			$dk->set_user($u);
+			$dk->set_pass($p);
+			$dk->set_email($e);
+			$dk->set_hoten($ht);
+			$dk->set_diachi($dc);
+			$dk->set_dienthoai($dt);
+			$dk->set_level($lv);
+			$ngaydk = date("d");
+			$thangdk = date("m");
+			$namdk = date("Y");
+			$ngaydk = "$namdk-$thangdk-$ngaydk";
+			$ngaysinh = "$namsinh-$thangsinh-$ngaysinh";
+			$dk->set_ngaydangky($ngaydk);
+			$dk->set_ngaysinh($ngaysinh);
+			if($dk->check_user()==FALSE){
+				echo "<div align='center' style='margin:10px;'><font size='+1' color='#FF0033'>Tên này đã có người dùng</font></div>";
+			}
+			if($dk->check_email()==FALSE){
+				echo "<div align='center' style='margin:10px;'><font size='+1' color='#FF0033'>Email này đã có người dùng</font></div>";
 			}
 			else{
-				$dk->insert_user();
-				echo "<div align='center' style='margin:10px;'><font size='+1' color='#FF0033'>Đăng ký thành công !</font></div>";	
+				if($dk->insert_user()==FALSE){
+					echo "<div align='center' style='margin:10px;'><font size='+1' color='#FF0033'>Đăng ký thất bại</font></div>";
+				}
+				else{
+					$dk->insert_user();
+					echo "<div align='center' style='margin:10px;'><font size='+1' color='#FF0033'>Đăng ký thành công !</font></div>";	
+				}
+			
 			}
-		
 		}
-		
 	}	
 }else{?>
 
@@ -92,15 +99,7 @@ if(isset($_POST['ok'])){
             <label>Mật khẩu:</label> <input type="password" name="txtpass" size="25" /><br />
              <label>Nhập lại mật khẩu:</label> <input type="password" name="txtrepass" size="25" /><br />
             <label>Email:</label> <input type="text" name="txtemail" size="30" /><br />
-            <label>Mã xác nhận:</label><div style="padding-top:3px" id="thu"><font size="4"> 
-            							<?php
-										
-										$t= Time();
-										$maxn=(substr($t,-4));
-										echo $maxn;
-										$_SESSION['ma']=$maxn;
-										?>
-                                       </font></div><br/>
+            <label>Mã xác nhận:</label><div style="padding-top:3px" id="thu"> <img src="modules/user/random_image.php" /></div><br/>
             <label>&nbsp;</label> <input type="text" name="txtmxn" size="4" /><br />
             </fieldset>
             <fieldset>
