@@ -4,6 +4,7 @@ require("libraries/oop.php");
 require("languages/lang_vn.php");
 require_once("templates/default/top.php");
 require_once("templates/default/left.php");
+if(isset($_GET['module'])){
 switch($_GET['module']){
 	case "user":
             require("modules/user/controller.php");
@@ -16,9 +17,9 @@ switch($_GET['module']){
           break;
 		  case"test":
 		  require("modules/test/controller.php");
-	
-          break;	
-    default:
+	    break;	
+}
+}else{
 		require("modules/hanghoa/listhanghoa.php");
 }
 

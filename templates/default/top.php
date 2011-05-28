@@ -3,6 +3,10 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href="templates/default/style.css" rel="stylesheet" type="text/css" />
+<script language="javascript" src="libraries/ajax.js" ></script>
+<script language="javascript" src="libraries/jquery/jquery-1.4.4.min.js" ></script>
+<script language="javascript" src="libraries/jquery/jquery-ui-1.8.8.custom.min.js" ></script>
+<script language="javascript" src="libraries/jquery/jquery.cart.js" ></script>
 <script language="javascript" src="templates/default/menu.js" ></script>
 <script language="javascript" src="templates/default/snowstorm.js"></script>
 <script language="javascript" src="templates/default/chayhinh.js"></script>
@@ -14,7 +18,7 @@
 <div id="tim">
 <a href="#"ưefwef></a>
 </div>
-<embed src="images/icons/banner.swf" width="1000" type="application/x-shockwave-flash" height="150" pluginspage="http://www.macromedia.com/go/getflashplayer" movie="images/icons/banner.swf" quality="High"></embed>
+
 
 </div>
 <div id="menu">
