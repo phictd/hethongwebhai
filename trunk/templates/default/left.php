@@ -11,7 +11,7 @@
 				foreach($data as $item){
 					echo "<li><a href='index.php?module=hanghoa&act=lhhloai&idloai=$item[idLoaiHang]'>$item[TenLoai] </a>";
 					echo "<ul>";
-					$a->set_idloai($item[idLoaiHang]);
+					$a->set_idloai($item['idLoaiHang']);
 					$datact=$a->listcongty();
 					foreach($datact as $itemct){					
 						echo "<li><a href='#'>$itemct[TenCongTy]</a></li>";
@@ -26,15 +26,15 @@
            </div>
            <div class="img1">
                Mr.Thời (Kinh doanh)
-              <a href="ymsgr:SendIM?pilot_viet"><img src="images/icons/online(1).gif"/></a>
+              <a href="ymsgr:SendIM?pilot_viet"><img src='http://opi.yahoo.com/online?u=pilot_viet&m=g&t=14'/></a>
            </div>
            <div class="img1">
                Mr.Đạt (Kinh doanh)
-              <a href="#"><img src="images/icons/online(1).gif" /></a>
+             <a href="ymsgr:SendIM?pilot_viet"><img src='http://opi.yahoo.com/online?u=pilot_viet&m=g&t=14'/></a>
            </div>
            <div class="img1">
                Mr.Thuật (Kinh Doanh)
-              <a href="#"><img src="images/icons/online(1).gif"/></a>
+             <a href="ymsgr:SendIM?pilot_viet"><img src='http://opi.yahoo.com/online?u=pilot_viet&m=g&t=14'/></a>
            </div>
            <div class="img1">
                Support by English
