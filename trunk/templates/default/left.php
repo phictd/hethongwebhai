@@ -36,10 +36,7 @@
                Mr.Thuật (Kinh Doanh)
              <a href="ymsgr:SendIM?pilot_viet"><img src='http://opi.yahoo.com/online?u=pilot_viet&m=g&t=14'/></a>
            </div>
-           <div class="img1">
-               Support by English
-                <a href="#"><img src="images/icons/online(1).gif"/></a>
-           </div>
+           
           <div class="img1">
           	<a href="#"><img src="images/laptop/hinh/h1.jpg" width="145" height="100" name="h" style="filter:blendTrans(duration=3)" /></a>
           </div>
