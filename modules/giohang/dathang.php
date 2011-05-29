@@ -1,84 +1,92 @@
 <script language="javascript" src="modules/user/calendar.js"></script>
 <?php
 session_start();
+
 require_once("libraries/donhang.php");
 require_once("libraries/chitietdonhang.php");
 require_once("modules/user/classes/tc_calendar.php");
+if(isset($_SESSION['username'])){
+	if(isset($_POST['ok'])){
 
-if(isset($_POST['ok'])){
-	if(isset($_SESSION['username'])){
 		$id= time();
 		$donhang = new donhang;
 		$chitietdonhang= new ChiTietDonHang;
 
 		if($_POST['txttennn'] == NULL){
-			echo "Xin nhập họ tên<br/>";
+			$loi[] = "Xin nhập họ tên<br/>";
 		}else{
 			$tennn = $_POST['txttennn'];
 		}
 		if($_POST['txtdt'] == NULL){
-		   echo "Xin nhập số điện thoại<br/>";
+		   $loi[] = "Xin nhập số điện thoại<br/>";
 		}else{
 			$dt = $_POST['txtdt'];
 		}
 		if($_POST['txtdc'] == NULL){
-		   echo "Xin nhập địa chỉ<br/>";
+		   $loi[] = "Xin nhập địa chỉ<br/>";
 		}else{
 			$dc = $_POST['txtdc'];
 		}
 		if($_POST['date1_day'] == 0){
-		   echo "Chưa chọn ngày giao<br/>";
+		   $loi[] = "Chưa chọn ngày giao<br/>";
 		}else{
 			$ngaygiao = $_POST['date1_day'];
 		}
 		if($_POST['date1_month'] == 0){
-		   echo "Chưa chọn tháng<br/>";
+		   $loi[] = "Chưa chọn tháng<br/>";
 		}else{
 			$thanggiao = $_POST['date1_month'];
 		}
 		if($_POST['date1_year'] == 0){
-		   echo "Chưa chọn năm giao<br/>";
+		   $loi[] = "Chưa chọn năm giao<br/>";
 		}else{
 			$namgiao = $_POST['date1_year'];
 		}
-		if($tennn && $dt && $dc && $ngaygiao &&  $thanggiao && $namgiao  ){
-			$donhang->set_idDonHang($id);
-			$donhang->set_Username($_SESSION['username']);
-			$donhang->set_TenNguoiNhan($tennn);
-			$donhang->set_DienThoai($dt);
-			$donhang->set_DiaDiemGiaoHang($dc);
-			$tt=0;
-			$donhang->set_TinhTrang($tt);
-			$ngaydat = date('d');
-			$thangdat = date('m');
-			$namdat = date('Y');
-			$dat = "$namdat-$thangdat-$ngaydat";
-			$donhang->set_ThoiDiemDatHang($dat);
-			$giao="$namgiao-$thanggiao-$ngaygiao";
-			$donhang->set_ThoiDiemGiaoHang($giao);
-			
-			if($donhang->ThemDonHang() == FALSE){
-				echo "<div align='center' style='margin:10px;'><font size='+1' color='#FF0033'>Không Tạo Được Phiếu Mua. Có Lỗi Xảy Ra !</font></div>";
-			}else{
-				
-				for($f = 1; $f <= $_SESSION['tongsl']; $f++){
-					$chitietdonhang->set_idDonHang($id);
-					$chitietdonhang->set_idHang($_SESSION['mahang'.$f]);
-					$chitietdonhang->set_SoLuong($_SESSION['soluong'.$f]);
-					$chitietdonhang->ThemChiTietDonHang();
-				}
+		if($_POST['txtmxn'] == NULL || $_POST['txtmxn'] != $_SESSION["security_code"]){
+			$loi[] = "Mã xác nhận không đúng<br />";
+		}
+		if($loi != ""){
+			echo "<ul>";
+				foreach($loi as $err){
+					echo "<li>$err</li>";
+		}	
+				echo "</ul>";
+		}else{
+			if($tennn && $dt && $dc && $ngaygiao &&  $thanggiao && $namgiao  ){
+				$donhang->set_idDonHang($id);
+				$donhang->set_Username($_SESSION['username']);
+				$donhang->set_TenNguoiNhan($tennn);
+				$donhang->set_DienThoai($dt);
+				$donhang->set_DiaDiemGiaoHang($dc);
+				$tt=0;
+				$donhang->set_TinhTrang($tt);
+				$ngaydat = date('d');
+				$thangdat = date('m');
+				$namdat = date('Y');
+				$dat = "$namdat-$thangdat-$ngaydat";
+				$donhang->set_ThoiDiemDatHang($dat);
+				$giao="$namgiao-$thanggiao-$ngaygiao";
+				$donhang->set_ThoiDiemGiaoHang($giao);
+				$donhang->ThemDonHang();
+				if($donhang->ThemDonHang() == FALSE){
+					echo "<div align='center' style='margin:10px;'><font size='+1' color='#FF0033'>Không Tạo Được Phiếu Mua. Có Lỗi Xảy Ra !</font></div>";
+				}else{
+					
+					for($f = 1; $f <= $_SESSION['tongsl']; $f++){
+						$chitietdonhang->set_idDonHang($id);
+						$chitietdonhang->set_idHang($_SESSION['idHang'.$f]);
+						$chitietdonhang->set_SoLuong($_SESSION['soluong'.$f]);
+						$chitietdonhang->ThemChiTietDonHang();
+					}
 				
 				echo "<div align='center' style='margin:10px;'><font size='+1' color='#999999'>Tạo Phiếu Thành Công. Xin Cảm Ơn Quý Khách !</font></div>";
+				}
+			unset($_SESSION['tongsl']);
+			unset($_SESSION['thanhtien']);
 			}
-		unset($_SESSION['tongsl']);
-		unset($_SESSION['thanhtien']);
 		}
-
-	}else{
-		header("location:index.php?module=giohang&act=xem&co=1");
-		exit();
 	}
-}else{
+
 ?>
 <form action="index.php?module=giohang&act=dathang" method="post">
     
@@ -105,11 +113,16 @@ if(isset($_POST['ok'])){
                   ?>
                   
                   </form><br/>
-            <label>Ghi chú:</label> <textarea name="txtghichu" cols="25" rows="5" ></textarea>
+            <label>Ghi chú:</label> <textarea name="txtghichu" cols="25" rows="5" ></textarea><br />
+             <label>Mã xác nhận:</label><div style="padding-top:3px" id="thu"> <img src="libraries/random_image.php" /></div><br/>
+             <label>&nbsp;</label> <input type="text" name="txtmxn" size="4" /><font color="#FF0000">*</font><br /><br />
             </fieldset>
             <label>&nbsp;</label><input style="margin-left:80px; margin-top:5px;" type="submit" name="ok" value="Mua" />
-            <label>&nbsp;</label><input type="reset" name="reset" value="Phiếu Mặc định" /> 
+            <label>&nbsp;</label><input type="reset" name="reset" value="Thông tin mặc định" /> 
               </fieldset>       
             </form>
-            
-<?php }?>
+<?php
+}else{
+	echo "<div align='center'><font size='+1' color='#0066FF'> Ban phai dang nhap</font></div>";
+}
+?>

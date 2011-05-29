@@ -10,7 +10,7 @@ function create_image()
     $security_code = substr($md5_hash, 15, 5); 
     $_SESSION["security_code"] = $security_code;
  
-    $image = imagecreatefromjpeg("../../images/icons/img.jpg");
+    $image = imagecreatefromjpeg("../images/icons/img.jpg");
 	imageline($image,1,1,40,40,$LineColor);
 	$LineColor = imagecolorallocate($image,233,239,239);
 	imageline($image,1,100,60,0,$LineColor);
