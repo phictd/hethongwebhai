@@ -53,26 +53,6 @@ echo "</div>";
 </div>
 
 
-<div class="news"><img src="images/icons/TopSellerNumberBg3.gif" />&nbsp;<a href="#">Compaq Presario CQ20 311TU ( NM537PA)</a><br/><font color="#FF0066">13.699.000VND
-</font>
-<div class="cls"></div>
-</div>
-
-<div class="news"><img src="images/icons/TopSellerNumberBg4.gif" />&nbsp;<a href="#">Tấm dán bàn phím Laptop</a><br/><font color="#FF0066"><br/>50.000VND
-</font>
-<div class="cls"></div>
-</div>
-
-<div class="news"><img align="middle" src="images/icons/qcright1.png"/></div>
-<div class="news"><a href="#">Laptop Lenovo IdeaPad G460 - 8919 (5904-8919)</a><br/><font color="#FF0066">13.190.000VND
-</font>
-<div class="cls"></div>
-</div>
-
-<div class="news"><a href="#">Laptop Lenovo Ideapad S10-3c (5905-6520)</a><br/><font color="#FF0066">7.363.000VND</font>
-<div class="cls"></div>
-</div>
-
 <div class="news"><a href="#">Laptop Lenovo IdeaPad G450 - 5347 (5905-5347)</a><br/><font color="#FF0066">8.500.000VND</font>
 <div class="cls"></div>
 </div>

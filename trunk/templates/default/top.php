@@ -8,7 +8,6 @@
 <script language="javascript" src="libraries/jquery/jquery-ui-1.8.8.custom.min.js" ></script>
 <script language="javascript" src="libraries/jquery/jquery.cart.js" ></script>
 <script language="javascript" src="templates/default/menu.js" ></script>
-<script language="javascript" src="templates/default/snowstorm.js"></script>
 <script language="javascript" src="templates/default/chayhinh.js"></script>
 <title>SHOPCONGNGHE.COM</title>
 </head>

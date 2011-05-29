@@ -46,11 +46,6 @@
           <div class="img1">
           	<a href="#"><img src="images/laptop/hinh1/b1.jpg" width="145" height="100" name="h2" style="filter:blendTrans(duration=3)" /></a>
           </div>
-          <div class="img1">
-          	<a href="#"><img src="images/laptop/727_mainimage.jpg" width="145" /></a>
-          </div>
-          <div class="img1">
-          	<a href="#"><img src="images/laptop/626.jpg" width="145" /></a>
-          </div>
+            
         </div>
  <div id="info">

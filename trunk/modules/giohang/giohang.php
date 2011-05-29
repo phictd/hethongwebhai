@@ -21,11 +21,11 @@ if(isset($_GET["ma"])) {
 			$_SESSION['tongsl']++;
 			$i = $_SESSION['tongsl'];
 			session_register("idhang".$i);
-			$_SESSION["idhang".$i] = $datahang[idHang];
+			$_SESSION["idhang".$i] = $datahang['idHang'];
 			session_register("tenhang".$i);
-			$_SESSION['tenhang'.$i] = $datahang[TenHang];
+			$_SESSION['tenhang'.$i] = $datahang['TenHang'];
 			session_register("gia".$i);
-			$_SESSION["gia".$i] = $datahang[Gia];
+			$_SESSION["gia".$i] = $datahang['Gia'];
 			session_register("soluong".$i);
 			$_SESSION["soluong".$i] = $slhang;
 			$_SESSION['thanhtien'] = $_SESSION['thanhtien']+($_SESSION['gia'.$i]*$_SESSION['soluong'.$i]);
