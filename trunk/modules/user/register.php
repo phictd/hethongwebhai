@@ -103,7 +103,7 @@ if(isset($_POST['ok'])){
             <label>Mật khẩu:</label> <input type="password" name="txtpass" size="25" /><font color="#FF0000">*</font><br />
              <label>Nhập lại mật khẩu:</label> <input type="password" name="txtrepass" size="25" /><font color="#FF0000">*</font><br />
             <label>Email:</label> <input type="text" name="txtemail" size="30" /><font color="#FF0000">*</font><br />
-            <label>Mã xác nhận:</label><div style="padding-top:3px" id="thu"> <img src="modules/user/random_image.php" /></div><br/>
+            <label>Mã xác nhận:</label><div style="padding-top:3px" id="thu"> <img src="libraries/random_image.php" /></div><br/>
             <label>&nbsp;</label> <input type="text" name="txtmxn" size="4" /><font color="#FF0000">*</font><br />
             </fieldset>
             <fieldset>
