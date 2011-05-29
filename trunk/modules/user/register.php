@@ -40,11 +40,15 @@ if(isset($_POST['ok'])){
 	}else{
 		$dc=$_POST['txtdc'];
 	}
-	if($_POST['txtdt'] == NULL){
-		$loi[] = "Số điện thoại không để trống <br />";
-	}else{
-		$dt=$_POST['txtdt'];
+	
+	if($_POST['txtdt'] != ""){
+		if(is_numeric($_POST['txtdt'])){	
+			$dt=$_POST['txtdt'];
+		}else{
+			$loi[] = "Số điện thoại không hợp lê <br />";
+		}
 	}
+		
 	if($loi != ""){
 			echo "<ul>";
 				foreach($loi as $err){
