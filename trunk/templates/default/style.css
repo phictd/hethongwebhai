@@ -295,7 +295,7 @@ font-weight:bold;
 }
 .product_img a{
 /*width:200px;*/
-padding:5px 0px 5px 0px;
+padding:5px 5px 5px 5px;
 clear:left;
 float:left;
 border:0px;
@@ -335,7 +335,7 @@ border:1px solid #999;
     /*height:195px;*/
     height:auto;
     text-align:center;
-    padding:0px;
+    padding:5px 5px 5px 10px;
 }
 
 .link{

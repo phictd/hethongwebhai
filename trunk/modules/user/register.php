@@ -99,17 +99,17 @@ if(isset($_POST['ok'])){
             <legend align="center"><font size="+1">Đăng Ký Thành Viên</font></legend>
             <fieldset>
             <legend>Tài Khoản</legend>
-            <label>Tên tài khoản:</label> <input type="text" name="txtuser" size="25" /><br />
-            <label>Mật khẩu:</label> <input type="password" name="txtpass" size="25" /><br />
-             <label>Nhập lại mật khẩu:</label> <input type="password" name="txtrepass" size="25" /><br />
-            <label>Email:</label> <input type="text" name="txtemail" size="30" /><br />
+            <label>Tên tài khoản:</label> <input type="text" name="txtuser" size="25" /><font color="#FF0000">*</font><br />
+            <label>Mật khẩu:</label> <input type="password" name="txtpass" size="25" /><font color="#FF0000">*</font><br />
+             <label>Nhập lại mật khẩu:</label> <input type="password" name="txtrepass" size="25" /><font color="#FF0000">*</font><br />
+            <label>Email:</label> <input type="text" name="txtemail" size="30" /><font color="#FF0000">*</font><br />
             <label>Mã xác nhận:</label><div style="padding-top:3px" id="thu"> <img src="modules/user/random_image.php" /></div><br/>
-            <label>&nbsp;</label> <input type="text" name="txtmxn" size="4" /><br />
+            <label>&nbsp;</label> <input type="text" name="txtmxn" size="4" /><font color="#FF0000">*</font><br />
             </fieldset>
             <fieldset>
             <legend>Thông Tin Cá Nhân</legend>
-            <label>Họ tên:</label> <input type="text" name="txtht" size="30" /><br />					
-            <label>Địa chỉ:</label> <input type="text" name="txtdc" size="50" /><br />
+            <label>Họ tên:</label> <input type="text" name="txtht" size="30" /><font color="#FF0000">*</font><br />					
+            <label>Địa chỉ:</label> <input type="text" name="txtdc" size="50" /><font color="#FF0000">*</font><br />
             <label>Ngày sinh:</label> <form id="form2" name="form2" method="post" action="">
                     <?php
                   $myCalendar = new tc_calendar("date1", true);
@@ -128,7 +128,7 @@ if(isset($_POST['ok'])){
                   </form><br/>
             <label>Giới tính:</label><input type="radio" name="gioitinh" value="1" checked="checked"/>Nam
             							<input type="radio" name="gioitinh" value="0" />Nữ<br/>
-            <label>Điện thoại:</label> <input type="text" name="txtdt" size="12" />
+            <label>Điện thoại:</label> <input type="text" name="txtdt" size="12" /><font color="#FF0000">*</font>
             </fieldset>
             <label>&nbsp;</label><input style="margin-left:80px; color:#333;" type="submit" name="ok" value="Đăng ký" />
             				<input type="reset" name="reset" style="color:#333;" value="Nhập lại" />
