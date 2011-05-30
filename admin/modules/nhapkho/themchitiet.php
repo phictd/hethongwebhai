@@ -1,5 +1,5 @@
 <?php
-//ini_set( "display_errors", 0);
+ini_set( "display_errors", 0);
 require_once('../../../libraries/oop.php');
 require_once('../../../libraries/congty.php');
 require_once('../../../libraries/loaihang.php');
@@ -57,7 +57,8 @@ echo "<form action='chitiet.php?id=$idphieunhap' method='post'>
 		
 		echo "<td width='150px' align='center'>		
 		
-		<select id='icongty' name='congty' onchange=thaydoicongty(this.value)>";			
+		<select id='icongty' name='congty' onchange=thaydoicongty(this.value)>";
+			echo "<option value='-1'>----Chọn----</option>";				
 			foreach($data_congty as $item_congty){				
 				echo "<option value='$item_congty[idCongTy]'>$item_congty[TenCongTy]</option>";	
 			}			
@@ -68,11 +69,12 @@ echo "<form action='chitiet.php?id=$idphieunhap' method='post'>
 		
 		echo "<td width='150px' align='center'>
 		
-		<select id='ihanghoa' name='hanghoa' >";			
-			$data_hang=laydatahanghoa($idcongty);
+		<select id='ihanghoa' name='hanghoa' >";	
+			echo "<option value='-1'>----Chọn----</option>";				
+			/*$data_hang=laydatahanghoa($idcongty);
 			foreach($data_hang as $item_hang){
 				echo "<option value='$item_hang[idHang]'>$item_hang[TenHang]</option>";	
-			}			
+			}	*/		
 		echo "
 		</select></td>";
 		
