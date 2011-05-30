@@ -175,7 +175,7 @@ public function listhanghoatheoloai($X,$A){
 }
 
 public function listhanghoa6($X,$A){
-	$sql="select * from hanghoa,congty where hanghoa.idCongTy=congty.idCongTy order by idLoaiHang ASC limit $X,$A";
+	$sql="select * from hanghoa order by idHang ASC limit $X,$A";
 	$this->query($sql);
 	if($this->num_rows() == 0){
 		return 0;
