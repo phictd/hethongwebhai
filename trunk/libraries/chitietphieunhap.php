@@ -30,6 +30,14 @@ public function get_soluong(){
 public function insert_chitietphieunhap(){	
 	$sql="insert into chitietphieunhap(idphieunhap,idhang,soluong) values('".$this->get_idphieunhap()."','".$this->get_idhang()."','".$this->get_soluong()."')";
 	$this->query($sql);	
+	
+	$sql_phieunhap="update phieunhap set TongTien = TongTien+(".$this->get_soluong()."*(select Gia from hanghoa where idHang='".$this->get_idhang()."')) where idPhieuNhap='".$this->get_idphieunhap()."'";
+	$this->query($sql_phieunhap);
+	
+	$sql_hanghoa="update hanghoa set SoLuong ='".$this->get_soluong()."' where idHang='".$this->get_idhang()."'";
+	$this->query($sql_hanghoa);
+	
+
 }
 
 public function listchitietphieunhap(){
