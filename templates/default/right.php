@@ -20,7 +20,7 @@ echo "<form action='index.php?module=user&act=check_login".$tam."' method='post'
          echo "  <label>Tên đăng nhập:</label> <br/><input type='text' name='txtuser' size='15' /><br />";
          echo "  <label>Mật khẩu:</label><br/> <input type='password' name='txtpass' size='15' /><br />";
          echo "  <input type='submit' name='ok' value='Đăng nhập' />";
-          echo " <a href='index.php?module=user&act=register'><input type='submit' name='dk' value='Đăng ký' /></a>";
+          echo " <a href='index.php?module=user&act=register'><input type='button' name='dk' value='Đăng ký' /></a>";
            echo "</fieldset>";
            echo " </form>";
 echo "</div>";
