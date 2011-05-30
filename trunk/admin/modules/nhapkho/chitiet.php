@@ -18,15 +18,21 @@ if(isset($_POST['dong'])){
 $id=$_GET['id'];
 if(isset($_POST['ok'])){
 	$idhang=$_POST['hanghoa'];
-	if($_POST['soluong']!="")
-		$soluong=$_POST['soluong'];
-	else
-		$soluong=0;		
-	$chitiet=new ChiTietPhieuNhap;
-	$chitiet->set_idhang($idhang);
-	$chitiet->set_idphieunhap($id);
-	$chitiet->set_soluong($soluong);
-	$chitiet->insert_chitietphieunhap();
+	if($idhang=='-1')
+		echo "<script type='text/javascript'>
+     		alert('Bạn chưa chọn hàng');
+		</script> ";
+	else{
+		if($_POST['soluong']!="")
+			$soluong=$_POST['soluong'];
+		else
+			$soluong=0;		
+		$chitiet=new ChiTietPhieuNhap;
+		$chitiet->set_idhang($idhang);
+		$chitiet->set_idphieunhap($id);
+		$chitiet->set_soluong($soluong);
+		$chitiet->insert_chitietphieunhap();
+	}
 	echo "<script type='text/javascript'>
      		location.href='chitiet.php?id=$id';
 		</script> ";

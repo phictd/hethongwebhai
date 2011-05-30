@@ -8,7 +8,7 @@ $loaihang=new LoaiHang;
 $loaihang->set_idloai($idloai);
 $data_congty=$loaihang->listcongty();
 
-
+		echo "<option value='-1'>----Chọn----</option>";		
 		foreach($data_congty as $item_congty){				
 				?>
 					<option value='<?php echo $item_congty['idCongTy'];?>'><?php echo $item_congty['TenCongTy'];?></option> <?php	}	
