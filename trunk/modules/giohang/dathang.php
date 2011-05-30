@@ -115,7 +115,7 @@ if(isset($_SESSION['username'])){
                   </form><br/>
             <label>Ghi chú:</label> <textarea name="txtghichu" cols="25" rows="5" ></textarea><br />
              <label>Mã xác nhận:</label><div style="padding-top:3px" id="thu"> <img src="libraries/random_image.php" /></div><br/>
-             <label>&nbsp;</label> <input type="text" name="txtmxn" size="4" /><font color="#FF0000">*</font><br /><br />
+             <label>&nbsp;</label> <input type="text" name="txtmxn" size="6" /><font color="#FF0000">*</font><br /><br />
             </fieldset>
             <label>&nbsp;</label><input style="margin-left:80px; margin-top:5px;" type="submit" name="ok" value="Mua" />
             <label>&nbsp;</label><input type="reset" name="reset" value="Thông tin mặc định" /> 
