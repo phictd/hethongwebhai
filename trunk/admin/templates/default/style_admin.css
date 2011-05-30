@@ -1,0 +1,71 @@
+/* CSS Document */
+@charset "utf-8";
+*{
+margin:0px;
+color:black;
+}
+
+body{
+font:12px verdana;
+width:780px;
+margin:auto;
+}
+table{
+font:12px verdana;
+text-align:center;
+}
+
+td{
+border:#3C0 solid 1px;
+}
+.title{
+	width:200px;
+background:green;
+color:#FFFFFF;
+font-weight:900;
+}
+.info{
+	width:300px;
+}
+.title1{
+background:green;
+color:#FFFFFF;
+font-weight:900;
+}
+
+h3{
+	color:#F93;
+	font-weight:900;
+	font:30px Verdana;
+}
+legend{
+color:#009933;
+font-weight:900;
+}
+
+fieldset{
+border:1px solid #0099FF;
+margin:5px;
+width:600px;
+}
+label{
+	text-align:left;
+width:120px;
+float:left;
+padding:0px;
+font-weight:900;
+margin-top:3px;
+}
+.center{
+	text-align:center;
+}
+.right{
+	text-align:right;
+}
+tr{
+	height:20px;
+}
+a{text-decoration:none
+}
+
+

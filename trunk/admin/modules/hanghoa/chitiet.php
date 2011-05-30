@@ -29,7 +29,12 @@ $duongdan="../../../images/".$thumuc."/";
 if(isset($_POST['ok'])){
 	if($_FILES['img']['name'] != "" || $_POST['txtfull']!=""){
 		if($_FILES['img']['name'] != ""){
+			if(!is_dir($duongdan)){
+				mkdir($duongdan);
+			}
 			move_uploaded_file($_FILES['img']['tmp_name'],$duongdan.$_FILES['img']['name']);
+			if($hinh!="" || $hinh!="none")
+				unlink($hinh);
 			$image="images/".$thumuc."/".$_FILES['img']['name'];
 		}else{
 			$image="none";
