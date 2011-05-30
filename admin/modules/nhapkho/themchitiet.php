@@ -6,44 +6,75 @@ require_once('../../../libraries/loaihang.php');
 require_once('../../../libraries/hanghoa.php');
 require_once('../../../libraries/chitietphieunhap.php');
 
+function layidcongty($idl){
+	$lhang=new LoaiHang;
+	$cty=new CongTy;
+	
+	$lhang->set_idloai($idl);
+	$data_cty=$lhang->listcongty();
+	return $data_cty[0]['idCongTy'];	
+}
+
+function laydatacongty($idl){
+	$lhang=new LoaiHang;
+	$cty=new CongTy;	
+	$lhang->set_idloai($idl);	
+	return $lhang->listcongty();
+}
+	
+function laydatahanghoa($idct){
+	$ct=new CongTy;
+	$ct->set_idcongty($idct);
+	return $ct->listhanghoa();
+	
+}
+
 $stt=$_GET['stt'];
+$idphieunhap=$_GET['idphieunhap'];
 
 $loaihang=new LoaiHang;
 $congty=new CongTy;
 $data_loaihang=$loaihang->listloaihang();
+$idloai=$data_loaihang[0]['idLoaiHang'];
+
+$data_congty=laydatacongty($idloai);
+$idcongty=$data_congty[0]['idCongTy'];
+
 echo "<form action='chitiet.php?id=$idphieunhap' method='post'>
 		<table align='center'  width='600px' id='tableloaihang' >
 		<tr height='20px'>
 			<td width='50px' align='center'>$stt</td>";
-		echo "<td width='150px' align='center'><select id='iloaihang' name='loaihang' onchange=thaydoiloaihang(this.value)>";
-		$idloai=0;
-			foreach($data_loaihang as $item_loaihang){
-				if($idloai==0){
-					$idloai=$item_loaihang[idLoaiHang];
-				}
+		echo "<td width='150px' align='center'>
+		
+		<select id='iloaihang' name='loaihang' onchange='thaydoiloaihang(this.value)'>";		
+			foreach($data_loaihang as $item_loaihang){				
 				echo "<option value='$item_loaihang[idLoaiHang]'>$item_loaihang[TenLoai]</option>";	
 			}			
-		echo "</select></td>";
+		echo "
+		</select>
 		
-		echo "<td width='150px' align='center'><div id='congtyhh'><select id='icongty' name='congty' onchange=thaydoicongty(this.value)>";	
-			$idcongty=0;	
-			$loaihang->set_idloai($idloai);
-			$data_congty=$loaihang->listcongty();
-			foreach($data_congty as $item_congty){
-				if($idcongty==0){
-					$idcongty=$item_congty[idCongTy];
-				}
+		</td>";
+		
+		echo "<td width='150px' align='center'>		
+		
+		<select id='icongty' name='congty' onchange=thaydoicongty(this.value)>";			
+			foreach($data_congty as $item_congty){				
 				echo "<option value='$item_congty[idCongTy]'>$item_congty[TenCongTy]</option>";	
 			}			
-		echo "</select></div></td>";
+		echo "
+		</select>
 		
-		echo "<td width='150px' align='center'><div id='hanghoahh'><select id='ihanghoa' name='hanghoa' >";			
-			$congty->set_idcongty($idcongty);
-			$data_hang=$congty->listhanghoa();
+		</td>";
+		
+		echo "<td width='150px' align='center'>
+		
+		<select id='ihanghoa' name='hanghoa' >";			
+			$data_hang=laydatahanghoa($idcongty);
 			foreach($data_hang as $item_hang){
 				echo "<option value='$item_hang[idHang]'>$item_hang[TenHang]</option>";	
 			}			
-		echo "</select></div></td>";
+		echo "
+		</select></td>";
 		
 		echo"			
 			
