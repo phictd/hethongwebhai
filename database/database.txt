@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 -- 
 -- Host: localhost
--- Generation Time: May 31, 2011 at 11:17 AM
+-- Generation Time: May 31, 2011 at 11:41 AM
 -- Server version: 5.0.27
 -- PHP Version: 5.2.1
 -- 
@@ -176,16 +176,16 @@ INSERT INTO `hanghoa` (`idHang`, `idCongTy`, `TenHang`, `MoTa`, `NgayCapNhat`, `
 (15, 5, 'Rado-M8', '<p>\r\n	<span>D&ugrave;ng</span> <span>kim</span> quay <span>hiá»ƒn</span> <span>thá»‹</span> ,<span>chá»‘ng</span> <span>rá»‰</span> <span>sáº¯t</span></p>\r\n', '2010-12-16', 500000, 'images/DongHo/Longinesg.jpg', 0, 0, '', 0, 'H'),
 (16, 5, 'Rado - rtu', '<p>\r\n	<span>D&ugrave;ng</span> <span>kim</span> quay <span>hiá»ƒn</span> <span>thá»‹</span> ,<span>chá»‘ng</span> <span>rá»‰</span> <span>sáº¯t</span></p>\r\n', '2010-12-16', 1600000, 'images/DongHo/omega.jpg', 0, 0, '', 0, 'H'),
 (17, 5, 'Rado - HY12', '<p>\r\n	<span>D&ugrave;ng</span> <span>kim</span> quay <span>hiá»ƒn</span> <span>thá»‹</span> ,<span>chá»‘ng</span> <span>rá»‰</span> <span>sáº¯t</span></p>\r\n', '2010-12-16', 2500000, 'images/DongHo/product.jpg', 0, 0, '', 0, 'H'),
-(18, 5, 'Rado - TP223', '<p>\r\n	<span>D&ugrave;ng</span> <span>kim</span> quay <span>hiá»ƒn</span> <span>thá»‹</span> ,<span>chá»‘ng</span> <span>rá»‰</span> <span>sáº¯t</span></p>\r\n', '2010-12-16', 1500000, 'images/DongHo/rolex .jpg', 0, 0, '', 0, 'H'),
-(19, 5, 'Rado - M269', '<p>\r\n	<span>D&ugrave;ng</span> <span>kim</span> quay <span>hiá»ƒn</span> <span>thá»‹</span> ,<span>chá»‘ng</span> <span>rá»‰</span> <span>sáº¯t</span></p>\r\n', '2010-12-16', 2200000, 'images/DongHo/rolex v .JPG', 0, 0, '', 0, 'H'),
+(18, 5, 'Rado - TP223', '<p>\r\n	<span>D&ugrave;ng</span> <span>kim</span> quay <span>hiá»ƒn</span> <span>thá»‹</span> ,<span>chá»‘ng</span> <span>rá»‰</span> <span>sáº¯t</span></p>\r\n', '2010-12-16', 1500000, 'images/DongHo/rolex.jpg', 0, 0, '', 0, 'H'),
+(19, 5, 'Rado - M269', '<p>\r\n	<span>D&ugrave;ng</span> <span>kim</span> quay <span>hiá»ƒn</span> <span>thá»‹</span> ,<span>chá»‘ng</span> <span>rá»‰</span> <span>sáº¯t</span></p>\r\n', '2010-12-16', 2200000, 'images/DongHo/rolexv.JPG', 0, 0, '', 0, 'H'),
 (20, 5, 'Rado -ER', '<p>\r\n	<span>D&ugrave;ng</span> <span>kim</span> quay <span>hiá»ƒn</span> <span>thá»‹</span> ,<span>chá»‘ng</span> <span>rá»‰</span> <span>sáº¯t</span></p>\r\n', '2010-12-16', 2400000, 'images/DongHo/3690563.jpg', 0, 0, '', 0, 'H'),
 (21, 5, 'Rado - M32', '<p>\r\n	<span>D&ugrave;ng</span> <span>kim</span> quay <span>hiá»ƒn</span> <span>thá»‹</span> ,<span>chá»‘ng</span> <span>rá»‰</span> <span>sáº¯t</span></p>\r\n', '2010-12-16', 1100000, 'images/DongHo/1130285745.jpg', 0, 0, '', 0, 'H'),
 (22, 5, 'Rado - M 362', '<p>\r\n	<span>D&ugrave;ng</span> <span>kim</span> quay <span>hiá»ƒn</span> <span>thá»‹</span> ,<span>chá»‘ng</span> <span>rá»‰</span> <span>sáº¯t</span></p>\r\n', '2010-12-16', 2400000, 'images/DongHo/Longines.jpg', 0, 0, '', 0, 'H'),
 (23, 1, ' Casio', '<p>\r\n	<span>D&ugrave;ng</span> <span>kim</span> quay <span>hiá»ƒn</span> <span>thá»‹</span> ,<span>chá»‘ng</span> <span>rá»‰</span> <span>sáº¯t</span></p>\r\n', '2010-12-16', 2000000, 'images/DongHo/Longinesg.jpg', 0, 0, '', 0, 'H'),
 (24, 1, 'BEM-112SG', '<p>\r\n	<span>D&ugrave;ng</span> <span>kim</span> quay <span>hiá»ƒn</span> <span>thá»‹</span> ,<span>chá»‘ng</span> <span>rá»‰</span> <span>sáº¯t</span></p>\r\n', '2010-12-16', 2200000, 'images/DongHo/omega.jpg', 0, 0, '', 0, 'H'),
 (25, 1, 'G-011D-2BDR', '<p>\r\n	<span>D&ugrave;ng</span> <span>kim</span> quay <span>hiá»ƒn</span> <span>thá»‹</span> ,<span>chá»‘ng</span> <span>rá»‰</span> <span>sáº¯t</span></p>\r\n', '2010-12-16', 1900000, 'images/DongHo/product.jpg', 0, 0, '', 0, 'H'),
-(26, 1, 'AW-591 ', '<p>\r\n	<span>D&ugrave;ng</span> <span>kim</span> quay <span>hiá»ƒn</span> <span>thá»‹</span> ,<span>chá»‘ng</span> <span>rá»‰</span> <span>sáº¯t</span></p>\r\n', '2010-12-16', 2020000, 'images/DongHo/rolex .jpg', 0, 0, '', 0, 'H'),
-(27, 1, 'EFA-122D ', '<p>\r\n	<span>D&ugrave;ng</span> <span>kim</span> quay <span>hiá»ƒn</span> <span>thá»‹</span> ,<span>chá»‘ng</span> <span>rá»‰</span> <span>sáº¯t</span></p>\r\n', '2010-12-16', 2500000, 'images/DongHo/rolex v .JPG', 0, 0, '', 0, 'H'),
+(26, 1, 'AW-591 ', '<p>\r\n	<span>D&ugrave;ng</span> <span>kim</span> quay <span>hiá»ƒn</span> <span>thá»‹</span> ,<span>chá»‘ng</span> <span>rá»‰</span> <span>sáº¯t</span></p>\r\n', '2010-12-16', 2020000, 'images/DongHo/rolex.jpg', 0, 0, '', 0, 'H'),
+(27, 1, 'EFA-122D ', '<p>\r\n	<span>D&ugrave;ng</span> <span>kim</span> quay <span>hiá»ƒn</span> <span>thá»‹</span> ,<span>chá»‘ng</span> <span>rá»‰</span> <span>sáº¯t</span></p>\r\n', '2010-12-16', 2500000, 'images/DongHo/rolexv.JPG', 0, 0, '', 0, 'H'),
 (28, 1, 'BEM-112D ', '<p>\r\n	<span>D&ugrave;ng</span> <span>kim</span> quay <span>hiá»ƒn</span> <span>thá»‹</span> ,<span>chá»‘ng</span> <span>rá»‰</span> <span>sáº¯t</span></p>\r\n', '2010-12-16', 2100000, 'images/DongHo/3690563.jpg', 0, 0, '', 0, 'H'),
 (29, 1, ':BG-1224B ', '<p>\r\n	<span>D&ugrave;ng</span> <span>kim</span> quay <span>hiá»ƒn</span> <span>thá»‹</span> ,<span>chá»‘ng</span> <span>rá»‰</span> <span>sáº¯t</span></p>\r\n', '2010-12-16', 1700000, 'images/DongHo/1130285745.jpg', 0, 0, '', 0, 'H'),
 (30, 1, 'BG-1301 ', '<p>\r\n	<span>D&ugrave;ng</span> <span>kim</span> quay <span>hiá»ƒn</span> <span>thá»‹</span> ,<span>chá»‘ng</span> <span>rá»‰</span> <span>sáº¯t</span></p>\r\n', '2010-12-16', 1500000, 'images/DongHo/Longines.jpg', 0, 0, '', 0, 'H'),
