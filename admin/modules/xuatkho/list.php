@@ -13,9 +13,11 @@ input{
 	color:#F60;
 	font-weight:600;
 }
-</style><div align="center">	
-	<table align="center"  width="840px" id="tableloaihang" >
-    	<tr height="20px">
+</style>
+<div align="center">
+
+<table align="center"  width="840px" id="tableloaihang" >
+<tr height="20px">
         	<td class=title width="50px">STT</td>
         	<td class=title width="100px">Mã Đơn</td>
             <td class=title width="100px">User</td>
@@ -58,13 +60,7 @@ require_once('../../../libraries/function.php');
 			
 			?>	
             	<td align=center width='50px'> <a href='modules/donhang/chitiet.php?id=<?php echo $item_donhang[idDonHang];?>' target="_blank" >Chi Tiết</a></td>		
-				<td align=center width='50px'> <a href='#' onclick="suadonhang('<?php echo $item_donhang[idDonHang];?>',
-                															document.getElementById('ngaygiao<?php echo $stt;?>').value,
-                                                                            document.getElementById('nguoinhan<?php echo $stt;?>').value,
-                                                                            document.getElementById('dienthoai<?php echo $stt;?>').value,
-                                                                            document.getElementById('diadiemgiao<?php echo $stt;?>').value,
-                                                                            document.getElementById('ghichu<?php echo $stt;?>').value
-                                                                                )">Xuất</a></td>
+				<td align=center width='50px'> <a href='modules/xuatkho/phieuxuatkho.php?id=<?php echo $item_donhang[idDonHang];?>' target="_blank" >Xuất</a></td>
 			<?php
 			
 			echo "</tr>";
@@ -73,7 +69,7 @@ require_once('../../../libraries/function.php');
 	
 ?><br />
 
-  </table>
+</table>
     
     
 </div> 
