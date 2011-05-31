@@ -60,10 +60,7 @@
 	<?php 
 		if($C > 1){
 				$D=$X/$A + 1;
-				
-				echo "day la X".$X,"<br />";
-				echo "day la A".$A,"<br />";
-				echo "day la D".$D,"<br /><br />";
+
 				if($D != 1){
 					$M= $X - $A;
 					echo "<a href=index.php?start=$M&page=$C class=link><<</a>";
