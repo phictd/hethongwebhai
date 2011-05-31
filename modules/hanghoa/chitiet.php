@@ -3,7 +3,7 @@
 		require_once('libraries/hanghoa.php');
 		$id=$_GET['id'];
 		$b= new HangHoa;
-		$b->set_idHang($id);
+		$b->set_idhang($id);
 		$data1=$b->getHang();
 	
 ?>
@@ -64,15 +64,17 @@ font-weight:bold;
 <div id="chitiet">
     <h1>THÔNG TIN SẢN PHẨM</h1>
     <div id="khung">
-      <?php echo "<img src=$data1[UrlHinh] width='170' height='150' />";?> 
-
-      <p class="red1"><?php echo $data1['TenHang'];?></p> 
-      <p class="red">Giá:<?php echo number_format($data1['Gia'],"000"),"VND";?></p>
- 	<p class="black"><?php echo $data1['MoTa'];?></p>
-
-      <p><a href="index.php?module=giohang&act=them&ma=<?php echo $data1[idHang]; ?>&slhang=1"><img src="images/icons/addtocart.gif"/></a></p>
+      <?php 
+	  foreach($data1 as $data){
+	  echo "<img src=$data[UrlHinh] width='170' height='150' />";
 	
-     
+      echo "<p class='red1'>$data[TenHang]</p> ";
+      echo "<p class='red'>Giá:".number_format($data['Gia'])." VND</p>";
+ 	echo "<p class='black'>$data[MoTa]</p>";
+
+      echo "<p><a href='index.php?module=giohang&act=them&ma=$data[idHang]'><img src='images/icons/addtocart.gif' /></a></p>";
+	  }
+     ?> 
     </div>
 
 </div>
