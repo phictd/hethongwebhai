@@ -12,7 +12,7 @@ switch($_GET['act']){
         require("modules/giohang/xemgiohang.php");
         break;
         case "capnhat":
-        require("modules/giohang/capnhatdonhang.php");
+        require("modules/giohang/capnhatgiohang.php");
         break;
         case "dathang":
         require("modules/giohang/dathang.php");

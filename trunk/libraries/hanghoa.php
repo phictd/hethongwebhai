@@ -35,6 +35,8 @@ public function set_idhang($idhang){
 public function get_idhang(){
 	return $this->idhang;
 }
+
+///////////////////////////////
 /* */
 public function set_idloai($idloai){
 	$this->idloai=$idloai;
@@ -228,13 +230,20 @@ public function listloaihang(){
 	}
 }
 
-//lay 1 mat hang
-       public function getHang(){
-        $sql = "select * from hanghoa where idHang ='".$this->get_idhang()."'";
+//////////////////lay idHang va Gia de tinh tien//////////////////
+      public function getHang(){
+        $sql = "select idHang,TenHang,Gia from hanghoa where idHang ='".$this->get_idhang()."'";
         $this->query($sql);
-        return $this->fetch();
-       }
+		if($this->num_rows() == 0){
+			return 0;
+		}else{
+			while($row=$this->fetch()){
+				$data[]=$row;
+			}	
+			return $data;
+       	}
 
+	  }  
 
 public function delete_hanghoa(){
 	$sql="delete from hanghoa where idHang='".$this->get_idhang()."'";	
