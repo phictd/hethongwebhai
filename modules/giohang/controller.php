@@ -2,10 +2,7 @@
 require("libraries/donhang.php");
 //require("libraries/chitietdonhang.php");
 switch($_GET['act']){
-    case "them":
-        require("modules/giohang/giohang.php");
-        break;
-        case "xoa":
+         case "xoa":
         require("modules/giohang/xoagiohang.php");
         break;
         case "xem":
