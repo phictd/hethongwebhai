@@ -232,7 +232,7 @@ public function listloaihang(){
 
 //////////////////lay idHang va Gia de tinh tien//////////////////
       public function getHang(){
-        $sql = "select idHang,TenHang,Gia from hanghoa where idHang ='".$this->get_idhang()."'";
+        $sql = "select idHang,TenHang,Gia,MoTa,UrlHinh from hanghoa where idHang ='".$this->get_idhang()."'";
         $this->query($sql);
 		if($this->num_rows() == 0){
 			return 0;
