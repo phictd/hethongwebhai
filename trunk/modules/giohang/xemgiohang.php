@@ -56,8 +56,8 @@ echo "<br/>";
 
 echo "<center>";
     echo "<input name='capnhat' type='submit' value='Cập Nhật Lại Số Lượng' style='margin:5px 20px 0px 5px'/>";
-	 echo "<a href='index.php?module=giohang&act=xoa&idHang=0'><input name='d' type='button' value='Xóa Giỏ Hàng' style='margin:5px 20px 0px 0px;' /></a>";
-   	echo "<a href='index.php?module=giohang&act=dathang'><input name='dh' type='button' value='Đặt Hàng'/></a>";
+	echo "<a href='index.php?module=giohang&act=xoa&idHang=0'><input name='d' type='button' value='Xóa Giỏ Hàng' class='kc_nut' /></a>";
+   	echo "<a href='index.php?module=giohang&act=dathang'><input name='dh' type='button' value='Đặt Hàng' /></a>";
 
 echo "</center>";
 echo "</form>";
