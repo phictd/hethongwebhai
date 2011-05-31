@@ -39,19 +39,19 @@
 			$D=$X/$A + 1;
 			if($D != 1){
 				$M= $X - $A;
-				echo "<a href=index.php?start=$M&page=$C class=link><<</a>";
+				echo "<a href=index.php?module=hanghoa&act=lhhcongty&start=$M&page=$C class=link><<</a>";
 			}
 			for($i=1;$i<= $C;$i++){
 				if($i == $D){
 					echo " <span class=active>$i</span> ";
 				}else{
 					$M=($i-1)*$A;
-					echo " <a href=index.php?start=$M&page=$C class=link>$i</a> ";
+					echo " <a href=index.php?module=hanghoa&act=lhhcongty&start=$M&page=$C class=link>$i</a> ";
 				}
 			}
 			if($D != $C){
 				$M=$X + $A;
-				echo "<a index.php?module=hanghoa&act=lhhloai&idloai=$item[idLoaiHang]&start=$M&page=$C class=link>>></a>";
+				echo "<a href='index.php?module=hanghoa&act=lhhcongty&start=$M&page=$C' class=link>>></a>";
 			}
 		}
 	?>
