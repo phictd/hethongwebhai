@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 -- 
 -- Host: localhost
--- Generation Time: May 31, 2011 at 11:41 AM
+-- Generation Time: May 31, 2011 at 11:51 AM
 -- Server version: 5.0.27
 -- PHP Version: 5.2.1
 -- 
@@ -191,8 +191,8 @@ INSERT INTO `hanghoa` (`idHang`, `idCongTy`, `TenHang`, `MoTa`, `NgayCapNhat`, `
 (30, 1, 'BG-1301 ', '<p>\r\n	<span>D&ugrave;ng</span> <span>kim</span> quay <span>hiá»ƒn</span> <span>thá»‹</span> ,<span>chá»‘ng</span> <span>rá»‰</span> <span>sáº¯t</span></p>\r\n', '2010-12-16', 1500000, 'images/DongHo/Longines.jpg', 0, 0, '', 0, 'H'),
 (31, 1, 'BG-160-4V ', '<p>\r\n	<span>D&ugrave;ng</span> <span>kim</span> quay <span>hiá»ƒn</span> <span>thá»‹</span> ,<span>chá»‘ng</span> <span>rá»‰</span> <span>sáº¯t</span></p>\r\n', '2010-12-16', 1976000, 'images/DongHo/Longinesg.jpg', 0, 0, '', 0, 'H'),
 (32, 1, 'BG-1220-4AV ', '<p>\r\n	<span>D&ugrave;ng</span> <span>kim</span> quay <span>hiá»ƒn</span> <span>thá»‹</span> ,<span>chá»‘ng</span> <span>rá»‰</span> <span>sáº¯t</span></p>\r\n', '2010-12-16', 1652000, 'images/DongHo/product.jpg', 0, 0, '', 0, 'H'),
-(33, 1, 'MSG-164CG-1V ', '<p>\r\n	<span>D&ugrave;ng</span> <span>kim</span> quay <span>hiá»ƒn</span> <span>thá»‹</span> ,<span>chá»‘ng</span> <span>rá»‰</span> <span>sáº¯t</span></p>\r\n', '2010-12-16', 1563000, 'images/DongHo/rolex .jpg', 0, 0, '', 0, 'H'),
-(34, 1, 'BG-194AF, 195V ', '<p>\r\n	<span>D&ugrave;ng</span> <span>kim</span> quay <span>hiá»ƒn</span> <span>thá»‹</span> ,<span>chá»‘ng</span> <span>rá»‰</span> <span>sáº¯t</span></p>\r\n', '2010-12-16', 1766000, 'images/DongHo/rolex v .JPG', 0, 0, '', 0, 'H'),
+(33, 1, 'MSG-164CG-1V ', '<p>\r\n	<span>D&ugrave;ng</span> <span>kim</span> quay <span>hiá»ƒn</span> <span>thá»‹</span> ,<span>chá»‘ng</span> <span>rá»‰</span> <span>sáº¯t</span></p>\r\n', '2010-12-16', 1563000, 'images/DongHo/rolex.jpg', 0, 0, '', 0, 'H'),
+(34, 1, 'BG-194AF, 195V ', '<p>\r\n	<span>D&ugrave;ng</span> <span>kim</span> quay <span>hiá»ƒn</span> <span>thá»‹</span> ,<span>chá»‘ng</span> <span>rá»‰</span> <span>sáº¯t</span></p>\r\n', '2010-12-16', 1766000, 'images/DongHo/rolexv.JPG', 0, 0, '', 0, 'H'),
 (35, 1, 'BG-180M ', '<p>\r\n	<span>D&ugrave;ng</span> <span>kim</span> quay <span>hiá»ƒn</span> <span>thá»‹</span> ,<span>chá»‘ng</span> <span>rá»‰</span> <span>sáº¯t</span></p>\r\n', '2010-12-16', 1506000, 'images/DongHo/1130285745.jpg', 0, 0, '', 0, 'H'),
 (36, 1, 'Baby-G', '<p>\r\n	<span>D&ugrave;ng</span> <span>kim</span> quay <span>hiá»ƒn</span> <span>thá»‹</span> ,<span>chá»‘ng</span> <span>rá»‰</span> <span>sáº¯t</span></p>\r\n', '2010-12-16', 1963000, 'images/DongHo/omega.jpg', 0, 0, '', 0, 'H'),
 (38, 6, 'TIVI  Samsung LA1', '<p>\r\n	TIVI&nbsp; Samsung LA1 l&agrave; má»™t sáº£n pháº©m hiá»‡n Ä‘áº¡i theo c&ocirc;ng nghá»‡ Nano vá»›i t&iacute;nh nÄƒng Ä‘áº§ háº¥p dáº«n</p>\r\n', '2010-12-16', 12500000, 'images/TiVi/resize_14081_26c450.jpg', 0, 0, '', 0, 'H'),
