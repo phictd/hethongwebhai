@@ -47,7 +47,7 @@
 					echo "<div class='prod_box'>";
 				 	echo "<div class='top_prod_box'></div>";
 				   	echo "<div class='center_prod_box'>";
-					echo "<div class='product_img'><a href='#' rel='addToCart' onclick='getdata($item1[idHang])' ><img src='".$item1['UrlHinh']."' width='150' height='120'/></a></div>";
+					echo "<div class='product_img'><a href='#' rel='addToCart' onclick='getdata($item1[idHang])' ><img border='0' src='".$item1['UrlHinh']."' width='150' height='120' /></a></div>";
 					echo "<div class='product_title'>$item1[TenHang]</div>";
 					echo "<div class='product_title_price'>$item1[Gia]</div>";
 				   	echo "<a style='margin-right:10px;' href='#' rel='addToCart' onclick='getdata($item1[idHang])' ><img src='images/icons/cart.gif'/></a>";
