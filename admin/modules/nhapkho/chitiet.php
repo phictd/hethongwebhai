@@ -70,7 +70,7 @@ $data_chitiet=$chitiet->listchitietphieunhap();
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Chi Tiết Phiếu Nhập</title>
-<script type="text/javascript" src="../../../libraries/ajax_admin.js"></script>
+<script type="text/javascript" src="../../../libraries/ajax_nhaphang.js"></script>
 <link href="../../templates/default/style_admin.css" rel="stylesheet" type="text/css" />
 </head>
 

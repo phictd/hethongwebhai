@@ -41,8 +41,9 @@ function suaphieunhap(id,ghichu){
 	http.send(null);
 }
 
-function suadonhang(id,ghichu){
-	http.open('get','modules/donhang/sua.php?id='+id+'&ghichu='+ghichu,true);
+function suadonhang(id,ngaygiao,nguoinhan,dienthoai,diadiemgiao,ghichu){
+	
+	http.open('get','modules/donhang/sua.php?id='+id+'&ngaygiao='+ngaygiao+'&nguoinhan='+nguoinhan+'&dienthoai='+dienthoai+'&diadiemgiao='+diadiemgiao+'&ghichu='+ghichu,true);
 	http.onreadystatechange=process_tuongtaccsdl;
 	http.send(null);
 }
@@ -135,6 +136,11 @@ function themphieunhapvaocsdl(id,ghichu){
 	http.onreadystatechange=process_tuongtaccsdl;
 	http.send(null);		
 }
+function themdonhangvaocsdl(id,user,ngaydat,ngaygiao,nguoinhan,dienthoai,diadiem,ghichu){	
+	http.open('get','modules/donhang/themdonhangvaocsdl.php?id='+id+'&user='+user+'&ngaydat='+ngaydat+'&ngaygiao='+ngaygiao+'&nguoinhan='+nguoinhan+'&dienthoai='+dienthoai+'&diadiem='+diadiem+'&ghichu='+ghichu,true);
+	http.onreadystatechange=process_tuongtaccsdl;
+	http.send(null);			
+}
 
 
 congtyhh=0;
@@ -193,6 +199,7 @@ function process_tuongtaccsdl(){
 				case '15': document.getElementById('thongbao').innerHTML='Thêm Thành Công';list('nhapkho');break;
 				case '16': document.getElementById('thongbao').innerHTML='Sửa Thành Công';list('donhang');break;
 				case '17   ': document.getElementById('thongbao').innerHTML='Xóa Thành Công';list('donhang');break;
+				case '18': document.getElementById('thongbao').innerHTML='Thêm Thành Công';list('donhang');break;
 				default : document.getElementById('thongbao').innerHTML=kq;
 			}
 			
