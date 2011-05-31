@@ -8,54 +8,18 @@ require_once('../../../libraries/function.php');
 
 ini_set( "display_errors", 0);
 
-
-if(isset($_POST['dong'])){	
-	dongcuaso();
-	exit();
-}
 $id=$_GET['id'];
-
-if(isset($_POST['ok'])){
-	$soluong=0+$_POST['soluong'];
-	$idhang=$_POST['hanghoa'];
-	if($idhang=='-1')
-		echo "<script type='text/javascript'>
-     		alert('Bạn chưa chọn hàng');
-		</script> ";
-	else{
-		if(is_int($soluong)&&$soluong>0){
-			
-			$chitiet=new ChiTietDonHang;
-			$chitiet->set_idHang($idhang);
-			$chitiet->set_idDonHang($id);
-			$chitiet->set_soluong($soluong);
-			$chitiet->ThemChiTietDonHang();
-		}else{
-			echo "<script type='text/javascript'>
-     		alert('Số lượng nhập không đúng ');
-		</script> ";
-		}
-	}
-	echo "<script type='text/javascript'>
-     		location.href='chitiet.php?id=$id';
-		</script> ";
-}
 
 $a=new DonHang;
 $a->set_idDonHang($id);
-if(isset($_POST['dong'])){		
-	dongcuaso();
-	exit();
-}
-if(isset($_POST['xoa'])){		
-	$a->XoaDonHang();
-	dongcuaso();
-	exit();
-}
+
 $data=$a->getdata();
 
-?>
+$ngaydat = date('d');
+$thangdat = date('m');
+$namdat = date('Y');
 
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -66,58 +30,43 @@ $data=$a->getdata();
 </head>
 
 <body>
-<p>
-  <center>
-    <font style="font-size:16px;font-weight:900;">PHIẾU XUẤT KHO</font></strong>
-  </center>
-</p>
-<center>
-  <p>&nbsp;</p>
-  
-  
-  <form action="phieuxuatkho.php?id=<?php echo $id;?>" method="post" name="frm" enctype="multipart/form-data" >
-    
-    <table width="600px">
-      <tr>
-        <td class="title"> Mã Phiếu</td>
-        <td class="info"><h3><?php echo $id;?></h3></td>
-      </tr>
-      <tr>
-        <td class="title">Ngày Đặt</td>
-        <td class="info" ><input type="text" name="txthoten" size="30" value="<?php echo $data[0]['ThoiDiemDatHang'];?>" disabled="disabled" class="center" /></td>        
-      </tr>
-      <tr>
-        <td class="title">Ngày Giao</td>
-        <td class="info" ><input type="text" name="txthoten" size="30" value="<?php echo $data[0]['ThoiDiemGiaoHang'];?>" disabled="disabled" class="center" /></td>        
-      </tr>
-      <tr>
-        <td class="title">Điện Thoại</td>
-        <td class="info"><input type="text" name="txthoten" size="30" value="<?php echo $data[0]['DienThoai'];?>" disabled="disabled" class="center"/></td>
-      </tr>
-      <tr>
-        <td class="title">Địa điểm</td>
-        <td class="info"><input type="text" name="txthoten" size="30" value="<?php echo $data[0]['DiaDiemGiaoHang'];?>" disabled="disabled" class="center"/></td>
-      </tr>
-      <tr>
-        <td class="title">Tổng tiền</td>
-        <td class="info"><font style="font-weight:700;color:#F00;font-size:18px"><?php echo xulygia($data[0]['TongTien']);?></font></td>
-      </tr>  
-      <tr>
-        <td class="title">Ghi chú</td>
-        <td class="info"><input type="text" name="txtdiachi" size="30" value="<?php echo $data[0]['GhiChu'];?>" disabled="disabled" class="center"/></td>
-      </tr>   
-    </table>
-    <fieldset>
-      <legend>Chi Tiết Đơn Hàng</legend>
-      <table width="600px">
+<form action="phieuxuatkho_xem.php?id=<?php echo $id;?>" method="post" name="frm" enctype="multipart/form-data" >
+<div id="xk_top">
+	<div id="xk_left">
+    Bộ phận: <input type="text" name="txtbophan" size="10" value="Quản lý kho" /></div><!-- div xk_left close -->
+    <div id="xk_middle" class="center">
+      <br />
+<p><font style="font-size:20px;font-weight:900;">PHIẾU XUẤT KHO</font></p>
+      <p>Ngày <?php echo $ngaydat;?> tháng <?php echo $thangdat;?> năm <?php echo $namdat;?></p>
+    </div><!-- div xk_middle close -->
+    <div id="xk_right">
+      <p>Số: <input type="text" name="txtso" size="10" class="right" value="<?php echo time();?>" /></p>
+      <p>Nợ: <input type="text" name="txtno" size="10" class="right" /></p>
+      <p>Có: <input type="text" name="txtco" size="10" class="right" /></p>
+    </div>
+    <!-- div xk_right close -->
+</div><!-- div xk_top close -->
+   	<div id="xk_info">
+   	  <p>&nbsp;</p>
+   	  <p><label>Họ tên người nhận hàng</label> <input type="text" name="txthoten" size="50" value="<?php echo $data[0]['TenNguoiNhan'];?>"/></p>
+      <p><label>Địa chỉ</label><input type="text" name="txtdiachi" size="50" value="<?php echo $data[0]['DiaDiemGiaoHang'];?>"/></p>
+      <p><label>Số điện thoại</label><input type="text" name="txtsodienthoai" size="50" value="<?php echo $data[0]['DienThoai'];?>"/></p>
+   	  <p><label>Lý do xuất kho</label><input type="text" name="txtlydoxuatkho" size="50" value="Bán cho khách hàng" /></p>
+   	  <p><label>Xuất tại kho</label><input type="text" name="txtxuattaikho" size="50" value="Cơ sở 1 : 123 Trần Hưng Đạo"/></p>
+      
+   	  <p>&nbsp;</p>   
+              
+      <table width="640px">
         <tr>
-          <td class="title1" width="50px"> STT</td>
-          <td class="title1" width="80px"> Loại Hàng</td>
-          <td class="title1"width="120px"> Công Ty </td>
-          <td class="title1"width="150px"> Tên Hàng</td>
-          <td class="title1"width="100px"> Số Lượng</td> 
-          <td class="title1"width="50px"> Sửa</td> 
-          <td class="title1"width="50px"> Xóa</td>                            
+          <td class="title1" width="10px">STT</td>
+          <td class="title1" width="70px">Loại Hàng</td>
+          <td class="title1"width="70px">Công Ty </td>
+          <td class="title1"width="150px">Tên Hàng</td>
+          <td class="title1"width="40px">Đơn vị tính</td>
+          <td class="title1"width="40px">Số Lượng</td> 
+          <td class="title1"width="130px">Đơn Giá</td> 
+          <td class="title1"width="130px">Thành Tiền</td>
+                                      
         </tr>
         <?php
 						$chitiet=new ChiTietDonHang;
@@ -125,7 +74,7 @@ $data=$a->getdata();
 						$data_chitiet=$chitiet->listChiTietDonhang();						
 						if($data_chitiet==0)
 							echo "<tr>
-                            		<td class='info1' colspan='7'> Không có chi tiết nào trong phiếu này</td>
+                            		<td class='info1' colspan='8'> Không có chi tiết nào trong phiếu này</td>
 								</tr>";
 						else{
 							$stt=0;
@@ -133,32 +82,57 @@ $data=$a->getdata();
 							foreach($data_chitiet as $item_chitiet){
 								$stt++;
 								echo"<tr>
-										<td class='info1' width='50px'>$stt</td>";								
+										<td class='info1' width='10px'>$stt</td>";								
 								$hanghoa->set_idhang($item_chitiet['idHang']);
 								$data_hanghoa=$hanghoa->listhanghoa();		
-								echo"<td class='info1' width='150px'><input type='text' id='loai$stt' size='10' value='".$data_hanghoa[0][TenLoai]."' disabled='disabled' class='center'/></td>
-										<td class='info1' width='150px'><input type='text' id='congty$stt' size='14' value='".$data_hanghoa[0][TenCongTy]."' disabled='disabled' class='center'/></td>
-										<td class='info1' width='150px'><input type='text' id='tensanpham$stt' size='15' value='".$data_hanghoa[0][TenHang]."' disabled='disabled' class='center'/>										
-										<td class='info1' width='100px'><input type='text' id='soluong$stt' size='6' value='$item_chitiet[SoLuong]'  class='right'/></td>
-									 ";?>
-        <td align='center' width='50px'>                                								
-          <a href='#' onclick=suachitiet_donhang('<?php echo $id;?>','<?php echo $data_hanghoa[0]['idHang'];?>',document.getElementById('soluong<?php echo $stt;?>').value)>Sửa</a>                               
-          </td> 
-          <td align='center' width='50px'> <a href='#' onclick=xoachitiet_donhang('<?php echo $id;?>','<?php echo $data_hanghoa[0]['idHang'];?>')>Xóa</a> 
-          </td>
-          </tr>	
-        <?php							
+								echo"<td class='info1' width='70px'>".$data_hanghoa[0][TenLoai]."</td>
+										<td class='info1' width='70px'>".$data_hanghoa[0][TenCongTy]."</td>
+										<td class='info1' width='150px'>".$data_hanghoa[0][TenHang]."</td>
+										<td class='info1' width='40px'>Cái</td>									
+										<td class='info1' width='40px'>$item_chitiet[SoLuong]</td>
+									
+										<td align='center' width='130px'>                                								
+										".xulygia($data_hanghoa[0][Gia])."      
+										</td> 
+										<td align='center' width='130px'>".xulygia($data_hanghoa[0][Gia]*$item_chitiet[SoLuong])."
+										</td>
+									</tr>";
+        						
 							}							
 						}?>
-        
-        </table>
-      
-      <div id="them"></div>
-      
-      <center><a href="#" onClick="themdongchitiet('<?php echo ++$stt;?>')" ><input type="button" id="themct" value="Thêm Sản Phẩm" /> </a><input type='submit' name='xoa' value='Xóa Đơn Hàng'/><input type='submit' name='dong' value='Đóng'/></center>
-      
-      </fieldset>  
-  </form>
-</center>
+        <tr>
+       	  <td class='info1'width="10px"></td>
+          <td class='info1' colspan="3" width="290px" align="center">Cộng</td>         
+          <td class='info1'width="40px" align="center">X</td>
+          <td class='info1'width="40px" align="center">X</td>
+          <td class='info1'width="130px" align="center">X</td>
+          <td class='info1'width="130px" align="center"><?php echo xulygia($data[0]['TongTien']);?></td>
+        </tr>
+      </table>     
+<div id="xk_bottom">
+    <p><strong>Tổng số tiền</strong> (viết bằng chữ): <?php echo doc_so($data[0]['TongTien']);?></p>
+    <p><div class="right" style="margin-right:100px;">
+    		Xuất. ngày <?php echo $ngaydat;?> tháng <?php echo $thangdat;?> năm <?php echo $namdat;?>
+       </div>
+    </p>
+    <p>
+    <div class="chuky">Thủ kho<br />
+    					(Ký,họ tên)</div>   
+    <div class="chuky">Người nhận hàng<br />
+    					(Ký,họ tên)</div>
+    <div class="chuky">Người lập phiếu<br />
+    					(Ký,họ tên)</div>     
+                      
+    </p>
+    </div><!-- div xk_bottom close --> 
+</div><!-- div xk_info close -->
+
+<div align="center" style="clear:left;">
+<br/>
+<input type="submit" name='ok' value="Xuất Kho" /><input type='submit' name='dong' value='Đóng'/></center>    
+ 
+</div>
+ </form>
+
 </body>
 </html>

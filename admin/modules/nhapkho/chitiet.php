@@ -88,7 +88,7 @@ $data_chitiet=$chitiet->listchitietphieunhap();
     </tr>
     <tr>
     	<td class="title">Tổng Tiền</td>
-        <td class="info"><input type="text" name="txthoten" size="30" value="<?php echo $tongtien;?>" disabled="disabled" class="center"/></td>
+        <td class="info"><font style="font-weight:700;color:#F00;font-size:18px"><?php echo xulygia($tongtien);?></font></td>
     </tr>
     <tr>
     	<td class="title">Ghi Chú</td>

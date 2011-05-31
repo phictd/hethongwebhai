@@ -14,6 +14,7 @@
  //ini_set( "display_errors", 0);
 require_once('../../../libraries/oop.php');
 require_once('../../../libraries/phieunhap.php');
+require_once('../../../libraries/function.php');
 	$phieunhap= new PhieuNhap;
 	$data_phieunhap=$phieunhap->listphieunhap();
 	$stt=0;
@@ -27,7 +28,7 @@ require_once('../../../libraries/phieunhap.php');
 			echo "<td align=center width='50px'>$stt</td>";
 			echo "<td align=center width='100px'><input type='text' id='maphieu$stt' value='$item_phieunhap[idPhieuNhap]' size='25' disabled='disabled'/></td>";
 			echo "<td align=center width='100px'><input type='text' id='ngaynhap$stt' value='$ngaynhap' size='25' disabled='disabled'/></td>";
-			echo "<td align=center width='100px'><input type='text' id='tongtien$stt' value='$item_phieunhap[TongTien]' size='25' disabled='disabled' class='num'/></td>";
+			echo "<td align=center width='100px'><font style='font-weight:900; color:#FF0'>".xulygia($item_phieunhap[TongTien])."</font></td>";
 			echo "<td align=center width='150px'><input type='text' id='ghichu$stt' value='$item_phieunhap[GhiChu]' size='30'/></td>";
 			
 			?>
