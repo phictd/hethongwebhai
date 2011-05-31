@@ -26,15 +26,15 @@
            </div>
            <div class="img1">
                Mr.Thời (Kinh doanh)
-              <a href="ymsgr:SendIM?pilot_viet"><img src='http://opi.yahoo.com/online?u=pilot_viet&m=g&t=14'/></a>
+              <a href="ymsgr:SendIM?pilot_viet"><img src='http://opi.yahoo.com/online?u=pilot_viet&m=g&t=14' border="0"/></a>
            </div>
            <div class="img1">
                Mr.Đạt (Kinh doanh)
-             <a href="ymsgr:SendIM?pilot_viet"><img src='http://opi.yahoo.com/online?u=pilot_viet&m=g&t=14'/></a>
+             <a href="ymsgr:SendIM?pilot_viet"><img src='http://opi.yahoo.com/online?u=pilot_viet&m=g&t=14' border="0"/></a>
            </div>
            <div class="img1">
                Mr.Thuật (Kinh Doanh)
-             <a href="ymsgr:SendIM?pilot_viet"><img src='http://opi.yahoo.com/online?u=pilot_viet&m=g&t=14'/></a>
+             <a href="ymsgr:SendIM?pilot_viet"><img src='http://opi.yahoo.com/online?u=pilot_viet&m=g&t=14' border="0"/></a>
            </div>
            
           <div class="img1">
