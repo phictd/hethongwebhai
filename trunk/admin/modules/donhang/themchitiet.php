@@ -1,5 +1,5 @@
 <?php
-//ini_set( "display_errors", 0);
+ini_set( "display_errors", 0);
 require_once('../../../libraries/oop.php');
 require_once('../../../libraries/congty.php');
 require_once('../../../libraries/loaihang.php');
@@ -44,7 +44,7 @@ echo "<form action='chitiet.php?id=$iddonhang' method='post'>
 		<table align='center'  width='600px' id='tableloaihang' >
 		<tr height='20px'>
 			<td width='50px' align='center'>$stt</td>";
-		echo "<td width='150px' align='center'>
+		echo "<td width='80px' align='center'>
 		
 		<select id='iloaihang' name='loaihang' onchange='thaydoiloaihang(this.value)'>";		
 			foreach($data_loaihang as $item_loaihang){				
@@ -55,7 +55,7 @@ echo "<form action='chitiet.php?id=$iddonhang' method='post'>
 		
 		</td>";
 		
-		echo "<td width='150px' align='center'>		
+		echo "<td width='120px' align='center'>		
 		
 		<select id='icongty' name='congty' onchange=thaydoicongty(this.value)>";
 			echo "<option value='-1'>----Chọn----</option>";				
@@ -81,11 +81,15 @@ echo "<form action='chitiet.php?id=$iddonhang' method='post'>
 		echo"			
 			
 			<td width='100px' align='center'><input type='text' size='10' id='isoluong' name='soluong'/></td>
-			";?>
+			";
+		echo "<td align='center' width='50px'> <input type='submit' value='Thêm' name='ok' /></td> 
+                            <td align='center' width='50px'> Xóa</td> ";
+			
+			?>
 						
 		</tr>
 	</table>
-    <div align="center"><input type="submit" value="Thêm" name="ok" /></div>
+   
   </form>
 
    

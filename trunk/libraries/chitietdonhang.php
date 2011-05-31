@@ -48,8 +48,12 @@ class ChiTietDonHang extends connect_db{
     }*/
 public function ThemChiTietDonHang(){
 	 $sql = "insert into chitietdonhang(idDonHang,idHang,SoLuong) values('".$this->get_idDonHang()."','".$this->get_idHang()."','".
-        $this->get_SoLuong()."')";
-        $this->query($sql);
+     $this->get_SoLuong()."')";
+     $this->query($sql);
+		
+	$sql_donhang="update donhang set TongTien = TongTien+(".$this->get_soluong()."*(select Gia from hanghoa where idHang='".$this->get_idhang()."')) where idDonHang='".$this->get_idDonHang()."'";
+	$this->query($sql_donhang);
+		
         if(mysql_errno () !=""){
             return FALSE;
         }else{
@@ -58,12 +62,15 @@ public function ThemChiTietDonHang(){
     }
 	
     //xoa
-    public function XoaChitietDonHang(){
-        echo "ham xoa don hang";
-        $sql = "delete from chitietdonhang where idDonHang ='".$this->getidDonHang()."'";
-        $this->query($sql);
-        $sql2 = "delete from donhang where idDonHang ='".$this->getidDonHang()."'";
-        $this->query($sql2);
+    public function XoaChitietDonHang(){     
+		// tru so tien cua san pham do ra khoi donhang
+		 $sql_donhang="update donhang set TongTien = TongTien-((select SoLuong from chitietdonhang where idHang='".$this->get_idhang()."' and idDonHang='".$this->get_idDonHang()."')*(select Gia from hanghoa where idHang='".$this->get_idhang()."')) where idDonHang='".$this->get_idDonHang()."'";
+		$this->query($sql_donhang); 
+		
+		// Xoa Chi tiet  
+        $sql = "delete from chitietdonhang where idDonHang ='".$this->get_idDonHang()."' and idHang='".$this->get_idHang()."'";
+        $this->query($sql);	
+		
     }
     //list
     public function listChiTietDonhang(){
@@ -77,7 +84,25 @@ public function ThemChiTietDonHang(){
             }
             return $data;
         }
-       }
+    }
+	// sua chi tiet
+	 public function updateChiTiet(){
+		 // tru so tien cua san pham do ra khoi donhang
+		 $sql_donhang="update donhang set TongTien = TongTien-((select SoLuong from chitietdonhang where idHang='".$this->get_idhang()."' and idDonHang='".$this->get_idDonHang()."')*(select Gia from hanghoa where idHang='".$this->get_idhang()."')) where idDonHang='".$this->get_idDonHang()."'";
+	$this->query($sql_donhang);
+		 //set so luong
+        $sql="update chitietdonhang set SoLuong = '".$this->get_SoLuong()."' where idHang='".$this->get_idhang()."' and idDonHang='".$this->get_idDonHang()."'";
+        $this->query($sql);
+		// set lai tong tien cua donhang
+		$sql_donhangsau="update donhang set TongTien = TongTien+(".$this->get_soluong()."*(select Gia from hanghoa where idHang='".$this->get_idhang()."')) where idDonHang='".$this->get_idDonHang()."'";
+	$this->query($sql_donhangsau);
+		
+		if(mysql_errno () !=""){
+            return FALSE;
+        }else{
+            return TRUE;
+        }
+    }
        //get 1 don hang
     public function XemChiTietDonHang(){
 	$sql="select * from donhang,chitietdonhang where donhang.idDonHang = chitietdonhang.idDonHang and donhang.idDonHang='".$this->getidDonHang()."'";
