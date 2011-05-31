@@ -77,7 +77,7 @@ require_once('../../../libraries/function.php');
     <div id='them'></div><br />
     <div id="thongbao"></div>
     <a href="#" onclick="themdong('donhang',<?php echo ++$stt;?>)" >Thêm </a>
-    </div>
+   
     
 </div> 
 
