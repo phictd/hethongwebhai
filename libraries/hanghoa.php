@@ -174,6 +174,21 @@ public function listhanghoatheoloai($X,$A){
 		}
 }
 
+////////////////LIST HANG THEO CONG TY////////////////
+public function listhanghoatheocongty($X,$A){
+		$sql="select * from hanghoa ,congty where hanghoa.idCongTy=congty.idCongTy and congty.idCongTy='".$this->get_idcongty()."' limit $X,$A ";
+		$this->query($sql);
+		if($this->num_rows() == 0){
+			return 0;
+		}else{
+			while($row=$this->fetch()){
+				$data[]=$row;
+			}	
+			return $data;
+		}
+}
+
+
 public function listhanghoa6($X,$A){
 	$sql="select * from hanghoa order by idHang ASC limit $X,$A";
 	$this->query($sql);
