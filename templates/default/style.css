@@ -9,7 +9,7 @@ body{
 font:12px verdana;
 width:1000px;
 margin:auto;
-background: repeat-x fixed url(../../images/icons/background.jpg);
+background: fixed url(../../images/icons/background.gif) no-repeat top;
 }
 
 #top{
