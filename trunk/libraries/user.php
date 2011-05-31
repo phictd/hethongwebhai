@@ -145,6 +145,7 @@ public function check_login(){
 public function listuser(){
 	$sql="select * from users";
 	$this->query($sql);
+	
 	if($this->num_rows() == 0){
 		return 0;
 	}else{

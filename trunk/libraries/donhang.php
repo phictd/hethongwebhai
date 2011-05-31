@@ -134,10 +134,19 @@ class DonHang extends connect_db{
 	}
 	
 	public function update_donhang(){
-		$sql="update donhang set GhiChu='".$this->get_GhiChu()."'";
+		$sql="update donhang set ";
+		if($this->get_Username()!="")$sql=$sql."Username='".$this->get_Username()."',";
+		if($this->get_ThoiDiemDatHang()!="")$sql=$sql."ThoiDiemDatHang='".$this->get_ThoiDiemDatHang()."',";
+		if($this->get_ThoiDiemGiaoHang()!="")$sql=$sql."ThoiDiemGiaoHang='".$this->get_ThoiDiemGiaoHang()."',";
+		if($this->get_TenNguoiNhan()!="")$sql=$sql."TenNguoiNhan='".$this->get_TenNguoiNhan()."',";
+		if($this->get_DienThoai()!="")$sql=$sql."DienThoai='".$this->get_DienThoai()."',";
+		if($this->get_DiaDiemGiaoHang()!="")$sql=$sql."DiaDiemGiaoHang='".$this->get_DiaDiemGiaoHang()."',";
+		if($this->get_GhiChu()!="")$sql.="GhiChu='".$this->get_GhiChu()."'";
+		
 		$sql=$sql." where idDonHang='".$this->get_idDonHang()."'";
 		
-		 $this->query($sql);			
+		 $this->query($sql);	
+		 
 }
 }
 ?>
