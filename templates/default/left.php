@@ -14,7 +14,7 @@
 					$a->set_idloai($item['idLoaiHang']);
 					$datact=$a->listcongty();
 					foreach($datact as $itemct){					
-						echo "<li><a href='#'>$itemct[TenCongTy]</a></li>";
+						echo "<li><a href='index.php?module=hanghoa&act=lhhcongty&idcongty=$itemct[idCongTy]'>$itemct[TenCongTy]</a></li>";
 					}
 					echo "</ul>";
 					echo "</li>";
