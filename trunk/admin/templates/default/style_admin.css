@@ -1,18 +1,18 @@
 /* CSS Document */
 @charset "utf-8";
 *{
-margin:0px;
-color:black;
+	margin:0px;
+	color:black;
 }
 
 body{
-font:12px verdana;
-width:780px;
-margin:auto;
+	font:12px verdana;
+	width:700px;
+	margin:auto;
 }
 table{
-font:12px verdana;
-text-align:center;
+	font:12px verdana;
+	text-align:center;
 }
 
 td{
@@ -20,17 +20,17 @@ border:#3C0 solid 1px;
 }
 .title{
 	width:200px;
-background:green;
-color:#FFFFFF;
-font-weight:900;
+	background:green;
+	color:#FFFFFF;
+	font-weight:900;
 }
 .info{
 	width:300px;
 }
 .title1{
-background:green;
-color:#FFFFFF;
-font-weight:900;
+	background:green;
+	color:#FFFFFF;
+	font-weight:900;
 }
 
 h3{
@@ -39,22 +39,31 @@ h3{
 	font:30px Verdana;
 }
 legend{
-color:#009933;
-font-weight:900;
+	color:#009933;
+	font-weight:900;
 }
 
 fieldset{
-border:1px solid #0099FF;
-margin:5px;
-width:600px;
+	border:1px solid #0099FF;
+	margin:5px;
+	width:610px;
 }
 label{
+	clear:left;
 	text-align:left;
-width:120px;
-float:left;
-padding:0px;
-font-weight:900;
-margin-top:3px;
+	width:170px;
+	float:left;
+	padding:0px;
+	font-weight:900;
+	margin-top:3px;
+}
+.chuky{
+	float:right;
+	width:140px;
+	text-align:center;
+}
+#duongvien{
+	border: 1px solid #000;
 }
 .center{
 	text-align:center;
@@ -65,7 +74,40 @@ margin-top:3px;
 tr{
 	height:20px;
 }
-a{text-decoration:none
+a{
+	text-decoration:none
+}
+#xk_top{
+	margin:auto;	
+	width:700px;
+}
+#xk_left{
+	float:left;
+	width:200px;	
+}
+#xk_right{
+	float:left;
+	width:130px;	
+	padding-left:70px;
+}
+
+#xk_middle{
+	float:left;
+	width:300px;	
+}
+#xk_bottom{
+	float:left;
+	width:700px;	
+}
+#xk_info{
+	float:left;
+	width:700px;
+	padding-left:30px;	
+	padding-right:30px;
+}
+
+#xk_info span{
+	line-height:20px;
 }
 
 
