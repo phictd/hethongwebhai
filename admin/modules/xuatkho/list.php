@@ -57,7 +57,7 @@ require_once('../../../libraries/function.php');
 			echo "<td align=center width='100px'><input type='text' id='ghichu$stt' value='$item_donhang[GhiChu]' size='10'/></td>";
 			
 			?>	
-            	<td align=center width='50px'> <a href='modules/xuatkho/chitiet.php?id=<?php echo $item_donhang[idDonHang];?>' target="_blank" >Chi Tiết</a></td>		
+            	<td align=center width='50px'> <a href='modules/donhang/chitiet.php?id=<?php echo $item_donhang[idDonHang];?>' target="_blank" >Chi Tiết</a></td>		
 				<td align=center width='50px'> <a href='#' onclick="suadonhang('<?php echo $item_donhang[idDonHang];?>',
                 															document.getElementById('ngaygiao<?php echo $stt;?>').value,
                                                                             document.getElementById('nguoinhan<?php echo $stt;?>').value,
@@ -74,10 +74,7 @@ require_once('../../../libraries/function.php');
 ?><br />
 
   </table>
-    <div id='them'></div><br />
-    <div id="thongbao"></div>
-    <a href="#" onclick="themdong('donhang',<?php echo ++$stt;?>)" >Thêm </a>
-    </div>
+    
     
 </div> 
 
