@@ -66,13 +66,13 @@ font-weight:bold;
     <div id="khung">
       <?php 
 	  foreach($data1 as $data){
-	  echo "<img src=$data[UrlHinh] width='170' height='150' />";
+	  echo "<a href='#' rel='addToCart' onclick='getdata($data[idHang])' ><img src=$data[UrlHinh] width='170' height='150' /></a>";
 	
       echo "<p class='red1'>$data[TenHang]</p> ";
       echo "<p class='red'>Giá:".number_format($data['Gia'])." VND</p>";
  	echo "<p class='black'>$data[MoTa]</p>";
 
-      echo "<p><a href='index.php?module=giohang&act=them&ma=$data[idHang]'><img src='images/icons/addtocart.gif' /></a></p>";
+      echo "<a href='#' rel='addToCart' onclick='getdata($data[idHang])' ><img src='images/icons/addtocart.gif' /></a>";
 	  }
      ?> 
     </div>
