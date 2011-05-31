@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 -- 
 -- Host: localhost
--- Generation Time: May 31, 2011 at 12:52 PM
+-- Generation Time: May 31, 2011 at 01:15 PM
 -- Server version: 5.0.27
 -- PHP Version: 5.2.1
 -- 
@@ -115,6 +115,7 @@ CREATE TABLE `donhang` (
   `ThoiDiemGiaoHang` date NOT NULL default '0000-00-00',
   `TenNguoiNhan` varchar(100) NOT NULL default '',
   `DiaDiemGiaoHang` varchar(255) NOT NULL default '',
+  `TongTien` int(14) NOT NULL default '0',
   `TinhTrang` tinyint(1) NOT NULL default '0',
   `GhiChu` varchar(255) NOT NULL default '',
   `DienThoai` varchar(255) NOT NULL,
@@ -125,12 +126,12 @@ CREATE TABLE `donhang` (
 -- Dumping data for table `donhang`
 -- 
 
-INSERT INTO `donhang` (`idDonHang`, `Username`, `ThoiDiemDatHang`, `ThoiDiemGiaoHang`, `TenNguoiNhan`, `DiaDiemGiaoHang`, `TinhTrang`, `GhiChu`, `DienThoai`) VALUES 
-(1292529906, 'ti', '2010-12-17', '2010-12-17', 'LÃª VÄƒn TÃ­', '113 Hoï¿½ ng VÄƒn Thá»¥, HCM', 0, '11111', '089874563'),
-(1292529473, 'ti', '2010-12-17', '2010-12-17', 'LÃª VÄƒn TÃ­', '113 Hoï¿½ ng VÄƒn Thá»¥, HCM', 0, 'aa', '089874563'),
-(1292529426, 'ti', '2010-12-17', '2010-12-17', 'LÃª VÄƒn TÃ­', '113 Hoï¿½ ng VÄƒn Thá»¥, HCM', 0, 'xcv', '089874563'),
-(1292529378, 'ti', '2010-12-17', '2010-12-17', 'LÃª VÄƒn TÃ­', '113 Hoï¿½ ng VÄƒn Thá»¥, HCM', 0, 'fds', '089874563'),
-(1292529346, 'ti', '2010-12-17', '2010-12-17', 'LÃª VÄƒn TÃ­', '113 Hoï¿½ ng VÄƒn Thá»¥, HCM', 0, '', '089874563');
+INSERT INTO `donhang` (`idDonHang`, `Username`, `ThoiDiemDatHang`, `ThoiDiemGiaoHang`, `TenNguoiNhan`, `DiaDiemGiaoHang`, `TongTien`, `TinhTrang`, `GhiChu`, `DienThoai`) VALUES 
+(1292529906, 'ti', '2010-12-17', '2010-12-17', 'LÃª VÄƒn TÃ­', '113 Hoï¿½ ng VÄƒn Thá»¥, HCM', 0, 0, '11111', '089874563'),
+(1292529473, 'ti', '2010-12-17', '2010-12-17', 'LÃª VÄƒn TÃ­', '113 Hoï¿½ ng VÄƒn Thá»¥, HCM', 0, 0, 'aa', '089874563'),
+(1292529426, 'ti', '2010-12-17', '2010-12-17', 'LÃª VÄƒn TÃ­', '113 Hoï¿½ ng VÄƒn Thá»¥, HCM', 0, 0, 'xcv', '089874563'),
+(1292529378, 'ti', '2010-12-17', '2010-12-17', 'LÃª VÄƒn TÃ­', '113 Hoï¿½ ng VÄƒn Thá»¥, HCM', 0, 0, 'fds', '089874563'),
+(1292529346, 'ti', '2010-12-17', '2010-12-17', 'LÃª VÄƒn TÃ­', '113 Hoï¿½ ng VÄƒn Thá»¥, HCM', 0, 0, '', '089874563');
 
 -- --------------------------------------------------------
 
