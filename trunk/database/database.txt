@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 -- 
 -- Host: localhost
--- Generation Time: May 31, 2011 at 11:51 AM
+-- Generation Time: May 31, 2011 at 12:52 PM
 -- Server version: 5.0.27
 -- PHP Version: 5.2.1
 -- 
@@ -152,7 +152,7 @@ CREATE TABLE `hanghoa` (
   `SoLanMua` int(20) NOT NULL default '0',
   `AnHien` char(1) NOT NULL default 'H',
   PRIMARY KEY  (`idHang`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=63 ;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=73 ;
 
 -- 
 -- Dumping data for table `hanghoa`
@@ -217,7 +217,17 @@ INSERT INTO `hanghoa` (`idHang`, `idCongTy`, `TenHang`, `MoTa`, `NgayCapNhat`, `
 (59, 4, 'TCL L46P10', '<p>\r\n	<span>Tivi</span> 40 inch <span>d&ograve;ng</span> <span>BX420</span> <span>cho</span> <span>giáº£i</span> <span>tr&iacute;</span> <span>to&agrave;n</span> <span>diá»‡n</span> <span>v&agrave;</span> <span>Ä‘áº§y</span> <span>th&uacute;</span> <span>vá»‹</span> <span>vá»›i</span> <span>báº¥t</span> <span>ká»³</span> <span>kh&ocirc;ng</span> <span>gian</span> <span>ph&ograve;ng</span> <span>kh&aacute;ch</span> <span>n&agrave;o</span></p>\r\n<p>\r\n	<span>H&igrave;nh</span> <span>áº£nh</span> <span>cháº¥t</span> <span>lÆ°á»£ng</span> <span>cao</span> Full HD 1080 <span>vá»›i</span> <span>Ä‘&egrave;n</span> <span>ná»n</span> <span>CCFL</span></p>\r\n', '2010-12-16', 31990000, 'images/TiVi/small_knp1259830058.jpg', 0, 0, '', 0, 'H'),
 (60, 4, 'TCL L42P10FZ', '<p>\r\n	<span>Tivi</span> 40 inch <span>d&ograve;ng</span> <span>BX420</span> <span>cho</span> <span>giáº£i</span> <span>tr&iacute;</span> <span>to&agrave;n</span> <span>diá»‡n</span> <span>v&agrave;</span> <span>Ä‘áº§y</span> <span>th&uacute;</span> <span>vá»‹</span> <span>vá»›i</span> <span>báº¥t</span> <span>ká»³</span> <span>kh&ocirc;ng</span> <span>gian</span> <span>ph&ograve;ng</span> <span>kh&aacute;ch</span> <span>n&agrave;o</span></p>\r\n<p>\r\n	<span>H&igrave;nh</span> <span>áº£nh</span> <span>cháº¥t</span> <span>lÆ°á»£ng</span> <span>cao</span> Full HD 1080 <span>vá»›i</span> <span>Ä‘&egrave;n</span> <span>ná»n</span> <span>CCFL</span></p>\r\n', '2010-12-16', 18600000, 'images/TiVi/small_stk1285318373.jpg', 0, 0, '', 0, 'H'),
 (61, 4, 'TCL L42E9AF', '<p>\r\n	<span>Tivi</span> 40 inch <span>d&ograve;ng</span> <span>BX420</span> <span>cho</span> <span>giáº£i</span> <span>tr&iacute;</span> <span>to&agrave;n</span> <span>diá»‡n</span> <span>v&agrave;</span> <span>Ä‘áº§y</span> <span>th&uacute;</span> <span>vá»‹</span> <span>vá»›i</span> <span>báº¥t</span> <span>ká»³</span> <span>kh&ocirc;ng</span> <span>gian</span> <span>ph&ograve;ng</span> <span>kh&aacute;ch</span> <span>n&agrave;o</span></p>\r\n<p>\r\n	<span>H&igrave;nh</span> <span>áº£nh</span> <span>cháº¥t</span> <span>lÆ°á»£ng</span> <span>cao</span> Full HD 1080 <span>vá»›i</span> <span>Ä‘&egrave;n</span> <span>ná»n</span> <span>CCFL</span></p>\r\n', '2010-12-16', 9800000, 'images/TiVi/small_rcn1254840276.jpg', 0, 0, '', 0, 'H'),
-(62, 4, 'TCL L46E9AF 46-inch', '<p>\r\n	<span>Tivi</span> 40 inch <span>d&ograve;ng</span> <span>BX420</span> <span>cho</span> <span>giáº£i</span> <span>tr&iacute;</span> <span>to&agrave;n</span> <span>diá»‡n</span> <span>v&agrave;</span> <span>Ä‘áº§y</span> <span>th&uacute;</span> <span>vá»‹</span> <span>vá»›i</span> <span>báº¥t</span> <span>ká»³</span> <span>kh&ocirc;ng</span> <span>gian</span> <span>ph&ograve;ng</span> <span>kh&aacute;ch</span> <span>n&agrave;o</span></p>\r\n<p>\r\n	<span>H&igrave;nh</span> <span>áº£nh</span> <span>cháº¥t</span> <span>lÆ°á»£ng</span> <span>cao</span> Full HD 1080 <span>vá»›i</span> <span>Ä‘&egrave;n</span> <span>ná»n</span> <span>CCFL</span></p>\r\n', '2010-12-16', 16850000, 'images/TiVi/small_lpi1254839396.jpg', 0, 0, '', 0, 'H');
+(62, 4, 'TCL L46E9AF 46-inch', '<p>\r\n	<span>Tivi</span> 40 inch <span>d&ograve;ng</span> <span>BX420</span> <span>cho</span> <span>giáº£i</span> <span>tr&iacute;</span> <span>to&agrave;n</span> <span>diá»‡n</span> <span>v&agrave;</span> <span>Ä‘áº§y</span> <span>th&uacute;</span> <span>vá»‹</span> <span>vá»›i</span> <span>báº¥t</span> <span>ká»³</span> <span>kh&ocirc;ng</span> <span>gian</span> <span>ph&ograve;ng</span> <span>kh&aacute;ch</span> <span>n&agrave;o</span></p>\r\n<p>\r\n	<span>H&igrave;nh</span> <span>áº£nh</span> <span>cháº¥t</span> <span>lÆ°á»£ng</span> <span>cao</span> Full HD 1080 <span>vá»›i</span> <span>Ä‘&egrave;n</span> <span>ná»n</span> <span>CCFL</span></p>\r\n', '2010-12-16', 16850000, 'images/TiVi/small_lpi1254839396.jpg', 0, 0, '', 0, 'H'),
+(63, 7, 'HPEee56', '<p>\r\n	Intel&reg; Atom&trade; Processor N450, 1.66 Ghz, 512 KB, L2 Cache, Intel GMA 3150 integrated graphics</p>', '2011-05-31', 18750000, 'images/LapTop/639.jpg', 0, 0, '', 0, 'H'),
+(64, 7, 'HPEcc65', '<p>\r\n	Intel&reg; Atom&trade; Processor <span>N450</span>, 1.66 <span>Ghz</span>, 512 KB, <span>L2</span> Cache, Intel <span>GMA</span> 3150 integrated graphics</p>\r\n', '2011-05-31', 19560000, 'images/LapTop/659.jpg', 0, 0, '', 0, 'H'),
+(65, 8, 'SOV23', '<p>\r\n	Intel&reg; Atom&trade; Processor <span>N450</span>, 1.66 <span>Ghz</span>, 512 KB, <span>L2</span> Cache, Intel <span>GMA</span> 3150 integrated graphics</p>\r\n', '2011-05-31', 20987000, 'images/LapTop/685.jpg', 0, 0, '', 0, 'H'),
+(66, 8, 'SOv569', '<p>\r\n	Intel&reg; Atom&trade; Processor <span>N450</span>, 1.66 <span>Ghz</span>, 512 KB, <span>L2</span> Cache, Intel <span>GMA</span> 3150 integrated graphics</p>\r\n', '2011-05-31', 31256000, 'images/LapTop/708.jpg', 0, 0, '', 0, 'H'),
+(67, 9, 'DELL23V', '<p>\r\n	Intel&reg; Atom&trade; Processor <span>N450</span>, 1.66 <span>Ghz</span>, 512 KB, <span>L2</span> Cache, Intel <span>GMA</span> 3150 integrated graphics</p>\r\n', '2011-05-31', 15236000, 'images/LapTop/778.jpg', 0, 0, '', 0, 'H'),
+(68, 9, 'DELLM3N', '<p>\r\n	Intel&reg; Atom&trade; Processor <span>N450</span>, 1.66 <span>Ghz</span>, 512 KB, <span>L2</span> Cache, Intel <span>GMA</span> 3150 integrated graphics</p>\r\n', '2011-05-31', 16589000, 'images/LapTop/722.jpg', 0, 0, '', 0, 'H'),
+(69, 11, 'ASUSM2', '<p>\r\n	Intel&reg; Atom&trade; Processor <span>N450</span>, 1.66 <span>Ghz</span>, 512 KB, <span>L2</span> Cache, Intel <span>GMA</span> 3150 integrated graphics</p>\r\n', '2011-05-31', 64236000, 'images/LapTop/747.jpg', 0, 0, '', 0, 'H'),
+(70, 11, 'ASUSM23', '<p>\r\n	Intel&reg; Atom&trade; Processor <span>N450</span>, 1.66 <span>Ghz</span>, 512 KB, <span>L2</span> Cache, Intel <span>GMA</span> 3150 integrated graphics</p>\r\n', '2011-05-31', 56236000, 'images/LapTop/763.jpg', 0, 0, '', 0, 'H'),
+(71, 10, 'TOSAh2', '<p>\r\n	Intel&reg; Atom&trade; Processor <span>N450</span>, 1.66 <span>Ghz</span>, 512 KB, <span>L2</span> Cache, Intel <span>GMA</span> 3150 integrated graphics</p>\r\n', '2011-05-31', 56235000, 'images/LapTop/749.jpg', 0, 0, '', 0, 'H'),
+(72, 12, 'ACER21', '<p>\r\n	Intel&reg; Atom&trade; Processor <span>N450</span>, 1.66 <span>Ghz</span>, 512 KB, <span>L2</span> Cache, Intel <span>GMA</span> 3150 integrated graphics</p>\r\n', '2011-05-31', 12365000, 'images/LapTop/123456.jpg', 0, 0, '', 0, 'H');
 
 -- --------------------------------------------------------
 
