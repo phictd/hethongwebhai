@@ -1,22 +1,31 @@
 <?php
 session_start();
-$i = $_GET["id"];
-$tt = $_SESSION['thanhtien'];
-$tt = $tt - ($_SESSION['gia'.$i]*$_SESSION['soluong'.$i]);
-$_SESSION['thanhtien'] = $tt;
-for($i;$i<$_SESSION["tongsl"];$i++){
-	$j=$i+1;
-	$_SESSION["mahang".$i]=$_SESSION["mahang".$j];
-	$_SESSION["tenhang".$i]=$_SESSION["tenhang".$j];
-	$_SESSION["soluong".$i]=$_SESSION["soluong".$j];
-	$_SESSION["gia".$i]=$_SESSION["gia".$j];
-
+require_once('libraries/hanghoa.php');
+//$cart=$_SESSION['cart'];
+$idHang=$_GET['idHang'];
+if($idHang == 0)
+{
+	unset($_SESSION['cart']);
+	unset ($_SESSION['tongmathang']);
+	unset ($_SESSION['thanhtien']);
 }
-session_unregister("mahang".$_SESSION["tongsl"]);
-session_unregister("tenhang".$_SESSION["tongsl"]);
-session_unregister("soluong".$_SESSION["tongsl"]);
-session_unregister("gia".$_SESSION["tongsl"]);
-$_SESSION["tongsl"]--;
+else
+{
+	unset($_SESSION['cart'][$idHang]);
+	$_SESSION['tongmathang']--;
+	if($_SESSION['tongmathang'] == 0){
+		unset ($_SESSION['tongmathang']);
+		unset ($_SESSION['thanhtien']);
+	}
+
+	$a = new HangHoa;
+	$data = $a->set_idHang($idHang);
+	foreach($data as $row){
+		$total = $_SESSION['thanhtien'] - ($_SESSION['cart'][$row['idHang']]*$row['Gia']);
+	}
+	$_SESSION['thanhtien'] = number_format($total);
+}
 ob_clean();
 header("location:index.php?module=giohang&act=xem");
+exit();
 ?>

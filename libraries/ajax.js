@@ -175,6 +175,26 @@ function process_them(){
 	}
 }
 
+/////////////////////TAO HIEU UNG CHO GIO HANG//////////////////////
+function getdata(x){
+	http.open("get","modules/giohang/themhang.php?data="+x,true);
+	http.onreadystatechange=process_bay;
+	http.send(null);
+}
+
+function process_bay(){
+	if(http.readyState == 4 && http.status == 200){
+		kq=http.responseText;
+		if(kq != 0){
+				
+				document.getElementById("cart_details").innerHTML=kq;
+		}
+	}
+}
+////////////////////////////////////////////////////////
+
+
+
 function process_tuongtaccsdl(){
 	if(http.readyState == 4 && http.status == 200){
 		kq=http.responseText;
