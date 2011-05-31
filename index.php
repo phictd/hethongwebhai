@@ -15,9 +15,12 @@ switch($_GET['module']){
     case "giohang":
         require("modules/giohang/controller.php");
           break;
-		  case"test":
-		  require("modules/test/controller.php");
-	    break;	
+	case"test":
+		 require("modules/test/controller.php");
+	    break;
+	case"tim":
+		require("modules/tim/controller.php");
+	    break;
 }
 }else{
 		require("modules/hanghoa/listhanghoa.php");

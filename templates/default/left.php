@@ -21,6 +21,14 @@
 				}
 			?>
            </ul>
+           
+           <div class="timkiem">
+           	<form action="index.php?module=tim&act=tim" method="post" >
+           		<input type="text" name="txttim" size="19" /><br />
+                <input type="submit" name="ok" value="Tìm" style="margin-left:50px;" />
+            </form>            
+            </div><!-- close div tim kiem -->
+           
            <div class="img">
            	<img src="images/icons/hotro.png" width="150" />
            </div>

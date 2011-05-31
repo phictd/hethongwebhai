@@ -13,7 +13,7 @@ if(isset($_SESSION['username']) && isset($_SESSION['level'])){
 }else{
 echo "<div>";
 
-echo "<form action='index.php?module=user&act=check_login".$tam."' method='post'>";
+echo "<form action='index.php?module=user&act=check_login' method='post'>";
           echo " <fieldset>";
            echo "<legend>Đăng nhập</legend>";
          echo "  <label>Tên đăng nhập:</label> <br/><input type='text' name='txtuser' size='15' /><br />";

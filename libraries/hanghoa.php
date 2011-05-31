@@ -266,9 +266,9 @@ public function update_hanghoa(){
 	}
 }
 
-
-public function tim(){
-	$sql="select * from hanghoa where hanghoa.TenHang or hang.Gia LIKE '%".$this->get_tim()."%' ";
+/////////////////////////////TIM KIEM/////////////////////////////
+public function tim($X,$A){
+	$sql="select idHang,TenHang,Gia,UrlHinh from hanghoa where TenHang LIKE '%".$this->get_tim()."%' or Gia LIKE '%".$this->get_tim()."%' limit $X,$A";
 	$this->query($sql);
 	if($this->num_rows() == 0){
 		return 0;
@@ -279,6 +279,15 @@ public function tim(){
 		return $data;
 	}
 }
+///////////////////////////////////////////////////////////////////////////
+
+///////////////////////////DEM TIM KIEM - PHAN TRANG TIM////////////////////////
+public function demtim(){
+$sql="select idHang,TenHang,Gia,UrlHinh from hanghoa where TenHang LIKE '%".$this->get_tim()."%' or Gia LIKE '%".$this->get_tim()."%' ";
+	$this->query($sql);
+	return $this->num_rows();
+}
+/////////////////////////////////////////////////////////////////////////////////////
 
 
 public function update_chitiet(){
