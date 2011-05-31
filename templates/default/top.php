@@ -14,6 +14,7 @@
 
 <body >
 <div id="top">
+<embed src="images/icons/banner.swf" width="1000" type="application/x-shockwave-flash" height="150" pluginspage="http://www.macromedia.com/go/getflashplayer" movie="images/icons/banner.swf" quality="High"></embed>
 <div id="tim">
 <a href="#"ưefwef></a>
 </div>
