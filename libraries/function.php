@@ -46,11 +46,15 @@ return str_replace(" ","",$a);
 }
 
 function xulygia($gia){
-	$t1=substr($gia,-3,4);
-	$t2=substr($gia,-6,-3);
-	$t3=substr($gia,0,-6);
-	if($gia>999999) $giakq=$t3.'.'.$t2.'.'.$t1.' VN&#272;';
-	else  $giakq=$t2.'.'.$t1.' VN&#272;';
+	if($gia<=999)
+		$giakq=$gia." VN&#272;";
+	else{
+		$t1=substr($gia,-3,4);
+		$t2=substr($gia,-6,-3);
+		$t3=substr($gia,0,-6);
+		if($gia>999999) $giakq=$t3.'.'.$t2.'.'.$t1.' VN&#272;';
+		else  $giakq=$t2.'.'.$t1.' VN&#272;';
+	}
 	
 	return $giakq;
 }
