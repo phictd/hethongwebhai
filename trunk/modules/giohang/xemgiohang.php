@@ -49,7 +49,7 @@ echo "<tr>";
 $_SESSION['thanhtien'] = number_format($total);
 echo "<tr bgcolor='#999999' height='30'>
     <td colspan='3' align='center'><font size='+1'>Tổng giá trị </font></td>
-<td colspan='3'align='center'><font size='+1'>".$total." VND</font></td>
+<td colspan='3'align='center'><font size='+1'>".number_format($total)." VND</font></td>
   </tr>";
 echo "</table>";
 echo "<br/>";
