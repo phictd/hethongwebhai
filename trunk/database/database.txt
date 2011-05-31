@@ -2,12 +2,12 @@
 -- version 2.9.2
 -- http://www.phpmyadmin.net
 -- 
--- Host: localhost
--- Generation Time: May 31, 2011 at 01:15 PM
--- Server version: 5.0.27
--- PHP Version: 5.2.1
+-- Serveur: localhost
+-- Généré le : Mercredi 01 Juin 2011 à 00:04
+-- Version du serveur: 5.0.27
+-- Version de PHP: 5.2.1
 -- 
--- Database: `dienmay`
+-- Base de données: `dienmay`
 -- 
 CREATE DATABASE `dienmay` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
 USE `dienmay`;
@@ -15,7 +15,7 @@ USE `dienmay`;
 -- --------------------------------------------------------
 
 -- 
--- Table structure for table `chitietdonhang`
+-- Structure de la table `chitietdonhang`
 -- 
 
 CREATE TABLE `chitietdonhang` (
@@ -25,7 +25,7 @@ CREATE TABLE `chitietdonhang` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- 
--- Dumping data for table `chitietdonhang`
+-- Contenu de la table `chitietdonhang`
 -- 
 
 INSERT INTO `chitietdonhang` (`idDonHang`, `idHang`, `SoLuong`) VALUES 
@@ -35,7 +35,7 @@ INSERT INTO `chitietdonhang` (`idDonHang`, `idHang`, `SoLuong`) VALUES
 -- --------------------------------------------------------
 
 -- 
--- Table structure for table `chitietphieunhap`
+-- Structure de la table `chitietphieunhap`
 -- 
 
 CREATE TABLE `chitietphieunhap` (
@@ -45,7 +45,7 @@ CREATE TABLE `chitietphieunhap` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- 
--- Dumping data for table `chitietphieunhap`
+-- Contenu de la table `chitietphieunhap`
 -- 
 
 INSERT INTO `chitietphieunhap` (`idPhieuNhap`, `idHang`, `SoLuong`) VALUES 
@@ -57,7 +57,7 @@ INSERT INTO `chitietphieunhap` (`idPhieuNhap`, `idHang`, `SoLuong`) VALUES
 -- --------------------------------------------------------
 
 -- 
--- Table structure for table `chitietphieuxuat`
+-- Structure de la table `chitietphieuxuat`
 -- 
 
 CREATE TABLE `chitietphieuxuat` (
@@ -67,14 +67,14 @@ CREATE TABLE `chitietphieuxuat` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- 
--- Dumping data for table `chitietphieuxuat`
+-- Contenu de la table `chitietphieuxuat`
 -- 
 
 
 -- --------------------------------------------------------
 
 -- 
--- Table structure for table `congty`
+-- Structure de la table `congty`
 -- 
 
 CREATE TABLE `congty` (
@@ -82,10 +82,10 @@ CREATE TABLE `congty` (
   `TenCongTy` varchar(50) NOT NULL,
   `idLoaiHang` int(10) NOT NULL,
   PRIMARY KEY  (`idCongTy`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=15 ;
 
 -- 
--- Dumping data for table `congty`
+-- Contenu de la table `congty`
 -- 
 
 INSERT INTO `congty` (`idCongTy`, `TenCongTy`, `idLoaiHang`) VALUES 
@@ -100,12 +100,14 @@ INSERT INTO `congty` (`idCongTy`, `TenCongTy`, `idLoaiHang`) VALUES
 (9, 'DELL', 8),
 (10, 'TOSHIBA', 8),
 (11, 'ASUS', 8),
-(12, 'ACER', 8);
+(12, 'ACER', 8),
+(13, 'Apple', 9),
+(14, 'LG', 9);
 
 -- --------------------------------------------------------
 
 -- 
--- Table structure for table `donhang`
+-- Structure de la table `donhang`
 -- 
 
 CREATE TABLE `donhang` (
@@ -123,7 +125,7 @@ CREATE TABLE `donhang` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- 
--- Dumping data for table `donhang`
+-- Contenu de la table `donhang`
 -- 
 
 INSERT INTO `donhang` (`idDonHang`, `Username`, `ThoiDiemDatHang`, `ThoiDiemGiaoHang`, `TenNguoiNhan`, `DiaDiemGiaoHang`, `TongTien`, `TinhTrang`, `GhiChu`, `DienThoai`) VALUES 
@@ -136,7 +138,7 @@ INSERT INTO `donhang` (`idDonHang`, `Username`, `ThoiDiemDatHang`, `ThoiDiemGiao
 -- --------------------------------------------------------
 
 -- 
--- Table structure for table `hanghoa`
+-- Structure de la table `hanghoa`
 -- 
 
 CREATE TABLE `hanghoa` (
@@ -153,10 +155,10 @@ CREATE TABLE `hanghoa` (
   `SoLanMua` int(20) NOT NULL default '0',
   `AnHien` char(1) NOT NULL default 'H',
   PRIMARY KEY  (`idHang`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=73 ;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=81 ;
 
 -- 
--- Dumping data for table `hanghoa`
+-- Contenu de la table `hanghoa`
 -- 
 
 INSERT INTO `hanghoa` (`idHang`, `idCongTy`, `TenHang`, `MoTa`, `NgayCapNhat`, `Gia`, `UrlHinh`, `SoLanXem`, `SoLuong`, `GhiChu`, `SoLanMua`, `AnHien`) VALUES 
@@ -228,34 +230,42 @@ INSERT INTO `hanghoa` (`idHang`, `idCongTy`, `TenHang`, `MoTa`, `NgayCapNhat`, `
 (69, 11, 'ASUSM2', '<p>\r\n	Intel&reg; Atom&trade; Processor <span>N450</span>, 1.66 <span>Ghz</span>, 512 KB, <span>L2</span> Cache, Intel <span>GMA</span> 3150 integrated graphics</p>\r\n', '2011-05-31', 64236000, 'images/LapTop/747.jpg', 0, 0, '', 0, 'H'),
 (70, 11, 'ASUSM23', '<p>\r\n	Intel&reg; Atom&trade; Processor <span>N450</span>, 1.66 <span>Ghz</span>, 512 KB, <span>L2</span> Cache, Intel <span>GMA</span> 3150 integrated graphics</p>\r\n', '2011-05-31', 56236000, 'images/LapTop/763.jpg', 0, 0, '', 0, 'H'),
 (71, 10, 'TOSAh2', '<p>\r\n	Intel&reg; Atom&trade; Processor <span>N450</span>, 1.66 <span>Ghz</span>, 512 KB, <span>L2</span> Cache, Intel <span>GMA</span> 3150 integrated graphics</p>\r\n', '2011-05-31', 56235000, 'images/LapTop/749.jpg', 0, 0, '', 0, 'H'),
-(72, 12, 'ACER21', '<p>\r\n	Intel&reg; Atom&trade; Processor <span>N450</span>, 1.66 <span>Ghz</span>, 512 KB, <span>L2</span> Cache, Intel <span>GMA</span> 3150 integrated graphics</p>\r\n', '2011-05-31', 12365000, 'images/LapTop/123456.jpg', 0, 0, '', 0, 'H');
+(72, 12, 'ACER21', '<p>\r\n	Intel&reg; Atom&trade; Processor <span>N450</span>, 1.66 <span>Ghz</span>, 512 KB, <span>L2</span> Cache, Intel <span>GMA</span> 3150 integrated graphics</p>\r\n', '2011-05-31', 12365000, 'images/LapTop/123456.jpg', 0, 0, '', 0, 'H'),
+(74, 13, 'IPHONE4 16GB', '<p>\r\n	<span class="Apple-style-span" style="font-family: Arial, Tahoma, Verdana; color: rgb(0, 0, 0); ">Mua&nbsp;<strong style="font-family: Arial, Tahoma, Verdana; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-style: none; border-right-style: none; border-bottom-style: none; border-left-style: none; text-decoration: none; list-style-type: none; ">iPhone 4&nbsp;</strong>phi&ecirc;n báº£n ch&iacute;nh h&atilde;ng táº¡i Mai Nguy&ecirc;n, Qu&yacute; kh&aacute;ch sáº½ Ä‘Æ°á»£c táº·ng:</span></p>\r\n<p style="font-family: Arial, Tahoma, Verdana; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-style: none; border-right-style: none; border-bottom-style: none; border-left-style: none; text-decoration: none; list-style-type: none; color: rgb(0, 0, 0); ">\r\n	Miáº¿ng d&aacute;n báº£o vá»‡ m&agrave;n h&igrave;nh (máº·t trÆ°á»›c v&agrave; máº·t sau)</p>\r\n', '2011-05-31', 18560000, 'images/DienThoai/iPhone4-13903.jpg', 0, 0, '', 0, 'H'),
+(75, 13, 'iPad Wi-Fi 64GB', '<p>\r\n	<span class="Apple-style-span" style="font-family: Arial, Tahoma, Verdana; color: rgb(0, 0, 0); ">Mua&nbsp;<strong style="font-family: Arial, Tahoma, Verdana; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-style: none; border-right-style: none; border-bottom-style: none; border-left-style: none; text-decoration: none; list-style-type: none; ">&nbsp;</strong>phi&ecirc;n báº£n ch&iacute;nh h&atilde;ng táº¡i Mai Nguy&ecirc;n, Qu&yacute; kh&aacute;ch sáº½ Ä‘Æ°á»£c táº·ng:</span></p>\r\n<p style="font-family: Arial, Tahoma, Verdana; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-style: none; border-right-style: none; border-bottom-style: none; border-left-style: none; text-decoration: none; list-style-type: none; color: rgb(0, 0, 0); ">\r\n	Miáº¿ng d&aacute;n báº£o vá»‡ m&agrave;n h&igrave;nh (máº·t trÆ°á»›c v&agrave; máº·t sau)</p>\r\n', '2011-05-31', 13560000, 'images/DienThoai/iPad-Wifi_18746.jpg', 0, 0, '', 0, 'H'),
+(76, 13, 'iPad Wi-Fi 32GB', '<p>\r\n	<span class="Apple-style-span" style="font-family: Arial, Tahoma, Verdana; color: rgb(0, 0, 0); ">Mua&nbsp;<strong style="font-family: Arial, Tahoma, Verdana; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-style: none; border-right-style: none; border-bottom-style: none; border-left-style: none; text-decoration: none; list-style-type: none; ">&nbsp;</strong>phi&ecirc;n báº£n ch&iacute;nh h&atilde;ng táº¡i Mai Nguy&ecirc;n, Qu&yacute; kh&aacute;ch sáº½ Ä‘Æ°á»£c táº·ng:</span></p>\r\n<p style="font-family: Arial, Tahoma, Verdana; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-style: none; border-right-style: none; border-bottom-style: none; border-left-style: none; text-decoration: none; list-style-type: none; color: rgb(0, 0, 0); ">\r\n	Miáº¿ng d&aacute;n báº£o vá»‡ m&agrave;n h&igrave;nh (máº·t trÆ°á»›c v&agrave; máº·t sau)</p>\r\n', '2011-05-31', 15236000, 'images/DienThoai/apple-ipad2-wifi2205.jpg', 0, 0, '', 0, 'H'),
+(77, 13, 'iPhone4 32GB', '<p>\r\n	&nbsp;</p>\r\n<p style="font-family: Arial, Tahoma, Verdana; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-style: none; border-right-style: none; border-bottom-style: none; border-left-style: none; text-decoration: none; list-style-type: none; color: rgb(0, 0, 0); ">\r\n	Mua<strong style="font-family: Arial, Tahoma, Verdana; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-style: none; border-right-style: none; border-bottom-style: none; border-left-style: none; text-decoration: none; list-style-type: none; ">&nbsp;</strong>phi&ecirc;n báº£n ch&iacute;nh h&atilde;ng táº¡i Mai Nguy&ecirc;n, Qu&yacute; kh&aacute;ch sáº½ Ä‘Æ°á»£c táº·ng:</p>\r\n<p style="font-family: Arial, Tahoma, Verdana; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-style: none; border-right-style: none; border-bottom-style: none; border-left-style: none; text-decoration: none; list-style-type: none; color: rgb(0, 0, 0); ">\r\n	Miáº¿ng d&aacute;n báº£o vá»‡ m&agrave;n h&igrave;nh (máº·t trÆ°á»›c v&agrave; máº·t sau)</p>\r\n', '2011-05-31', 12256000, 'images/DienThoai/iPhone4-White4873.jpg', 0, 0, '', 0, 'H'),
+(78, 14, 'Optimus P500', '<p>\r\n	<span class="Apple-style-span" style="font-family: Arial, Tahoma, Verdana; color: rgb(0, 0, 0); ">Mua&nbsp;<strong style="font-family: Arial, Tahoma, Verdana; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-style: none; border-right-style: none; border-bottom-style: none; border-left-style: none; text-decoration: none; list-style-type: none; ">&nbsp;</strong>phi&ecirc;n báº£n ch&iacute;nh h&atilde;ng táº¡i Mai Nguy&ecirc;n, Qu&yacute; kh&aacute;ch sáº½ Ä‘Æ°á»£c táº·ng:</span></p>\r\n<p style="font-family: Arial, Tahoma, Verdana; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-style: none; border-right-style: none; border-bottom-style: none; border-left-style: none; text-decoration: none; list-style-type: none; color: rgb(0, 0, 0); ">\r\n	Miáº¿ng d&aacute;n báº£o vá»‡ m&agrave;n h&igrave;nh (máº·t trÆ°á»›c v&agrave; máº·t sau)</p>\r\n', '2011-05-31', 5236000, 'images/DienThoai/optimus-One_2.jpg', 0, 0, '', 0, 'H'),
+(79, 14, 'KG 600', '<p>\r\n	<span class="Apple-style-span" style="font-family: Arial, Tahoma, Verdana; color: rgb(0, 0, 0); ">Mua&nbsp;<strong style="font-family: Arial, Tahoma, Verdana; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-style: none; border-right-style: none; border-bottom-style: none; border-left-style: none; text-decoration: none; list-style-type: none; ">&nbsp;</strong>phi&ecirc;n báº£n ch&iacute;nh h&atilde;ng táº¡i Mai Nguy&ecirc;n, Qu&yacute; kh&aacute;ch sáº½ Ä‘Æ°á»£c táº·ng:</span></p>\r\n<p style="font-family: Arial, Tahoma, Verdana; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-style: none; border-right-style: none; border-bottom-style: none; border-left-style: none; text-decoration: none; list-style-type: none; color: rgb(0, 0, 0); ">\r\n	Miáº¿ng d&aacute;n báº£o vá»‡ m&agrave;n h&igrave;nh (máº·t trÆ°á»›c v&agrave; máº·t sau)</p>\r\n', '2011-05-31', 7520000, 'images/DienThoai/LG-KF600_1.jpg', 0, 0, '', 0, 'H'),
+(80, 14, 'Winky 520', '<p>\r\n	<span class="Apple-style-span" style="font-family: Arial, Tahoma, Verdana; color: rgb(0, 0, 0); ">Mua&nbsp;phi&ecirc;n báº£n ch&iacute;nh h&atilde;ng táº¡i Mai Nguy&ecirc;n, Qu&yacute; kh&aacute;ch sáº½ Ä‘Æ°á»£c táº·ng:</span></p>\r\n<p>\r\n	<span class="Apple-style-span" style="font-family: Arial, Tahoma, Verdana; color: rgb(0, 0, 0); ">Miáº¿ng d&aacute;n báº£o vá»‡ m&agrave;n h&igrave;nh (máº·t trÆ°á»›c v&agrave; máº·t sau)</span></p>\r\n', '2011-05-31', 6253000, 'images/DienThoai/LG-GT350i_1.jpg', 0, 0, '', 0, 'H');
 
 -- --------------------------------------------------------
 
 -- 
--- Table structure for table `loaihang`
+-- Structure de la table `loaihang`
 -- 
 
 CREATE TABLE `loaihang` (
   `idLoaiHang` int(10) unsigned NOT NULL auto_increment,
   `TenLoai` varchar(50) character set utf8 collate utf8_unicode_ci NOT NULL,
   PRIMARY KEY  (`idLoaiHang`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
 
 -- 
--- Dumping data for table `loaihang`
+-- Contenu de la table `loaihang`
 -- 
 
 INSERT INTO `loaihang` (`idLoaiHang`, `TenLoai`) VALUES 
 (5, 'TiVi'),
 (6, 'Ná»“i CÆ¡m Äiá»‡n'),
 (7, 'Äá»“ng Há»“'),
-(8, 'LapTop');
+(8, 'LapTop'),
+(9, 'Äiá»‡n Thoáº¡i');
 
 -- --------------------------------------------------------
 
 -- 
--- Table structure for table `phieunhap`
+-- Structure de la table `phieunhap`
 -- 
 
 CREATE TABLE `phieunhap` (
@@ -267,7 +277,7 @@ CREATE TABLE `phieunhap` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- 
--- Dumping data for table `phieunhap`
+-- Contenu de la table `phieunhap`
 -- 
 
 INSERT INTO `phieunhap` (`idPhieuNhap`, `NgayNhap`, `TongTien`, `GhiChu`) VALUES 
@@ -277,7 +287,7 @@ INSERT INTO `phieunhap` (`idPhieuNhap`, `NgayNhap`, `TongTien`, `GhiChu`) VALUES
 -- --------------------------------------------------------
 
 -- 
--- Table structure for table `phieuxuat`
+-- Structure de la table `phieuxuat`
 -- 
 
 CREATE TABLE `phieuxuat` (
@@ -289,14 +299,14 @@ CREATE TABLE `phieuxuat` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- 
--- Dumping data for table `phieuxuat`
+-- Contenu de la table `phieuxuat`
 -- 
 
 
 -- --------------------------------------------------------
 
 -- 
--- Table structure for table `users`
+-- Structure de la table `users`
 -- 
 
 CREATE TABLE `users` (
@@ -314,7 +324,7 @@ CREATE TABLE `users` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- 
--- Dumping data for table `users`
+-- Contenu de la table `users`
 -- 
 
 INSERT INTO `users` (`HoTen`, `Username`, `Password`, `DiaChi`, `DienThoai`, `Email`, `NgayDangKy`, `Level`, `NgaySinh`, `GioiTinh`) VALUES 
