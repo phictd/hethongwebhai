@@ -44,7 +44,7 @@ foreach($data as $row){
 	$UrlHinh->appendChild($vUrlHinh);
 	
 }
-	$dom -> save('../modules/hanghoa/hanghoa.xml');
+	$dom -> save('hanghoa.xml');
 	echo "}";
 	echo "</script>";
 ?>
