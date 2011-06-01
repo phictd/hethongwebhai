@@ -87,7 +87,6 @@ class DonHang extends connect_db{
 		if($this->get_ThoiDiemGiaoHang()!="")$sql=$sql."ThoiDiemGiaoHang,";
 		if($this->get_TenNguoiNhan()!="")$sql=$sql."TenNguoiNhan,";
 		if($this->get_DienThoai()!="")$sql=$sql."DienThoai,";
-		if($this->get_TongTien()!="")$sql=$sql."TongTien,";
 		if($this->get_DiaDiemGiaoHang()!="")$sql=$sql."DiaDiemGiaoHang,";
 		if($this->get_TongTien()!="")$sql=$sql."TongTien,";
 		if($this->get_GhiChu()!="")$sql=$sql."GhiChu,";
@@ -100,7 +99,6 @@ class DonHang extends connect_db{
 		if($this->get_ThoiDiemGiaoHang()!="")$sql=$sql."'".$this->get_ThoiDiemGiaoHang()."',";
 		if($this->get_TenNguoiNhan()!="")$sql=$sql."'".$this->get_TenNguoiNhan()."',";
 		if($this->get_DienThoai()!="")$sql=$sql."'".$this->get_DienThoai()."',";
-		if($this->get_TongTien()!="")$sql=$sql."'".$this->get_TongTien()."',";
 		if($this->get_DiaDiemGiaoHang()!="")$sql=$sql."'".$this->get_DiaDiemGiaoHang()."',";
 		if($this->get_TongTien()!="")$sql=$sql."'".$this->get_TongTien()."',";
 		if($this->get_GhiChu()!="")$sql=$sql."'".$this->get_GhiChu()."',";
