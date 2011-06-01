@@ -6,7 +6,8 @@ class DonHang extends connect_db{
     private $ThoiDiemGiaoHang;
     private $TenNguoiNhan;
     private $DienThoai;
-    private $DiaDiemGiaoHang;	
+    private $DiaDiemGiaoHang;
+	private $TongTien;	
 	private $TinhTrang;
 	private $GhiChu;   
     public function  __construct() {
@@ -57,6 +58,13 @@ class DonHang extends connect_db{
     public function get_DiaDiemGiaoHang(){
         return $this->DiaDiemGiaoHang;
     }
+	///////////////
+	public function set_TongTien($tt){
+        $this->TongTien = $tt;
+    }
+    public function get_TongTien(){
+        return $this->TongTien;
+    }
 	public function set_TinhTrang($tt){
         $this->TinhTrang = $tt;
     }
@@ -78,6 +86,7 @@ class DonHang extends connect_db{
 		if($this->get_TenNguoiNhan()!="")$sql=$sql."TenNguoiNhan,";
 		if($this->get_DienThoai()!="")$sql=$sql."DienThoai,";
 		if($this->get_DiaDiemGiaoHang()!="")$sql=$sql."DiaDiemGiaoHang,";
+		if($this->get_TongTien()!="")$sql=$sql."TongTien,";
 		if($this->get_GhiChu()!="")$sql=$sql."GhiChu,";
 		$sql=substr($sql,0,-1);
 		$sql=$sql.") values(";
@@ -89,6 +98,7 @@ class DonHang extends connect_db{
 		if($this->get_TenNguoiNhan()!="")$sql=$sql."'".$this->get_TenNguoiNhan()."',";
 		if($this->get_DienThoai()!="")$sql=$sql."'".$this->get_DienThoai()."',";
 		if($this->get_DiaDiemGiaoHang()!="")$sql=$sql."'".$this->get_DiaDiemGiaoHang()."',";
+		if($this->get_TongTien()!="")$sql=$sql."'".$this->get_TongTien()."',";
 		if($this->get_GhiChu()!="")$sql=$sql."'".$this->get_GhiChu()."',";
 		$sql=substr($sql,0,-1);
 		$sql=$sql.")";		

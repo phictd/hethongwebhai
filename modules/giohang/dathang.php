@@ -53,13 +53,17 @@ if(isset($_SESSION['username'])){
 				echo "</ul>";
 		}else{
 			if($tennn && $dt && $dc && $ngaygiao &&  $thanggiao && $namgiao  ){
+				$tongtien = $_SESSION['thanhtien'];
+				$doilaitongtien = str_replace(",","",$tongtien);
+				
 				$donhang->set_idDonHang($id);
 				$donhang->set_Username($_SESSION['username']);
 				$donhang->set_TenNguoiNhan($tennn);
 				$donhang->set_DienThoai($dt);
 				$donhang->set_DiaDiemGiaoHang($dc);
+				$donhang->set_TongTien($doilaitongtien);
 				$tt=0;
-				$donhang->set_TinhTrang($tt);
+				//$donhang->set_TinhTrang($tt);
 				$ngaydat = date('d');
 				$thangdat = date('m');
 				$namdat = date('Y');
@@ -72,22 +76,25 @@ if(isset($_SESSION['username'])){
 					echo "<div align='center' style='margin:10px;'><font size='+1' color='#FF0033'>Không Tạo Được Phiếu Mua. Có Lỗi Xảy Ra !</font></div>";
 				}else{
 					
-					for($f = 1; $f <= $_SESSION['tongsl']; $f++){
+					foreach($_SESSION['cart'] as $idHang=>$SoLuong){
 						$chitietdonhang->set_idDonHang($id);
-						$chitietdonhang->set_idHang($_SESSION['idHang'.$f]);
-						$chitietdonhang->set_SoLuong($_SESSION['soluong'.$f]);
+						$chitietdonhang->set_idHang($idHang);
+						$chitietdonhang->set_SoLuong($SoLuong);
 						$chitietdonhang->ThemChiTietDonHang();
 					}
-				
-				echo "<div align='center' style='margin:10px;'><font size='+1' color='#999999'>Tạo Phiếu Thành Công. Xin Cảm Ơn Quý Khách !</font></div>";
+
+						echo "<div align='center' style='margin:10px;'><font size='+1' color='#999999'>Tạo Phiếu Thành Công. Xin Cảm Ơn Quý Khách !</font></div>";
 				}
-			unset($_SESSION['tongsl']);
-			unset($_SESSION['thanhtien']);
+			unset ($_SESSION['tongmathang']);
+			unset ($_SESSION['thanhtien']);
+			unset ($_SESSION['cart']);
 			}
 		}
 	}
 
 ?>
+
+
 <form action="index.php?module=giohang&act=dathang" method="post">
     
             <fieldset>
