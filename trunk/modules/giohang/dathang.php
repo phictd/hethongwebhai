@@ -53,16 +53,16 @@ if(isset($_SESSION['username'])){
 				echo "</ul>";
 		}else{
 			if($tennn && $dt && $dc && $ngaygiao &&  $thanggiao && $namgiao  ){
-				$tongtien = $_SESSION['thanhtien'];
-				$doilaitongtien = str_replace(",","",$tongtien);
+				//$tongtien = $_SESSION['thanhtien'];
+				//$doilaitongtien = str_replace(",","",$tongtien);
 				
 				$donhang->set_idDonHang($id);
 				$donhang->set_Username($_SESSION['username']);
 				$donhang->set_TenNguoiNhan($tennn);
 				$donhang->set_DienThoai($dt);
 				$donhang->set_DiaDiemGiaoHang($dc);
-				$donhang->set_TongTien($doilaitongtien);
-				$tt=0;
+				
+				
 				//$donhang->set_TinhTrang($tt);
 				$ngaydat = date('d');
 				$thangdat = date('m');
