@@ -59,8 +59,8 @@ class DonHang extends connect_db{
         return $this->DiaDiemGiaoHang;
     }
 
-	public function set_TongTien($tt){
-        $this->TongTien = $tt;
+	public function set_TongTien($tongtien){
+        $this->TongTien = $tongtien;
     }
     public function get_TongTien(){
         return $this->TongTien;
