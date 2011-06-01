@@ -8,8 +8,8 @@ require_once("modules/user/classes/tc_calendar.php");
 if(isset($_SESSION['username'])){
 	if(isset($_POST['ok'])){
 
-		$id= time();
-		$donhang = new donhang;
+		$idDonHang= time();
+		$donhang = new DonHang;
 		$chitietdonhang= new ChiTietDonHang;
 
 		if($_POST['txttennn'] == NULL){
@@ -53,17 +53,17 @@ if(isset($_SESSION['username'])){
 				echo "</ul>";
 		}else{
 			if($tennn && $dt && $dc && $ngaygiao &&  $thanggiao && $namgiao  ){
-				$tongtien = $_SESSION['thanhtien'];
-				$doilaitongtien = str_replace(",","",$tongtien);
+				//$tongtien = $_SESSION['thanhtien'];
+				//$doilaitongtien = str_replace(",","",$tongtien);
 				
-				$donhang->set_idDonHang($id);
+				$donhang->set_idDonHang($idDonHang);
 				$donhang->set_Username($_SESSION['username']);
 				$donhang->set_TenNguoiNhan($tennn);
 				$donhang->set_DienThoai($dt);
 				$donhang->set_DiaDiemGiaoHang($dc);
 				
 				
-				//$donhang->set_TinhTrang($tt);
+
 				$ngaydat = date('d');
 				$thangdat = date('m');
 				$namdat = date('Y');
@@ -77,7 +77,7 @@ if(isset($_SESSION['username'])){
 				}else{
 					
 					foreach($_SESSION['cart'] as $idHang=>$SoLuong){
-						$chitietdonhang->set_idDonHang($id);
+						$chitietdonhang->set_idDonHang($idDonHang);
 						$chitietdonhang->set_idHang($idHang);
 						$chitietdonhang->set_SoLuong($SoLuong);
 						$chitietdonhang->ThemChiTietDonHang();

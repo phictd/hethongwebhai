@@ -103,7 +103,8 @@ class DonHang extends connect_db{
 		if($this->get_TongTien()!="")$sql=$sql."'".$this->get_TongTien()."',";
 		if($this->get_GhiChu()!="")$sql=$sql."'".$this->get_GhiChu()."',";
 		$sql=substr($sql,0,-1);
-		$sql=$sql.")";		
+		$sql=$sql.")";
+				
 		
 		
         $this->query($sql);
