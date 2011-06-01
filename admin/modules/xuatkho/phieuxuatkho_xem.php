@@ -173,7 +173,7 @@ $namdat = date('Y');
 
 <div align="center" style="clear:left;">
 <br/>
-	<input type="submit" name='ok' value="Xuất Kho" /><input type="submit" name='in' value="In Phiếu" /><input type='submit' name='dong' value='Đóng'/>  
+	<input type="submit" name='ok' value="Xuất Kho" /><input type='submit' name='dong' value='Đóng'/>  
 </div>
  </form>
 
