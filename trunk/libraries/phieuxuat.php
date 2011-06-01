@@ -127,25 +127,16 @@ public function listphieuxuat(){
 
 
 public function delete_phieuxuat(){
-	$sql="delete from phieunhap where idPhieuNhap='".$this->get_idphieunhap()."'";	
+	$sql="delete from phieuxuat where idPhieuXuat='".$this->get_idphieuxuat()."'";	
 	$this->query($sql);
 }
 
 public function getdata(){
-	$sql="select * from phieunhap where idPhieuNhap='".$this->get_idphieunhap()."'";
+	$sql="select * from phieuxuat where idPhieuXuat='".$this->get_idphieuxuat()."'";
 	$this->query($sql);
 	return $this->fetch();
 }
 
-public function update_phieunhap(){
-		$sql="update phieunhap set ";
-		if($this->get_ngaynhap()!="") $sql=$sql."NgayNhap='".$this->get_ngaynhap()."',";
-		if($this->get_tongtien()!="")$sql=$sql."TongTien='".$this->get_tongtien()."',";
-		if($this->get_ghichu()!="")$sql=$sql."GhiChu='".$this->get_ghichu()."',";
-		$sql=substr($sql,0,-1);
-		$sql=$sql." where idPhieuNhap='".$this->get_idphieunhap()."'";
-		$this->query($sql);			
-}
 
 }
 ?>

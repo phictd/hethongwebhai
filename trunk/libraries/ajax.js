@@ -80,6 +80,11 @@ function xoadonhang(id){
 	http.onreadystatechange=process_tuongtaccsdl;
 	http.send(null);
 }
+function xoaphieuxuat(id){
+	http.open('get','modules/xuatkho/xoa.php?id='+id,true);
+	http.onreadystatechange=process_tuongtaccsdl;
+	http.send(null);
+}
 
 
 
@@ -220,6 +225,7 @@ function process_tuongtaccsdl(){
 				case '16': document.getElementById('thongbao').innerHTML='Sửa Thành Công';list('donhang');break;
 				case '17   ': document.getElementById('thongbao').innerHTML='Xóa Thành Công';list('donhang');break;
 				case '18': document.getElementById('thongbao').innerHTML='Thêm Thành Công';list('donhang');break;
+				case '19   ': document.getElementById('thongbao').innerHTML='Xóa Thành Công';list('xuatkho');break;
 				default : document.getElementById('thongbao').innerHTML=kq;
 			}
 			

@@ -43,10 +43,7 @@ if(isset($_POST['ok'])){
 
 $a=new DonHang;
 $a->set_idDonHang($id);
-if(isset($_POST['dong'])){		
-	dongcuaso();
-	exit();
-}
+
 if(isset($_POST['xoa'])){		
 	$a->XoaDonHang();
 	dongcuaso();
@@ -129,16 +126,24 @@ $data=$a->getdata();
 								$data_hanghoa=$hanghoa->listhanghoa();		
 								echo"<td class='info1' width='150px'><input type='text' id='loai$stt' size='10' value='".$data_hanghoa[0][TenLoai]."' disabled='disabled' class='center'/></td>
 										<td class='info1' width='150px'><input type='text' id='congty$stt' size='14' value='".$data_hanghoa[0][TenCongTy]."' disabled='disabled' class='center'/></td>
-										<td class='info1' width='150px'><input type='text' id='tensanpham$stt' size='15' value='".$data_hanghoa[0][TenHang]."' disabled='disabled' class='center'/>										
-										<td class='info1' width='100px'><input type='text' id='soluong$stt' size='6' value='$item_chitiet[SoLuong]'  class='right'/></td>
-									 ";?>
-								<td align='center' width='50px'>                                								
-                                <a href='#' onclick=suachitiet_donhang('<?php echo $id;?>','<?php echo $data_hanghoa[0]['idHang'];?>',document.getElementById('soluong<?php echo $stt;?>').value)>Sửa</a>                               
-								</td> 
-                                <td align='center' width='50px'> <a href='#' onclick=xoachitiet_donhang('<?php echo $id;?>','<?php echo $data_hanghoa[0]['idHang'];?>')>Xóa</a> 
-                                </td>
-								</tr>	
-                                <?php							
+										<td class='info1' width='150px'><input type='text' id='tensanpham$stt' size='15' value='".$data_hanghoa[0][TenHang]."' disabled='disabled' class='center'/>";
+								
+								if($data[0]['TinhTrang']==1){		
+									echo "  <td class='info1' width='100px'><input type='text' id='soluong$stt' size='6' value='$item_chitiet[SoLuong]'  class='right' disabled='disabled'/></td>";?>
+									<td align='center' width='50px'>X</td> 
+									<td align='center' width='50px'>X</td>
+                          <?php }else{
+							  		echo "  <td class='info1' width='100px'><input type='text' id='soluong$stt' size='6' value='$item_chitiet[SoLuong]'  class='right' /></td>";?>
+									<td align='center' width='50px'>                                								
+									<a href='#' onclick=suachitiet_donhang('<?php echo $id;?>','<?php echo $data_hanghoa[0]['idHang'];?>',document.getElementById('soluong<?php echo $stt;?>').value)>Sửa</a>                               
+									</td> 
+									<td align='center' width='50px'> <a href='#' onclick=xoachitiet_donhang('<?php echo $id;?>','<?php echo $data_hanghoa[0]['idHang'];?>')>Xóa</a> 
+									</td>
+						<?php							  
+						  		}
+								
+								echo "</tr>";	
+                                							
 							}							
 						}?>
 						
@@ -146,7 +151,7 @@ $data=$a->getdata();
                     
                     <div id="them"></div>
                     
-    <center><a href="#" onClick="themdongchitiet('<?php echo ++$stt;?>')" ><input type="button" id="themct" value="Thêm Sản Phẩm" /> </a><input type='submit' name='xoa' value='Xóa Đơn Hàng'/><input type='submit' name='dong' value='Đóng'/></center>
+    <center><?php if($data[0]['TinhTrang']!=1){?><a href="#" onClick="themdongchitiet('<?php echo ++$stt;?>')" ><input type="button" id="themct" value="Thêm Sản Phẩm" /> </a><?php } ?><input type='submit' name='xoa' value='Xóa Đơn Hàng'/><input type='submit' name='dong' value='Đóng'/></center>
                 
             </fieldset>  
 </form>

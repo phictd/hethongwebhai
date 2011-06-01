@@ -1,10 +1,15 @@
 <?php
+ini_set( "display_errors", 0);
 require_once('../../../libraries/oop.php');
 require_once('../../../libraries/donhang.php');
-$a= new DonHang;
+require_once('../../../libraries/chitietdonhang.php');
+$dh= new DonHang;
+$ct= new ChiTietDonHang;
 $id=$_GET['id'];
-$a->set_idDonHang($id);
-$a->XoaDonHang();
+$ct->set_idDonHang($id);
+$ct->Xoa_tatcaChitietDonHang();
+$dh->set_idDonHang($id);
+$dh->XoaDonHang();
 echo '17';
 ?>
    

@@ -62,6 +62,11 @@ public function delete_chitietphieunhap(){
 	$this->query($sql);
 }
 
+public function delete_allchitietinphieunhap(){
+	$sql="delete from chitietphieunhap where idPhieuNhap='".$this->get_idphieunhap()."' ";	
+	$this->query($sql);
+}
+
 public function getdata(){
 	$sql="select * from chitietphieunhap where idPhieuNhap='".$this->get_idphieunhap()."' and idHang='".$this->get_idhang()."'";
 	$this->query($sql);
