@@ -72,6 +72,13 @@ public function ThemChiTietDonHang(){
         $this->query($sql);	
 		
     }
+	
+	public function Xoa_tatcaChitietDonHang(){     
+		// Xoa tat ca Chi tiet co trong don hang 
+        $sql = "delete from chitietdonhang where idDonHang ='".$this->get_idDonHang()."'";
+        $this->query($sql);	
+		
+    }
     //list
     public function listChiTietDonhang(){
         $sql = "select * from chitietdonhang where idDonHang='".$this->get_idDonHang()."'";

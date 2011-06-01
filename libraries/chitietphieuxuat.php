@@ -32,11 +32,11 @@ public function insert_chitietphieuxuat(){
 	$this->query($sql);	
 }
 
-public function listchitietphieunhap(){
-	if($this->get_idphieunhap()!="")
-		$sql="select * from chitietphieunhap where idPhieuNhap='".$this->get_idphieunhap()."'";
+public function listchitietphieuxuat(){
+	if($this->get_idphieuxuat()!="")
+		$sql="select * from chitietphieuxuat where idPhieuXuat='".$this->get_idphieuxuat()."'";
 	else
-		$sql="select * from chitietphieunhap";
+		$sql="select * from chitietphieuxuat";
 	$this->query($sql);
 	if($this->num_rows() == 0){
 		return 0;
@@ -49,13 +49,18 @@ public function listchitietphieunhap(){
 }
 
 
-public function delete_chitietphieunhap(){
-	$sql="delete from chitietphieunhap where idPhieuNhap='".$this->get_idphieunhap()."' and idHang='".$this->get_idhang()."'";	
+public function delete_chitietphieuxuat(){
+	$sql="delete from chitietphieuxuat where idPhieuXuat='".$this->get_idphieuxuat()."' and idHang='".$this->get_idhang()."'";	
+	$this->query($sql);
+}
+
+public function delete_allchitietinphieuxuat(){
+	$sql="delete from chitietphieuxuat where idPhieuXuat='".$this->get_idphieuxuat()."' ";	
 	$this->query($sql);
 }
 
 public function getdata(){
-	$sql="select * from chitietphieunhap where idPhieuNhap='".$this->get_idphieunhap()."' and idHang='".$this->get_idhang()."'";
+	$sql="select * from chitietphieuxuat where idPhieuXuat='".$this->get_idphieuxuat()."' and idHang='".$this->get_idhang()."'";
 	$this->query($sql);
 	return $this->fetch();
 }
@@ -63,7 +68,7 @@ public function getdata(){
 public function update_chitietphieunhap(){
 				
 		if($this->get_soluong()!=""){
-			$sql="update chitietphieunhap set SoLuong='".$this->get_soluong()."' where idPhieuNhap='".$this->get_idphieunhap()."' and idHang='".$this->get_idhang()."'";
+			$sql="update chitietphieuxuat set SoLuong='".$this->get_soluong()."' where idPhieuXuat='".$this->get_idphieuxuat()."' and idHang='".$this->get_idhang()."'";
 			$this->query($sql);	
 			return TRUE;	
 		}
