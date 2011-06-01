@@ -58,13 +58,15 @@ class DonHang extends connect_db{
     public function get_DiaDiemGiaoHang(){
         return $this->DiaDiemGiaoHang;
     }
-	///////////////
+
 	public function set_TongTien($tt){
         $this->TongTien = $tt;
     }
     public function get_TongTien(){
         return $this->TongTien;
     }
+
+	
 	public function set_TinhTrang($tt){
         $this->TinhTrang = $tt;
     }
@@ -85,6 +87,7 @@ class DonHang extends connect_db{
 		if($this->get_ThoiDiemGiaoHang()!="")$sql=$sql."ThoiDiemGiaoHang,";
 		if($this->get_TenNguoiNhan()!="")$sql=$sql."TenNguoiNhan,";
 		if($this->get_DienThoai()!="")$sql=$sql."DienThoai,";
+		if($this->get_TongTien()!="")$sql=$sql."TongTien,";
 		if($this->get_DiaDiemGiaoHang()!="")$sql=$sql."DiaDiemGiaoHang,";
 		if($this->get_TongTien()!="")$sql=$sql."TongTien,";
 		if($this->get_GhiChu()!="")$sql=$sql."GhiChu,";
@@ -97,6 +100,7 @@ class DonHang extends connect_db{
 		if($this->get_ThoiDiemGiaoHang()!="")$sql=$sql."'".$this->get_ThoiDiemGiaoHang()."',";
 		if($this->get_TenNguoiNhan()!="")$sql=$sql."'".$this->get_TenNguoiNhan()."',";
 		if($this->get_DienThoai()!="")$sql=$sql."'".$this->get_DienThoai()."',";
+		if($this->get_TongTien()!="")$sql=$sql."'".$this->get_TongTien()."',";
 		if($this->get_DiaDiemGiaoHang()!="")$sql=$sql."'".$this->get_DiaDiemGiaoHang()."',";
 		if($this->get_TongTien()!="")$sql=$sql."'".$this->get_TongTien()."',";
 		if($this->get_GhiChu()!="")$sql=$sql."'".$this->get_GhiChu()."',";
@@ -130,8 +134,7 @@ class DonHang extends connect_db{
        }
        //get 1 don hang
     public function getdata(){
-	$sql="select * from donhang where  idDonHang='".$this->get_idDonHang()."'";
-	
+	$sql="select * from donhang where  idDonHang='".$this->get_idDonHang()."'";	
 	$this->query($sql);
     if($this->num_rows() == 0){
             return 0;
@@ -142,7 +145,23 @@ class DonHang extends connect_db{
             return $data;
         }
 	}
-	
+	public function getdatatheogiatri($giatri){
+	$sql="select $giatri from donhang where  idDonHang='".$this->get_idDonHang()."'";	
+	$this->query($sql);
+    if($this->num_rows() == 0){
+            return 0;
+        }else{
+            while($dong = $this->fetch()){
+                $data[] = $dong;
+            }
+            return $data;
+        }
+	}
+	public function update_tinhtrang(){
+		$sql="update donhang set TinhTrang=1 where idDonHang='".$this->get_idDonHang()."'";		
+		$this->query($sql);	
+		 
+	}
 	public function update_donhang(){
 		$sql="update donhang set ";
 		if($this->get_Username()!="")$sql=$sql."Username='".$this->get_Username()."',";
@@ -157,6 +176,6 @@ class DonHang extends connect_db{
 		
 		 $this->query($sql);	
 		 
-}
+	}
 }
 ?>
