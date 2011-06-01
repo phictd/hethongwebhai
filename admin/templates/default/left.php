@@ -10,7 +10,7 @@
             	<li><a href="index.php?module=donhang">Đơn Hàng</a></li>
                 <li><a href="index.php?module=user" >User</a></li>
 				<li><a href="../index.php">Trang Chủ</a></li>
-                <li><a href="../libraries/logout.php">Thoát</a></li>                                                                              
+                <li><a href="../index.php?module=user&act=logout">Thoát</a></li>                                                                              
             </ul>
         </div>
         <div id="info">
