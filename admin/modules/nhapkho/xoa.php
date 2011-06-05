@@ -8,7 +8,7 @@ $ct= new ChiTietPhieuNhap;
 $id=$_GET['id'];
 $ct->set_idphieunhap($id);
 $ct->delete_allchitietinphieunhap();
-$pn>set_idphieunhap($id);
+$pn->set_idphieunhap($id);
 $pn->delete_phieunhap();
 echo '14';
 ?>
